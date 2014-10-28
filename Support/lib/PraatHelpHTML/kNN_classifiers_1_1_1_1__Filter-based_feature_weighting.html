@@ -1,0 +1,26 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>kNN classifiers 1.1.1.1. Filter-based feature weighting</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+kNN classifiers 1.1.1.1. Filter-based feature weighting
+</b></font></table></table>
+<p>
+The <i>filter-based</i> <i>feature weighting</i> algorithm implemented in Praat is an extended version of the well known R<font size=-1>ELIEF</font> algorithm, R<font size=-1>ELIEF-F</font>, such as it is presented (with one minor exception, see below) in <a href="Igor_Kononenko__1994_.html">Kononenko (1994)</a>. Unlike the original R<font size=-1>ELIEF</font> algorithm, the R<font size=-1>ELIEF-F</font> algorithm copes with multi class (as in more than 2 classes) data sets. The simple intuition behind the R<font size=-1>ELIEF-F</font> algorithm is that a good feature is a feature with little within class variance and generous amounts of between-class variance. A bad feature is characterized by within-class and between-class variances of magnitudes roughly equal.</p>
+<p>
+The computation of the weight vector is done in an iterative fashion, with all weights initially set to 0. All features in the training set are normalized (all values are set within the range [0 ... 1]) and thereafter used to update the weight vector as follows: On each iteration a random instance is chosen. The nearest hit is located, where hit is an instance of the same class as that of the randomly chosen instance. The nearest misses of all the classes but that of the randomly chosen instance are located, where a miss is an instance of a class different from that of the randomly chosen instance. Each weight is updated by subtracting the difference between the given attribute of the randomly chosen instance and that of the nearest hit and adding the corresponding difference between the chosen instance and all the nearest misses weighted by the prior probabilities of their classes. If the distance between the attribute of the randomly chosen instance and the nearest hit equals the corresponding value for the nearest miss(es) then the weight value will not change, it will thus remain 0 given that the current iteration is the first one. If the difference between the attribute of the chosen instance and the nearest hit is lower than the corresponding value for the miss(es) then the weight value will be increased. On average highly significant attributes will result in absolute values distinct from 0, leading to an absolute increase of the weight, and insignificant attributes will on average result in values near 0, retaining the pessimistic view that all features are of no value as predictors.</p>
+<p>
+The implementation of R<font size=-1>ELIEF-F</font> found in Praat differs slightly from the algorithm described. Instances are not randomly chosen, instead all instances are used to update the weight vector. This simplification is of no concern unless massive data sets are used, in which case the Praat approach would be no less precise, but needlessly slow.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="KNN___Pattern___FeatureWeights__To_Categories___.html">KNN & Pattern & FeatureWeights: To Categories...</a>
+<li><a href="KNN___Pattern___FeatureWeights__To_TableOfReal___.html">KNN & Pattern & FeatureWeights: To TableOfReal...</a>
+<li><a href="kNN_classifiers.html">kNN classifiers</a>
+<li><a href="kNN_classifiers_1_1_1__Feature_weighting.html">kNN classifiers 1.1.1. Feature weighting</a>
+<li><a href="Pattern___Categories__To_FeatureWeights___.html">Pattern & Categories: To FeatureWeights...</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, May 29, 2008</p>
+</address>
+</body>
+</html>

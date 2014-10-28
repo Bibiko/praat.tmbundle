@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>form ${1:my_form}
+	${2|comment,real,positive,integer,natural,boolean,word,sentence,text,choice,button,optionmenu,option|} ${3:}
+endform</string>
+	<key>name</key>
+	<string>form</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>tabTrigger</key>
+	<string>form</string>
+	<key>uuid</key>
+	<string>CC02544A-961E-4110-972B-EF0F7A3EE7CC</string>
+</dict>
+</plist>

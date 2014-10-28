@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>indent:</string>
+		</dict>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>beforeRunningCommand</key>
+				<string>nop</string>
+				<key>command</key>
+				<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+[[ -z "$TM_SELECTED_TEXT" ]] &amp;&amp; exit_discard
+/usr/bin/env ruby18 "$TM_BUNDLE_SUPPORT/bin/formatFormBlock.rb"</string>
+				<key>input</key>
+				<string>selection</string>
+				<key>inputFormat</key>
+				<string>text</string>
+				<key>name</key>
+				<string>Helper – Format Form Block</string>
+				<key>outputCaret</key>
+				<string>selectOutput</string>
+				<key>outputFormat</key>
+				<string>text</string>
+				<key>outputLocation</key>
+				<string>replaceInput</string>
+				<key>scope</key>
+				<string>source.praat</string>
+				<key>uuid</key>
+				<string>6A53D310-BD56-4E46-9AEC-D5FB250C7EE5</string>
+				<key>version</key>
+				<integer>2</integer>
+			</dict>
+			<key>command</key>
+			<string>executeCommandWithOptions:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>~@[</string>
+	<key>name</key>
+	<string>Indent Selection</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>69B845A8-272E-44A8-90BD-90682A5A05A2</string>
+</dict>
+</plist>

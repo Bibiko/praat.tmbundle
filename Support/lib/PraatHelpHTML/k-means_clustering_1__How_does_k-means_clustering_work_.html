@@ -1,0 +1,20 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>k-means clustering 1. How does k-means clustering work?</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+k-means clustering 1. How does k-means clustering work?
+</b></font></table></table>
+<p>
+The <i>k</i>-means clustering algorithm attempts to split a given anonymous data set (a set containing no information as to class identity) into a fixed number (<i>k</i>) of clusters.</p>
+<p>
+Initially <i>k</i> number of so called <i>centroids</i> are chosen. A <i>centroid</i> is a data point (imaginary or real) at the center of a cluster. In Praat each centroid is an existing data point in the given input data set, picked at random, such that all <i>centroids</i> are unique (that is, for all <i>centroids</i> <i>c</i><sub><i>i</sub></i> and <i>c</i><sub><i>j</sub></i>, <i>c</i><sub><i>i</sub></i> &#8800; <i>c</i><sub><i>j</sub></i>). These <i>centroids</i> are used to train a <a href="kNN_classifiers_1__What_is_a_kNN_classifier_.html">kNN classifier</a>. The resulting classifier is used to classify (using <i>k</i> = 1) the data and thereby produce an initial randomized set of clusters. Each <i>centroid</i> is thereafter set to the arithmetic mean of the cluster it defines. The process of classification and <i>centroid</i> adjustment is repeated until the values of the <i>centroids</i> stabilize. The final <i>centroids</i> will be used to produce the final classification/clustering of the input data, effectively turning the set of initially anonymous data points into a set of data points, each with a class identity.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="k-means_clustering.html">k-means clustering</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, May 29, 2008</p>
+</address>
+</body>
+</html>

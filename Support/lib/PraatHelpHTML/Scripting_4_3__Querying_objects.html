@@ -1,0 +1,119 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Scripting 4.3. Querying objects</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+Scripting 4.3. Querying objects
+</b></font></table></table>
+<p>
+You can get the name of a selected object into a string variable. For instance, the following reads the name of the second selected Sound (as counted from the top of the list of objects) into the variable <i>name</i>$:</p>
+<code>
+name$ = <b>selected$</b> ("Sound", 2)<br></code>
+<p>
+If the Sound was called "Sound hallo", the variable <i>name</i>$ will contain the string "hallo". To get the name of the topmost selected Sound object, you can leave out the number:</p>
+<code>
+name$ = <b>selected$</b> ("Sound")<br></code>
+<p>
+To get the full name (type + name) of the third selected object, you do:</p>
+<code>
+fullName$ = <b>selected$</b> (3)<br></code>
+<p>
+To get the full name of the topmost selected object, you do:</p>
+<code>
+fullName$ = <b>selected$</b> ()<br></code>
+<p>
+To get the type and name out of the full name, you do:</p>
+<code>
+type$ = extractWord$ (fullName$, "")<br></code>
+<code>
+name$ = extractLine$ (fullName$, " ")<br></code>
+<p>
+Negative numbers count from the bottom. Thus, to get the name of the bottom-most selected Sound object, you say</p>
+<code>
+name$ = <b>selected$</b> ("Sound", -1)<br></code>
+<p>
+You would use <b>selected$</b> for drawing the object name in a picture:</p>
+<code>
+Draw: 0, 0, 0, 0, "yes"<br></code>
+<code>
+name$ = <b>selected$</b> ("Sound")<br></code>
+<code>
+Text top: "no", "This is sound " + name$<br></code>
+<p>
+For identifying previously selected objects, this method is not very suitable, since there may be multiple objects with the same name:</p>
+<code>
+# The following two lines are OK:<br></code>
+<code>
+soundName$ = <b>selected$</b> ("Sound", -1)<br></code>
+<code>
+pitchName$ = <b>selected$</b> ("Pitch")<br></code>
+<code>
+# But the following line is questionable, since it doesn't<br></code>
+<code>
+# necessarily select the previously selected Pitch again:<br></code>
+<code>
+<b>selectObject</b>: "Pitch " + pitchName$<br></code>
+<p>
+Instead of this error-prone approach, you should get the object's unique ID. The correct version of our example becomes:</p>
+<code>
+sound = <b>selected</b> ("Sound", -1)<br></code>
+<code>
+pitch = <b>selected</b> ("Pitch")<br></code>
+<code>
+# Correct:<br></code>
+<code>
+<b>selectObject</b>: pitch<br></code>
+<p>
+To get the number of selected Sound objects into a variable, use</p>
+<code>
+numberOfSelectedSounds = <b>numberOfSelected</b> ("Sound")<br></code>
+<p>
+To get the number of selected objects into a variable, use</p>
+<code>
+numberOfSelectedObjects = <b>numberOfSelected</b> ()<br></code>
+<h3>
+Example: doing something to every selected Sound</h3>
+<code>
+n = <b>numberOfSelected</b> ("Sound")<br></code>
+<code>
+<b>for</b> i to n<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+sound [i] = <b>selected</b> ("Sound", i)<br></code>
+<code>
+<b>endfor</b><br></code>
+<code>
+# Median pitches of all selected sounds:<br></code>
+<code>
+<b>for</b> i to n<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+<b>selectObject</b>: sound [i]<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+To Pitch: 0.0, 75, 600<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+f0 = Get quantile: 0, 0, 0.50, "Hertz"<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+appendInfoLine: f0<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+Remove<br></code>
+<code>
+<b>endfor</b><br></code>
+<code>
+# Restore selection:<br></code>
+<code>
+<b>selectObject</b> ( )   ; deselect all objects<br></code>
+<code>
+<b>for</b> i from 1 to n<br></code>
+<code>&nbsp;&nbsp;&nbsp;
+<b>plusObject</b>: sound [i]<br></code>
+<code>
+<b>endfor</b><br></code>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="Scripting.html">Scripting</a>
+<li><a href="Scripting_4__Object_selection.html">Scripting 4. Object selection</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; ppgb, January 11, 2014</p>
+</address>
+</body>
+</html>

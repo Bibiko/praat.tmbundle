@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>beginPause: "${1}"
+	${0}
+${2:answer = }endPause: ${3:"Continue", "Cancel", 1}</string>
+	<key>name</key>
+	<string>beginPause</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>tabTrigger</key>
+	<string>beginPause</string>
+	<key>uuid</key>
+	<string>4C987DF8-633B-4ACB-A395-D313681C9C31</string>
+</dict>
+</plist>

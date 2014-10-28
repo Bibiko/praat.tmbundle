@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+if [ -z "$TM_SELECTED_TEXT" ]; then
+	LHEAD="${TM_CURRENT_LINE:0:$((TM_LINE_INDEX))}"
+	GETCMD=$(echo "$LHEAD" | perl -pe 's/^\s+//;s/^.*?[=]\s*//;s/^(\w+) /$1ꀀ/;')
+	FIRSTWORDOFCOMMAND=$(echo "$GETCMD" | perl -pe 'chomp;s/ꀀ.*/ /')
+	TAILOFCOMMAND=$(echo "$GETCMD" | perl -pe 'chomp;s/^.*?ꀀ(.*)/$1/')
+	[[ $TAILOFCOMMAND == $FIRSTWORDOFCOMMAND ]] &amp;&amp; TAILOFCOMMAND=""
+else
+	FIRSTWORDOFCOMMAND="$TM_SELECTED_TEXT"
+	TAILOFCOMMAND=""
+fi
+
+# echo ":$LHEAD:"
+# echo ":$FIRSTWORDOFCOMMAND:"
+# echo ":$TAILOFCOMMAND:"
+# exit
+
+RES=$(grep  "^$FIRSTWORDOFCOMMAND" "$TM_BUNDLE_SUPPORT/lib/syn_completion.dat" | perl -ne 'chomp;print "{display=\"$_\";},"' | perl -ne 's/,$//;print "($_)"')
+
+if [ -z "$RES" ]; then
+	RES=$(grep  "^$TM_CURRENT_WORD" "$TM_BUNDLE_SUPPORT/lib/syn_completion.dat" | perl -ne 'chomp;print "{display=\"$_\";},"' | perl -ne 's/,$//;print "($_)"')
+	FIRSTWORDOFCOMMAND="$TM_CURRENT_WORD"
+	TAILOFCOMMAND=""
+fi
+
+# echo ":$RES:"
+# exit
+
+[[ -z "$RES" ]] &amp;&amp; echo "Nothing found" &amp;&amp; exit_show_tool_tip
+
+"$DIALOG" popup --additionalWordCharacters ' (&amp;-' --staticPrefix "$FIRSTWORDOFCOMMAND" --alreadyTyped "$TAILOFCOMMAND" --suggestions "$RES"
+
+</string>
+	<key>input</key>
+	<string>line</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>~</string>
+	<key>name</key>
+	<string>Praat Completion</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>atCaret</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>A06D0CE4-668E-4CF3-ABA8-000106FA0C6E</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,59 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Scripting 4.2. Removing objects</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+Scripting 4.2. Removing objects
+</b></font></table></table>
+<p>
+In <a href="Scripting_4_1__Selecting_objects.html">\SS4.1</a> we saw that objects could be removed by selecting them first and then calling the <b>Remove</b> command. A faster way is the <b>removeObject</b> function, which can also remove unselected objects:</p>
+<code>
+sound = Create Sound as pure tone: "sine377",<br></code>
+<code>
+... 1, 0, 1, 44100, 377, 0.2, 0.01, 0.01   ; remember the ID of the Sound<br></code>
+<code>
+Play   ; the Sound is selected, so it plays<br></code>
+<code>
+spectrum = To Spectrum: "yes"   ; remember the ID of the Spectrum<br></code>
+<code>
+Draw: 0, 5000, 20, 80, "yes"   ; the Spectrum is selected, so it is drawn<br></code>
+<code>
+# Remove the created Spectrum and Sound:<br></code>
+<code>
+<b>removeObject</b>: sound, spectrum   ; remove one selected and one unselected object<br></code>
+<p>
+The <b>removeObject</b> function keeps the objects selected that were selected before (except of course the ones it throws away). This allows you to easily throw away objects as soon as you no longer need them:</p>
+<code>
+sound = Create Sound as pure tone: "sine377",<br></code>
+<code>
+... 1, 0, 1, 44100, 377, 0.2, 0.01, 0.01   ; remember the ID of the Sound<br></code>
+<code>
+Play   ; the Sound is selected, so it plays<br></code>
+<code>
+spectrum = To Spectrum: "yes"<br></code>
+<code>
+<b>removeObject</b>: sound   ; we no longer need the Sound, so we remove it<br></code>
+<code>
+Draw: 0, 5000, 20, 80, "yes"   ; the Spectrum is still selected, so it is drawn<br></code>
+<code>
+<b>removeObject</b>: spectrum   ; remove the last object created by the script<br></code>
+<h3>
+Selecting and removing all objects from the list (don't)</h3>
+<p>
+A very strange command, which you should not normally use, is <b>select all</b>:</p>
+<code>&nbsp;&nbsp;&nbsp;
+<b>select all</b><br></code>
+<code>&nbsp;&nbsp;&nbsp;
+Remove<br></code>
+<p>
+This selects all objects in the list and then removes them. Please try not to use this, because it will remove even the objects that your script did not create! After all, you don't want the users of your script to lose the objects they created! So please try to remove in your script only the objects that your script created, even if the script is for your own use (because if it is a nice script, others will want to use it).</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="Scripting.html">Scripting</a>
+<li><a href="Scripting_4__Object_selection.html">Scripting 4. Object selection</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; ppgb, January 11, 2014</p>
+</address>
+</body>
+</html>

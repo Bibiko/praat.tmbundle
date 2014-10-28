@@ -1,0 +1,28 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>kNN classifiers 2. Quick start</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+kNN classifiers 2. Quick start
+</b></font></table></table>
+<h3>
+An example: Learning the Iris data set</h3>
+<p>
+In the <a href="Feedforward_neural_networks.html">the feedforward neural networks tutorial</a> a description of how the <a href="FFNet.html">FFNet</a> classifier in Praat can be applied to <a href="iris_data_set.html">the Iris data set</a> can be found.</p>
+<p>
+The same data can be used to test the <i>k</i>NN feature of Praat. To do so create an example data set using the <a href="Create_iris_example___.html">Create iris example...</a> command found in the <b>Neural nets</b> submenu. The form prompting for network topology settings can be ignored by selecting OK. Select the newly created <a href="Pattern.html">Pattern</a> and <a href="Categories.html">Categories</a> objects and click <b>To KNN Classifier...</b>. A form prompting for a name of the classifier to be created will be shown. The ordering in which instances are to be inserted into the instance base can also be specified, make sure that <b>Random</b> is selected and thereafter close the form by selecting OK. The newly created and trained classifier will be shown in the list of objects.</p>
+<p>
+To estimate how well the classifier can be expected to classify new samples of Irises select <b>Query -</b> &#8658; <b>Get accuracy estimate...</b>. A form prompting for <i>k</i>NN parameter settings and evaluation method will be shown. Experiment with the parameter settings until satisfactory results are achieved. If everything worked out the estimate will likely end up somewhere in the range of 94-98 percent.</p>
+<p>
+An alternative to manually experimenting with model parameters is to let the computer do the job. This is done be choosing the <a href="KNN.html">KNN</a> object and thereafter selecting <b>Query -</b> &#8658; <b>Get optimized parameters...</b>. The form shown prompts for a selection of parameters controlling the search. The default values will in most cases, including this, be appropriate.</p>
+<p>
+Another way of improving classification accuracy is to transform the instance space in which the individual instances, in this case Irises, are stored as to maximize the distance between instances of different classes and minimize the distance between instances of the same class. This can be done by means of feature weighting. To do so select the <a href="KNN.html">KNN</a> object and choose <b>To FeatureWeights...</b>. Adjust the <i>k</i>NN settings according to the ones found by the model search algorithm and let the remaining options retain the default values. Click OK. A <a href="FeatureWeights.html">FeatureWeights</a> object will be added to the objects list. The feature weights contained within the newly created object can be used by selecting named object in conjunction with the <a href="KNN.html">KNN</a> classifier and thereafter choosing the desired action.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="kNN_classifiers.html">kNN classifiers</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, August 9, 2008</p>
+</address>
+</body>
+</html>

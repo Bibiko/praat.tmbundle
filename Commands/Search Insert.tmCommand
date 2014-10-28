@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+L="$TM_CURRENT_LINE"
+
+if [ -z "$TM_SELECTED_TEXT" ]; then
+	LINDENT=`echo "$L" | perl -ne 's/^([ \t]*).*/$1/;print length($_)'`
+	LHEAD=`echo "$L" | perl -ne 's/^([^=]*?=\s*).*/$1/;print length($_)'`
+	if [ $(($LHEAD-1)) -eq ${#L} ]; then
+		"$TM_MATE" -l"$TM_LINE_NUMBER:$((1 + $LINDENT - 1))-$TM_LINE_NUMBER:10000000"
+	else
+		"$TM_MATE" -l"$TM_LINE_NUMBER:$LHEAD-$TM_LINE_NUMBER:10000000"
+	fi
+else
+	L="$TM_SELECTED_TEXT"
+fi
+
+STR=`echo "$L" | perl -pe 's/^[^=]*?=\s*//;s/(?&lt;=\.\.\.).*$//;s/(:).*$//;s/&amp;/%26/g;s/"/%22/g'`
+echo "&lt;script&gt;window.location.replace(\"file://$TM_BUNDLE_SUPPORT/lib/PraatCommandWizard/index.html?q=$STR\");&lt;/script&gt;"
+
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^</string>
+	<key>name</key>
+	<string>Search &amp; Insert Command...</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>5DA72714-875F-4170-890F-ED5E2AF8FC7F</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

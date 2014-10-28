@@ -1,0 +1,698 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>What's new?</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+What's new?
+</b></font></table></table>
+<p>
+Latest changes in Praat.</p>
+<p>
+<b>5.4</b> (4 October 2014)</p>
+<p>
+<b>5.3.87</b> (3 October 2014)</p>
+<dl>
+<dd>
+&#8226; Windows scripting: prevented incorrect handling of relative paths after the use of chooseReadFile$.
+<dd>
+&#8226; Windows: repaired a bug that could cause Praat to crash if a metafile resolution was 180 or 1200 dpi.
+</dl>
+<p>
+<b>5.3.86</b> (28 September 2014)</p>
+<dl>
+<dd>
+&#8226; Linux audio: reverted to old version of PortAudio because of race problems in the Alsa&#8211;PulseAudio cooperation.
+</dl>
+<p>
+<b>5.3.85</b> (19 September 2014)</p>
+<dl>
+<dd>
+&#8226; Mac audio: circumvented a bug in PortAudio by which playback of sounds with sampling frequencies below 44100 Hz could be distorted on some USB headsets.
+</dl>
+<p>
+<b>5.3.84</b> (26 August 2014)</p>
+<dl>
+<dd>
+&#8226; Manipulation: repaired a bug that could cause Praat to crash when playing a manipulation of a Sound created by the SpeechSynthesizer.
+</dl>
+<p>
+<b>5.3.83</b> (16 August 2014)</p>
+<dl>
+<dd>
+&#8226; TextGrid window: repaired a bug with automatic alignment that could cause an analysis tier to go out of order.
+<dd>
+&#8226; Linux audio: created a second workaround that reduces even more the chances of a freeze that is due to a potential deadlock in the collaboration between Alsa and PulseAudio that can occur when the playback of a sound is cancelled.
+<dd>
+&#8226; Smoother communication with Phon.
+<dd>
+&#8226; Windows: repaired a memory leak when saving PNG files.
+</dl>
+<p>
+<b>5.3.82</b> (26 July 2014)</p>
+<dl>
+<dd>
+&#8226; Audio playback: if the sound has more channels than the audio hardware, distribute them evenly.
+<dd>
+&#8226; Pause forms: more consistent appearance of the Revert button.
+<dd>
+&#8226; Scripting: pauseScript ( ) function.
+</dl>
+<p>
+<b>5.3.81</b> (2 July 2014)</p>
+<dl>
+<dd>
+&#8226; EEG: can work with status <i>numbers</i> instead of only with status <i>bits</i>.
+<dd>
+&#8226; Windows: repaired a bug that could cause Praat to crash if there was a 96-dpi printer.
+</dl>
+<p>
+<b>5.3.80</b> (29 June 2014)</p>
+<dl>
+<dd>
+&#8226; Praat preferences: choice between Chinese and Japanese style for Han characters.
+</dl>
+<p>
+<b>5.3.79</b> (21 June 2014)</p>
+<dl>
+<dd>
+&#8226; Can now play sounds over more than two channels.
+<dd>
+&#8226; Asynchronous play in scripts (see <a href="Demo_window.html">Demo window</a>).
+<dd>
+&#8226; EEG: blue-to-red colour scale for scalp distributions.
+</dl>
+<p>
+<b>5.3.78</b> (12 June 2014)</p>
+<dl>
+<dd>
+&#8226; Multithreading can now speed up pitch analysis by a factor of 4 or so, depending on the number of cores in your processor.
+<dd>
+&#8226; Linux: can now open and save Photo objects (from PNG files) and use <a href="Insert_picture_from_file___.html">Insert picture from file...</a>.
+<dd>
+&#8226; Open WAV files that are in the "extensible" format (previously "unsupported format -2").
+<dd>
+&#8226; Windows: support for dropping more than one file on the Praat icon.
+<dd>
+&#8226; Scripting: can now use the <b>editor</b> command with an object's ID instead of only with its name.
+<dd>
+&#8226; Windows: removed a bug that sometimes disallowed saving more than one JPEG file.
+<dd>
+&#8226; Linux audio: created a workaround that reduces the chances of a freeze that is due to a potential deadlock in the collaboration between Alsa and PulseAudio that can occur when the playback of a sound is cancelled.
+</dl>
+<p>
+<b>5.3.77</b> (18 May 2014)</p>
+<dl>
+<dd>
+&#8226; EEG: more facilities for EDF+ files.
+</dl>
+<p>
+<b>5.3.76</b> (8 May 2014)</p>
+<dl>
+<dd>
+&#8226; One can determine the size of "speckles" (filled circles) with <b>Speckle size...</b> in the <b>Pen</b> menu. Speckles are used in drawing Formant, PitchTier, and several other kinds of objects.
+</dl>
+<p>
+<b>5.3.75</b> (30 April 2014)</p>
+<dl>
+<dd>
+&#8226; Linux Matrix graphics bug fix: corrected working of <b>Draw cells...</b>.
+<dd>
+&#8226; Scripting bug fix: ability to use x and y as indexed variables.
+<dd>
+&#8226; PowerCepstrogram bug fix: made old version of Paint command available again for scripts.
+</dl>
+<p>
+<b>5.3.74</b> (24 April 2014)</p>
+<dl>
+<dd>
+&#8226; EEG: more interpretation of triggers in EDF+ files.
+</dl>
+<p>
+<b>5.3.73</b> (21 April 2014)</p>
+<dl>
+<dd>
+&#8226; EEG: understand more EGI/NetStation files.
+</dl>
+<p>
+<b>5.3.72</b> (17 April 2014)</p>
+<dl>
+<dd>
+&#8226; Windows: repaired a bug that caused two black edges in PNG files.
+<dd>
+&#8226; Windows: repaired a bug that could cause Praat to crash if a metafile resolution was 360 dpi.
+<dd>
+&#8226; Linux: repaired a bug that caused Praat to crash when cutting or pasting a sound in the Sound window.
+</dl>
+<p>
+<b>5.3.71</b> (9 April 2014)</p>
+<dl>
+<dd>
+&#8226; Windows: brought more unity in the style of Chinese characters.
+</dl>
+<p>
+<b>5.3.70</b> (2 April 2014)</p>
+<dl>
+<dd>
+&#8226; Added some query commands for DurationTier objects.
+<dd>
+&#8226; Repaired a bug that caused Praat not to run as a console app.
+</dl>
+<p>
+<b>5.3.69</b> (28 March 2014)</p>
+<dl>
+<dd>
+&#8226; Picture window: can save to 300-dpi and 600-dpi PNG files.
+<dd>
+&#8226; Graphics: sub-pixel precision line drawing on Mac and Linux.
+<dd>
+&#8226; Repaired a bug that could show spurious buttons in the Objects window if a plug-in created objects.
+</dl>
+<p>
+<b>5.3.68</b> (20 March 2014)</p>
+<dl>
+<dd>
+&#8226; Mac: corrected a bug introduced in 5.3.67 that could cause crashes when drawing a spectrogram.
+<dd>
+&#8226; Mac and Linux: <a href="Create_Strings_as_file_list___.html">Create Strings as file list...</a> handles broken symbolic links more leniently.
+</dl>
+<p>
+<b>5.3.67</b> (19 March 2014)</p>
+<dl>
+<dd>
+&#8226; Corrected a bug that would create strange PNG files if the selection did not touch the upper left corner of the Picture window.
+<dd>
+&#8226; Mac: can save the Picture window to PNG file.
+<dd>
+&#8226; EEG: understand trigger letters in BDF/EDF files.
+</dl>
+<p>
+<b>5.3.66</b> (9 March 2014)</p>
+<dl>
+<dd>
+&#8226; Windows and Linux: can save the Picture window to PNG file.
+<dd>
+&#8226; Windows: opening, modifying and saving PNG, TIFF or JPEG files (the Photo object, as on the Mac).
+</dl>
+<p>
+<b>5.3.65</b> (27 February 2014)</p>
+<dl>
+<dd>
+&#8226; Scripting language: removed some bugs from runScript.
+<dd>
+&#8226; Linux: can save the Picture window to PDF file.
+</dl>
+<p>
+<b>5.3.64</b> (12 February 2014)</p>
+<dl>
+<dd>
+&#8226; Scripting language: writeInfo, procedure, exitScript, runScript: all with colons.
+<dd>
+&#8226; 64-bit Mac graphics: better highlighting and unhighlighting of selection.
+<dd>
+&#8226; 64-bit Mac graphics: full screen.
+</dl>
+<p>
+<b>5.3.63</b> (24 January 2014)</p>
+<dl>
+<dd>
+&#8226; Scripting language: easier menu command invocation using the colon ":".
+<dd>
+&#8226; 64-bit Mac graphics: better handling of any absence of Doulos SIL or Charis SIL.
+<dd>
+&#8226; Windows scripting: can now use "~" in file names to refer to home directory, as on Mac and Linux.
+</dl>
+<p>
+<b>5.3.62</b> (2 January 2014)</p>
+<dl>
+<dd>
+&#8226; 64-bit Mac: removed a bug introduced in 5.3.61 that could cause text containing "ff" to become invisible.
+</dl>
+<p>
+<b>5.3.61</b> (1 January 2014)</p>
+<dl>
+<dd>
+&#8226; EEG: understand status registers that contain text.
+<dd>
+&#8226; KlattGrid: removed a bug introduced in May 2009 that could make Praat crash after editing an oral formant grid.
+</dl>
+<p>
+<b>5.3.60</b> (8 December 2013)</p>
+<dl>
+<dd>
+&#8226; Mac 64-bit: implemented swiping (to scroll with the trackpad) and pinching (to zoom with the trackpad).
+<dd>
+&#8226; Scripting: backslashTrigraphsToUnicode () and unicodeToBackslashTrigraphs ().
+</dl>
+<p>
+<b>5.3.59</b> (20 November 2013)</p>
+<dl>
+<dd>
+&#8226; EEG: faster reading of BDF and EDF files.
+<dd>
+&#8226; Batch scripting: made <b>appendInfo()</b> write to the console in the same way as <b>print</b>.
+<dd>
+&#8226; Removed a bug introduced in 5.3.57 whereby some Praat text files could not be read.
+</dl>
+<p>
+<b>5.3.58</b> (17 November 2013)</p>
+<dl>
+<dd>
+&#8226; EEG: support for 16-bit (next to 24-bit) BDF files and for 16-bit (next to 8-bit) statuses.
+<dd>
+&#8226; Mac: 64-bit beta version.
+</dl>
+<p>
+<b>5.3.57</b> (27 October 2013)</p>
+<dl>
+<dd>
+&#8226; Mac: opening, modifying and saving image files (the Photo object).
+<dd>
+&#8226; Mac 64-bit: some small improvements in the user interface.
+</dl>
+<p>
+<b>5.3.56</b> (15 September 2013)</p>
+<dl>
+<dd>
+&#8226; Mac: 64-bit alpha version.
+<dd>
+&#8226; Linux: improved selecting in the Picture window.
+</dl>
+<p>
+<b>5.3.55</b> (2 September 2013)</p>
+<dl>
+<dd>
+&#8226; Corrected a bug introduced in 5.3.54 by which you couldn't select a file for saving.
+</dl>
+<p>
+<b>5.3.54</b> (1 September 2013)</p>
+<dl>
+<dd>
+&#8226; Sound window: removed a bug introduced in 5.3.42 by which you couldn't ask for an odd number of poles in Formant Settings (by e.g. specifying "5.5" for the number of formants).
+<dd>
+&nbsp;Linux: improved dragging of selections in the Picture window and the Sound window.
+</dl>
+<p>
+<b>5.3.53</b> (9 July 2013)</p>
+<dl>
+<dd>
+&#8226; Table: more drawing commands.
+</dl>
+<p>
+<b>5.3.52</b> (12 June 2013)</p>
+<dl>
+<dd>
+&#8226; Scripting: editor windows understand <b>do</b> and <b>do$</b>.
+</dl>
+<p>
+<b>5.3.51</b> (30 May 2013)</p>
+<dl>
+<dd>
+&#8226; Sound window: <b>Extract selected sound for overlap...</b>.
+</dl>
+<p>
+<b>5.3.49</b> (13 May 2013)</p>
+<dl>
+<dd>
+&#8226; TextGrid window: alignment of the sound and the annotation in an interval, via Espeak.
+<dd>
+&#8226; Scripting: repaired a bug introduced in 5.3.32 that could cause very slow running of scripts.
+</dl>
+<p>
+<b>5.3.48</b> (1 May 2013)</p>
+<dl>
+<dd>
+&#8226; Scripting: variable-substitution-free object selection and file writing.
+<dd>
+&#8226; Scripting: <b>selectObject</b> and <b>removeObject</b> can select or remove multiple objects at a time.
+</dl>
+<p>
+<b>5.3.47</b> (23 April 2013)</p>
+<dl>
+<dd>
+&#8226; OTGrammar: included Giorgio Magri's (2012) update rule (weighted all up, high down).
+</dl>
+<p>
+<b>5.3.46</b> (21 April 2013)</p>
+<dl>
+<dd>
+&#8226; Scripting: variable-substitution-free procedure calls.
+<dd>
+&#8226; Linux: made the Save menu compatible with Ubuntu 12.04.
+</dl>
+<p>
+<b>5.3.45</b> (15 April 2013)</p>
+<dl>
+<dd>
+&#8226; More parts of the manual reflect variable-substitution-free scripting.
+</dl>
+<p>
+<b>5.3.44</b> (7 April 2013)</p>
+<dl>
+<dd>
+&#8226; <b>Create Sound as pure tone...</b>.
+<dd>
+&#8226; First steps towards variable-substitution-free scripting: the <b>do</b>, <b>do$</b>, <b>writeInfo</b> and <b>appendInfo</b> functions.
+</dl>
+<p>
+<b>5.3.43</b> (27 March 2013)</p>
+<dl>
+<dd>
+&#8226; Read and write stereo Kay sound files.
+<dd>
+&#8226; Phonetic symbols &#678;, &#679; and &#700;.
+<dd>
+&#8226; Network: <b>Normalize weights...</b>, <b>List weights...</b>, <b>Weights down to Table...</b>.
+</dl>
+<p>
+<b>5.3.42</b> (2 March 2013)</p>
+<dl>
+<dd>
+&#8226; Repaired some minor bugs regarding synchronization between multiple windows.
+</dl>
+<p>
+<b>5.3.41</b> (9 February 2013)</p>
+<dl>
+<dd>
+&#8226; Linux: repaired a bug that could cause Praat to crash when closing the Info window or a script window.
+</dl>
+<p>
+<b>5.3.40</b> (2 February 2013)</p>
+<dl>
+<dd>
+&#8226; Windows: better handling (in the LongSound window) of sounds that are too long to play.
+<dd>
+&#8226; Mac: corrected a bug that caused Praat to crash when closing the Strings window.
+<dd>
+&#8226; Linux: made audio output work again on 32-bit Linux.
+</dl>
+<p>
+<b>5.3.39</b> (6 January 2013)</p>
+<dl>
+<dd>
+&#8226; Formant &amp; Spectrogram: To IntensityTier...
+</dl>
+<p>
+<b>5.3.38</b> (4 January 2013)</p>
+<dl>
+<dd>
+&#8226; ExperimentMFC: repaired a bug introduced in 5.3.36 that caused sound to fail to play completely if the screen did not blank.
+</dl>
+<p>
+<b>5.3.37</b> (2 January 2013)</p>
+<dl>
+<dd>
+&#8226; ExperimentMFC: after screen blanking, reaction times count from when the response buttons appear.
+</dl>
+<p>
+<b>5.3.36</b> (1 January 2013)</p>
+<dl>
+<dd>
+&#8226; ExperimentMFC: made it possible to blank the screen while the sound is playing.
+</dl>
+<p>
+<b>5.3.35</b> (8 December 2012)</p>
+<dl>
+<dd>
+&#8226; SpeechSynthesizer: made it possible to have more than one at a time.
+<dd>
+&#8226; Linux: corrected a bug that caused incorrect alignment of the buttons in the Objects window.
+</dl>
+<p>
+<b>5.3.34</b> (21 November 2012)</p>
+<dl>
+<dd>
+&#8226; Windows: corrected a bug that caused incorrect alignment of the buttons in the Objects window.
+<dd>
+&#8226; The new <b>Sound: Combine to stereo</b> can now work with Sounds of different durations, as the old could.
+<dd>
+&#8226; Corrected a bug that caused Praat to crash when creating a SpeechSynthesizer.
+</dl>
+<p>
+<b>5.3.33</b> (20 November 2012)</p>
+<dl>
+<dd>
+&#8226; <b>Sound: Combine to stereo</b> can now combine any number of Sounds into a new Sound whose number of channels is the sum of the numbers of channels of the original Sounds.
+<dd>
+&#8226; ERP: Down to Sound.
+</dl>
+<p>
+<b>5.3.32</b> (17 October 2012)</p>
+<dl>
+<dd>
+&#8226; Sound window: corrected the working of the "by window" scaling option.
+</dl>
+<p>
+<b>5.3.31</b> (10 October 2012)</p>
+<dl>
+<dd>
+&#8226; ERP: Down to Table...
+<dd>
+&#8226; Linux: corrected a bug that could cause Praat to crash after closing a file selector window for saving.
+</dl>
+<p>
+<b>5.3.30</b> (6 October 2012)</p>
+<dl>
+<dd>
+&#8226; Circumvented a rare Windows bug that could cause Praat to start to write 1.5 as 1,5 in some countries after opening a strange directory.
+<dd>
+&#8226; Windows: corrected a bug introduced in 5.3.24 that could cause Praat to crash when quitting.
+<dd>
+&#8226; Windows: corrected a bug introduced in 5.3.24 that could cause the Objects window to look weird after resizing.
+</dl>
+<p>
+<b>5.3.29</b> (30 September 2012)</p>
+<dl>
+<dd>
+&#8226; <a href="EEG.html">EEG</a>: Draw scalp..., including gray legend.
+<dd>
+&#8226; Made the new Sound scaling options available for LongSounds.
+</dl>
+<p>
+<b>5.3.28</b> (28 September 2012)</p>
+<dl>
+<dd>
+&#8226; Corrected a bug introduced in 5.3.24 that made Praat crash on OSX 10.5.
+</dl>
+<p>
+<b>5.3.27</b> (27 September 2012)</p>
+<dl>
+<dd>
+&#8226; Corrected a couple of small bugs.
+</dl>
+<p>
+<b>5.3.26</b> (26 September 2012)</p>
+<dl>
+<dd>
+&#8226; Corrected a bug introduced in 5.3.24 that prevented Praat from running in batch mode.
+</dl>
+<p>
+<b>5.3.25</b> (26 September 2012)</p>
+<dl>
+<dd>
+&#8226; EEG: view of scalp distribution takes scaling options into account.
+<dd>
+&#8226; Linux: swipable Sound window and manual.
+<dd>
+&#8226; Linux: corrected a bug introduced in 5.3.24 whereby TextGrids could not be edited.
+</dl>
+<p>
+<b>5.3.24</b> (24 September 2012)</p>
+<dl>
+<dd>
+&#8226; More kinds of vertical scaling in e.g. Sound and EEG windows.
+<dd>
+&#8226; Rewritten user interface (may contain some bugs).
+</dl>
+<p>
+<b>5.3.23</b> (7 August 2012)</p>
+<dl>
+<dd>
+&#8226; Mac: removed a bug introduced in September 2011 that could cause incorrect behaviour of regular expressions since July 2012.
+</dl>
+<p>
+<b>5.3.22</b> (21 July 2012)</p>
+<dl>
+<dd>
+&#8226; Linux: removed a bug introduced in 5.3.21 that could cause Praat to crash when opening files.
+<dd>
+&#8226; Neural networks: correct writing and reading of learning settings.
+</dl>
+<p>
+<b>5.3.21</b> (10 July 2012)</p>
+<dl>
+<dd>
+&#8226; Linux: better folder choice in file selector window for opening files.
+<dd>
+&#8226; Repaired a bug that caused Praat to crash when opening a ManPages file on some platforms.
+</dl>
+<p>
+<b>5.3.20</b> (5 July 2012)</p>
+<dl>
+<dd>
+&#8226; <a href="EEG.html">EEG</a>: <b>Replace TextGrid</b>.
+</dl>
+<p>
+<b>5.3.19</b> (24 June 2012)</p>
+<p>
+<b>5.3.18</b> (15 June 2012)</p>
+<dl>
+<dd>
+&#8226; Corrected a bug in <a href="Sound__Change_gender___.html">Sound: Change gender...</a> that caused a part of the sound not to be changed.
+</dl>
+<p>
+<b>5.3.17</b> (12 June 2012)</p>
+<dl>
+<dd>
+&#8226; <a href="EEG.html">EEG</a> window: extent autoscaling by window.
+<dd>
+&#8226; ERPTier: Remove events between...
+</dl>
+<p>
+<b>5.3.16</b> (23 May 2012)</p>
+<p>
+<b>5.3.15</b> (10 May 2012)</p>
+<dl>
+<dd>
+&#8226; Improvements in clipboards, PDF and EPS files.
+</dl>
+<p>
+<b>5.3.14</b> (28 April 2012)</p>
+<dl>
+<dd>
+&#8226; Linux: Tab shortcut for playing the selection.
+<dd>
+&#8226; EPS files: higher minimum image resolution for spectrograms (300 instead of 106 dpi).
+</dl>
+<p>
+<b>5.3.13</b> (11 April 2012)</p>
+<dl>
+<dd>
+&#8226; <a href="EEG.html">EEG</a>: Extract part...
+</dl>
+<p>
+<b>5.3.12</b> (5 April 2012)</p>
+<dl>
+<dd>
+&#8226; Praat picture file: allow larger function drawings (up to 10<sup>9</sup> instead of 10<sup>6</sup> points).
+<dd>
+&#8226; Linux: better audio compatibility with Ubuntu 11.10 (support for unusual sampling frequencies when playing LongSounds).
+</dl>
+<p>
+<b>5.3.11</b> (27 March 2012)</p>
+<dl>
+<dd>
+&#8226; <a href="EEG.html">EEG</a>: a selected ERPTier can extract events on the basis of a column of a selected Table.
+</dl>
+<p>
+<b>5.3.10</b> (12 March 2012)</p>
+<dl>
+<dd>
+&#8226; <a href="EEG.html">EEG</a>: Concatenate.
+</dl>
+<p>
+<b>5.3.09</b> (10 March 2012)</p>
+<dl>
+<dd>
+&#8226; Better text-to-speech.
+</dl>
+<p>
+<b>5.3.08</b> (5 March 2012)</p>
+<dl>
+<dd>
+&#8226; Removed a bug introduced in 5.3.07 that could cause Praat to crash when viewing a LongSound.
+</dl>
+<p>
+<b>5.3.07</b> (4 March 2012)</p>
+<dl>
+<dd>
+&#8226; Praat can now save Sounds as 24-bit and 32-bit WAV files.
+</dl>
+<p>
+<b>5.3.06</b> (28 February 2012)</p>
+<p>
+<b>5.3.05</b> (19 February 2012)</p>
+<dl>
+<dd>
+&#8226; SpeechSynthesizer (<b>New</b> menu &#8594; <b>Sound</b>): text-to-speech.
+<dd>
+&#8226; <a href="EEG.html">EEG</a>: better scalp distribution drawing for both 32-channel and 64-channel recordings.
+</dl>
+<p>
+<b>5.3.04</b> (12 January 2012)</p>
+<dl>
+<dd>
+&#8226; EEG: draw scalp distribution.
+<dd>
+&#8226; Linux: better audio compatibility with Ubuntu 11.10 (support for unusual sampling frequencies when playing Sounds).
+</dl>
+<p>
+<b>5.3.03</b> (21 November 2011)</p>
+<dl>
+<dd>
+&#8226; EEG: filtering, editing, more viewing.
+</dl>
+<p>
+<b>5.3.02</b> (7 November 2011)</p>
+<dl>
+<dd>
+&#8226; Corrected a bug introduced in 5.3.01 that could cause the PitchTier or PointProcess window to crash.
+<dd>
+&#8226; Corrected a bug that could cause the Info window to freeze after an error message in a script window.
+</dl>
+<p>
+<b>5.3.01</b> (1 November 2011)</p>
+<dl>
+<dd>
+&#8226; Macintosh and Windows: better window positioning if the Dock or Task Bar is on the left or right.
+<dd>
+&#8226; IPA symbol: you can now use \.f for the half-length sign (&#721;).
+<dd>
+&#8226; EEG window.
+</dl>
+<h3>
+What used to be new?</h3>
+<dl>
+<dd>
+&#8226; <a href="What_was_new_in_5_3_.html">What was new in 5.3?</a>
+<dd>
+&#8226; <a href="What_was_new_in_5_2_.html">What was new in 5.2?</a>
+<dd>
+&#8226; <a href="What_was_new_in_5_1_.html">What was new in 5.1?</a>
+<dd>
+&#8226; <a href="What_was_new_in_5_0_.html">What was new in 5.0?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_6_.html">What was new in 4.6?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_5_.html">What was new in 4.5?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_4_.html">What was new in 4.4?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_3_.html">What was new in 4.3?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_2_.html">What was new in 4.2?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_1_.html">What was new in 4.1?</a>
+<dd>
+&#8226; <a href="What_was_new_in_4_0_.html">What was new in 4.0?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_9_.html">What was new in 3.9?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_8_.html">What was new in 3.8?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_7_.html">What was new in 3.7?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_6_.html">What was new in 3.6?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_5_.html">What was new in 3.5?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_3_.html">What was new in 3.3?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_2_.html">What was new in 3.2?</a>
+<dd>
+&#8226; <a href="What_was_new_in_3_1_.html">What was new in 3.1?</a>
+</dl>
+<hr>
+<address>
+	<p>&copy; ppgb, October 4, 2014</p>
+</address>
+</body>
+</html>

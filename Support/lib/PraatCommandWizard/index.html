@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="http://www.bibiko.de/praat/wizard/media/favicon.ico"> -->
+
+	<meta charset="utf-8">
+	<meta name="author" content="Hans-Jörg Bibiko">
+
+	<title>Praat's Command Wizard</title>
+
+	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="css/dataTables.colVis.css">
+	<link rel="stylesheet" type="text/css" href="css/wizard.css">
+
+	<style type="text/css" class="init"></style>
+
+	<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" src="js/dataTables.keyTable.js"></script>
+	<script type="text/javascript" language="javascript" src="js/dataTables.colVis.js"></script>
+	<script type="text/javascript" language="javascript" src="js/comwiz1.js"></script>
+	<script type="text/javascript" language="javascript" src="js/comwiz2.js"></script>
+	<script type="text/javascript" language="javascript" class="init">
+
+function isRetinaDisplay() {
+	if (window.matchMedia) {
+		var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+		if (mq && mq.matches || (window.devicePixelRatio > 1)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+function insertCmd(elt) {
+	updateParams();
+	// var ln = TextMate.system('"$TM_SUPPORT_PATH/lib/bash_init.sh" && "$TM_QUERY" -s TM_LINE_NUMBER', null).outputString.replace(/\n/g, '');
+	// TextMate.system('[[ -z $TM_SELECTED_TEXT ]] && "$TM_MATE" -l'+ln+':1-'+ln+':1000000', null);
+	TextMate.system("\"$DIALOG\" x-insert --text \""+document.getElementById(elt).innerText.replace(/"/g, '\\\"')+"\"", null);
+	TextMate.system("$TM_MATE");
+}
+
+function formatReal(r) {
+	if (r.match(/[eE]/)) {
+		var r1 = r.replace(/[eE].*$/, '').replace(/[\.+\-]/,'');
+		r1 = r1.replace(/^0+/, '');
+		r1 = r1.replace(/0+$/, '');
+		return parseFloat(r).toExponential(r1.length-1);
+	}
+	return parseFloat(r);
+}
+
+function updateParams() {
+	var nrOfArgs = dataSet[theRow][9];
+	var struct = dataSet[theRow][7].split('');
+	var args = [];
+	var e;
+	a ='';
+	for(var i=0; i<nrOfArgs; i++) {
+		f = "f" + i.toString();
+		e = document.getElementsByName(f);
+		val = '';
+		if (e.length > 1) {
+			val = $("input[type='radio'][name='"+f+"']:checked").val();
+		} else {
+			if (e[0].getAttribute('type') == 'checkbox') {
+				val = (e[0].checked) ? '"yes"' : '"no"';
+				args.push(val);
+				continue;
+			} else {
+				val = e[0].value;
+			}
+		}
+
+		// validate
+		if (struct[i] == 's') {
+			val = val.replace(/"/g, '""');
+			args.push('"'+val+'"');
+		}
+		else if(struct[i] == 'w') {
+			if (val.match(/[ \t]/)) {
+				alert("Argument "+(i+1).toString() + " '"+val+"' has to be a single word");
+				document.getElementsByName("f"+i.toString())[0].focus();
+				return;
+			}
+			val = val.replace(/"/g, '""');
+			args.push('"'+val+'"');
+		}
+		else if(struct[i] == 'i') {
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/\.0+$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if (!val.match(/^(\-)?[0-9]+$/)) {
+				alert("'"+val+"' is not a valid integer for argument "+(i+1).toString());
+				return;
+			}
+			args.push(parseInt(val).toString());
+		}
+		else if(struct[i] == 'c') {
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/\.0+$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if (val.match(/^Mono$/) || val.match(/^Left$/) || val.match(/^1$/)) {
+				args.push('1');
+			}
+			else if (val.match(/^Stereo$/) || val.match(/^Right$/) || val.match(/^2$/)) {
+				args.push('2');;
+			}
+			else if (parseInt(val) >= 0) {
+				args.push(parseInt(val).toString());
+			}
+			else {
+				alert("'"+val+"' is not a valid channel [1=Left=Mono; 2=Right=Stereo; or positive integer >= 0] for argument "+(i+1).toString());
+				return;
+			}
+		}
+		else if(struct[i] == 'f') {
+			//grey value between 0 and 1; names: Black, White, Red, Green, Blue, Yellow, Cyan, Magenta, Maroon, Lime, Navy, Teal, Purple, Olive, Pink, Silver, Grey; {R,G,B} as three values between 0 and 1
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/\.0+$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if(val.match(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/)) {
+				if (parseFloat(val) >= 0 && parseFloat(val) <=1 ){
+					args.push(parseFloat(val).toString());
+				}
+				else {
+					alert("'"+val+"' is not a valid grey value [real between 0.0 and 1.0] for argument "+ (i+1).toString());
+					return;
+				}
+			}
+			else if (val.match(/^(Black|White|Red|Green|Blue|Yellow|Cyan|Magenta|Maroon|Lime|Navy|Teal|Purple|Olive|Pink|Silver|Grey)$/i)) {
+				args.push('"'+val+'"');
+			}
+			else if (val.match(/^\{\s*[+]?[0]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*,\s*[+]?[0]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*,\s*[+]?[0]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*\}$/)) {
+				args.push('"'+val+'"');
+			}
+			else {
+				alert("'"+val+"' is not a valid colour [names: Black, White, Red, Green, Blue, Yellow, Cyan, Magenta, Maroon, Lime, Navy, Teal, Purple, Olive, Pink, Silver, Grey; {R,G,B} as three values between 0 and 1] for argument "+(i+1).toString());
+				return;
+			}
+		}
+		else if(struct[i] == 'n') {
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/\.0+$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if (!val.match(/^(\-)?[0-9]+$/)) {
+				alert("'"+val+"' is not a valid integer for argument "+(i+1).toString());
+				return;
+			}
+			if (parseInt(val) < 1) {
+				alert("Argument "+(i+1).toString() + " '"+val+"' has to be greater than zero");
+				return;
+			}
+			args.push(parseInt(val).toString());
+		}
+		else if(struct[i] == 'r') {
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if(!val.match(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/)) {
+				alert("'"+val+"' is not a valid real for argument "+(i+1).toString());
+				return;
+			}
+			args.push(formatReal(val));
+		}
+		else if(struct[i] == 'z') {
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if(!val.match(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/) && !val.match(/^undefined$/)) {
+				alert("'"+val+"' is neither a valid real nor 'undefined' for argument "+(i+1).toString());
+				return;
+			}
+			if (val.match(/^undefined$/)) {
+				args.push('"'+val+'"');
+			} else {
+				args.push(formatReal(val));
+			}
+		}
+		else if(struct[i] == 'p') {
+			val = val.replace(/\s*\(.*?\)\s*$/, '');
+			val = val.replace(/^\s+/, '');
+			val = val.replace(/\s+$/, '');
+			if(!val.match(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/)) {
+				alert("'"+val+"' is not a valid real for argument "+(i+1).toString());
+				return;
+			}
+			if (parseFloat(val) <= 0) {
+				alert("Argument "+(i+1).toString() + " '"+val+"' has to be greater than zero");
+				return;
+			}
+			args.push(formatReal(val));
+		}
+	}
+	a = args.join(", ");
+	var cmd = dataSet[theRow][1];
+	if (dataSet[theRow][6] > 2) {
+		cmd = cmd.replace(/\.\.\.$/, ': ');
+	}
+	document.getElementById("pcmd").innerHTML = cmd + a;
+}
+
+function showCommand ( newRow ) {
+	if (newRow !== oldRow) {
+		oldRow = newRow;
+
+		// parameter wizard
+		try {
+			var hasArgs = (dataSet[newRow][6] > 2) ? true : false;
+			var cmd = dataSet[newRow][1];
+			cmd = cmd.replace(/^ /, '&nbsp;');
+			var nrOfArgs = dataSet[newRow][9];
+			var argS = (nrOfArgs > 1) ? 's' : '';
+			var stype = (dataSet[newRow][3] == 'e') ? 'Editor Script Command' : 'Praat Script Command'
+			if (hasArgs) {
+				cmd = cmd.replace(/\.\.\.$/, ': ');
+			}
+		}
+		catch(e) {
+			alert("Error 001 - Please send this to the author: " + dataSet[newRow].toString());
+		}
+
+		document.getElementById("pcmd").innerHTML = cmd + dataSet[newRow][8];
+
+		var p = document.getElementById("cmdparam");
+		p.innerHTML = '';
+		if (nrOfArgs < 1) return;
+		
+		var da = dataSet2[newRow][1].split('ꀐ');
+		var len = da.length;
+		var ua;
+		var id;
+		var t = '';
+		var st = 1;
+
+		ua = da[0].split('ꀀ');
+		if (ua[0] == 'H') {
+			p.innerHTML = '<h1>' + ua[1] + '</h1>';
+		} else {
+			p.innerHTML = '<h1>' + dataSet[newRow][1] + '</h1>';
+			st = 0;
+		}
+		var k = st;
+		t += '<table>';
+		t += '<tr><td align=right colspan=2><small><i>no script variable names allowed</i></small></td></tr>'
+		for (var i = st; i < len; i++) {
+			ua = da[i].split('ꀀ');
+			id = (k-st).toString();
+			if (ua[0] == 'L') {
+				t += '</table><p class="com">'+ua[1]+'</p><table>';
+				continue;
+			}
+			k++;
+			if (ua[0] == 'CB') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" name="f' + id + '" type="checkbox" ' + ((ua[2]==1)?'checked':'') + '></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TT') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: string" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TW') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: single word as string" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TR') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: real" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TN') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: positive integer >= 0" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TP') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: positive real > 0.0" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TI') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: integer" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'SE') {
+				t += '<tr><td>'+ua[1]+'</td><td><select onchange="updateParams()" name="f' + id + '" size="1">';
+				opa = ua[2].split('ꀎ');
+				for (j=0; j<opa.length; j++) {
+					t += '<option';
+					opap = opa[j];
+					if (opap.match(/selected$/)) {
+						t += ' selected';
+						opap = opap.replace(/ selected/, '');
+					}
+					t += '>' + opap.replace(/"/g, '') + '</option>';
+				}
+				t += '</select>';
+				continue;
+			}
+			if (ua[0] == 'RA') {
+				t += '<tr><td>'+ua[1]+'</td><td>';
+				opa = ua[2].split('ꀎ');
+				for (j=0; j<opa.length; j++) {
+					opap = opa[j];
+					t += '<input onchange="updateParams()" type="radio" name="f'+id+'" value='+opap+'>';
+					opap = opap.replace(/ checked$/, '').replace(/"/g, '');
+					t += opap + '<br>';
+				}
+				continue;
+			}
+			if (ua[0] == 'TCH') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: channel [1=Left=Mono; 2=Right=Stereo; or positive integer > 0]" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TCO') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: color as real [grey value between 0 and 1]; as string [name: Black, White, Red, Green, Blue, Yellow, Cyan, Magenta, Maroon, Lime, Navy, Teal, Purple, Olive, Pink, Silver, Grey; {R,G,B} as three real values between 0 and 1]" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+			if (ua[0] == 'TRU') {
+				t += '<tr><td>'+ua[1]+'</td><td><input onchange="updateParams()" title="required format: real or \"undefined\"" name="f' + id + '" type="text" value="'+ua[2]+'"></td></tr>';
+				continue;
+			}
+		}
+		t += '</table>';
+		t = t.replace('<table></table>', '');
+		t = t.replace('</p><p class="com">', '<br>');
+		p.innerHTML += t;
+	}
+}
+
+function psearch() {
+	var q = dataSet[theRow][1].replace(/\.\.\.$/, '');
+	q = encodeURI(q).replace(/&/g, '%26');
+	window.open("https://www.google.com/search?rls=en&q=%22"+q+"%22%20praat", "_google");
+}
+
+function SelectText(element) {
+	$('div.dataTables_filter input').blur();
+	var doc = document
+		, text = doc.getElementById(element)
+		, range, selection;
+	if (doc.body.createTextRange) {
+		range = document.body.createTextRange();
+		range.moveToElementText(text);
+		range.select();
+	} else if (window.getSelection) {
+		selection = window.getSelection();
+		range = document.createRange();
+		range.selectNodeContents(text);
+		selection.removeAllRanges();
+		selection.addRange(range);
+	}
+}
+
+var theRow = '';
+var oldRow = '';
+
+
+$.fn.dataTable.ext.search.push(
+	function( settings, data, dataIndex ) {
+		var tv = $('#filterTarget').val();
+		var target_d = data[3] || '';
+		var hidden_d = data[4];
+		var depr_d = data[5];
+		if ( tv == "a" || data[3] == tv )
+		{
+			if ($('#sh_hid').is(':checked') && (hidden_d == "yes")) {
+				return false;
+			}
+			if ($('#sh_depr').is(':checked') && (depr_d == "yes")) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+);
+
+$(document).ready(function() {
+
+
+	$.extend({
+		getUrlVars: function(){
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++)
+			{
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		},
+		getUrlVar: function(name){
+			if($.getUrlVars()[name]) {
+				return $.getUrlVars()[name];
+			} else {
+				return '';
+			}
+		}
+	});
+
+	$('#wizard').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="cmdtable"></table>' );
+	oTable = $('#cmdtable').dataTable( {
+		"fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+			if (aData[3]=='e'){
+				$(nRow.firstChild).css('background-color', '#FD6ACB');
+				$(nRow.firstChild).css('color', '#FD6ACB');
+			} else {
+				$(nRow.firstChild).css('background-color', '#FFCC99'); 
+				$(nRow.firstChild).css('color', '#FFCC99');
+			}
+		},
+		"fnDrawCallback": function () {
+			if ( $('#cmdtable').dataTable().fnSettings().fnRecordsDisplay() == 1 ) {
+				$('tbody tr td')[0].click();
+				showCommand(theRow);
+			}
+		},
+		dom: 'C<"clear">lfrtip',
+		searching: true,
+		bAutoWidth: false,
+		stateSave: true,
+		"oSearch": {
+			"sSearch": decodeURIComponent($.getUrlVar('q'))
+		},
+		"tabIndex": 1,
+		"language": {
+			"sSearch": "Search:",
+			"sSearchPlaceholder": "type parts of a command [CTRL+F]"
+		},
+		colVis: {
+			"buttonText": "Other columns",
+			exclude: [ 0, 6 ]
+		},
+		columnDefs: [
+		{
+			"targets": [ 0 ],
+			"visible": true,
+			"searchable": false,
+			sortable: false,
+			"sWidth": "20px"
+		},
+		{
+			"targets": [ 1 ],
+			// "sWidth": "60%"
+		},
+		{
+			"targets": [ 2 ],
+			// "sWidth": "38%"
+			"render": function ( data, type, row ) {
+				return data.replace(/\.\./g, '<span style="font-size:1pt">..</span>'); },
+		},
+		{
+			"targets": [ 3 ],
+			"render": function ( data, type, row ) {
+				return (data=='e') ? 'Editor' : 'Script'; },
+			"visible": false,
+			"searchable": true,
+		},
+		{
+			"targets": [ 4 ],
+			"visible": false,
+			"searchable": true,
+			"render": function ( data, type, row ) {
+				return (data=='h') ? 'yes' : 'no'; },
+		},
+		{
+			"targets": [ 5 ],
+			"visible": false,
+			"searchable": true,
+			"render": function ( data, type, row ) {
+				return (data=='d') ? 'yes' : 'no'; },
+		},
+		{
+			"targets": [ 6 ],
+			"visible": false,
+			"searchable": true,
+		},
+		],
+		sorting: [[ 1, 'asc' ]],
+		data: dataSet,
+		columns: [
+			{ "title": "", "searchable": false },
+			{ "title": "Command", "searchable": true },
+			{ "title": "of Object(s)", "searchable": true },
+			{ "title": "Target", "searchable": true },
+			{ "title": "hidden", "class": "center", "searchable": true },
+			{ "title": "deprecated", "class": "center", "searchable": true },
+			{ "title": "Argument", "class": "center", "searchable": false }
+		],
+		form: true
+	} );
+
+	var table = $('#cmdtable').DataTable();
+
+	// if (isRetinaDisplay()) {
+	// 	document.getElementById("mft").className = "mfooter_r";
+	// }
+
+	var keys  = new $.fn.dataTable.KeyTable( table, {
+		"focus": [ 1, 0 ],
+		form: true
+	} );
+
+	$('#filterTarget').change( function() {
+		table.draw();
+		$('div.dataTables_filter input').focus();
+	} );
+
+	$('#sh_hid').change( function() {
+		table.draw();
+		$('div.dataTables_filter input').focus();
+	} );
+
+	$('#sh_depr').change( function() {
+		table.draw();
+		$('div.dataTables_filter input').focus();
+	} );
+
+
+	keys.event.focus( null, null, function( node, x, y ) {
+		if (oTable.fnSettings().fnRecordsDisplay() > 0) {
+			theRow = node.parentNode.firstChild.innerHTML;
+			showCommand(theRow);
+		}
+	} );
+	keys.event.action( null, null, function( node, x, y ) {
+		insertCmd('pcmd');
+	} );
+
+	$('#cmdtable tbody').on( 'click', 'tr', function () {
+		if (oTable.fnSettings().fnRecordsDisplay() > 0) {
+			theRow = table.row( this ).data()[0];
+		}
+	} );
+	if($.getUrlVar('q') && $.getUrlVar('q').length > 0) {
+		$('div.dataTables_filter input').val(decodeURIComponent($.getUrlVar('q')));
+	}
+	if($.getUrlVar('t') && $.getUrlVar('t').length > 0) {
+		var c = $.getUrlVar('t').substring(0,1);
+		switch(c) {
+		case 'e':
+			$('#filterTarget').val('Editor');
+			break;
+		case 's':
+			$('#filterTarget').val('Script');
+			break;
+		default:
+			$('#filterTarget').val('a');
+		}
+	}
+
+	$('div.dataTables_filter input').focus();
+	if (oTable.fnSettings().fnRecordsDisplay() > 0) {
+		$('tbody tr td')[0].click();
+		showCommand(theRow);
+	}
+
+	$(window).keydown(function(ev){
+		var e = window.event ? window.event : ev;
+		if ((e.which || e.keyCode) == '13') {
+			if (oTable.fnSettings().fnRecordsDisplay() > 0) {
+				$('tbody tr td')[0].click();
+				return false;
+			} else {
+				return true;
+			}
+		}
+		var char = String.fromCharCode((e.which || e.keyCode));
+		if (e.ctrlKey && char == 'U') {
+			$('#filterTarget').focus();
+			return false;
+		}
+		if (e.ctrlKey && char == 'F') {
+			$('div.dataTables_filter input').focus();
+			return false;
+		}
+		if (e.ctrlKey && char == 'A') {
+			SelectText('pcmd');
+			insertCmd('pcmd');
+			return false;
+		}
+		if (e.ctrlKey && char == 'Z') {
+			$('tbody tr td')[0].click();
+			return false;
+		}
+		if (e.ctrlKey && char == 'Y') {
+			var e = document.getElementsByName('f0');
+			if (e == undefined || e.length < 1) return false;
+			$target = $(document.getElementById('mft'));
+
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top
+			}, 900, 'swing', function () {
+				//window.location.hash = $target;
+			});
+			
+			if (typeof(e) != 'undefined' && e != null) {
+				e[0].focus();
+			}
+			return false;
+		}
+		return true;
+	});
+
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+		fixedContentPos: false,
+		fixedBgPos: true,
+		overflowY: 'auto',
+		closeBtnInside: true,
+		preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+
+	// document.getElementById("version").innerHTML = version;
+	// document.getElementById("pcwversion").innerHTML = pcwversion;
+	// document.getElementById("pcwdate").innerHTML = pcwdate;
+	// document.getElementById("total").innerHTML = oTable.fnSettings().fnRecordsTotal();
+
+	oTable.fnFilter( decodeURIComponent($.getUrlVar('q')) );
+	table.draw();
+
+
+} );
+
+	</script>
+
+</head>
+
+<body class="dt-cmdtable">
+	<div class="container">
+		<!-- <section> -->
+			<!-- <h1><a href="http://www.praat.org" target="_new">
+					<img src="media/Praat/64x64.png" width="32px" style="margin-right:5mm"/></a>
+				Praat's Command Wizard<sub><font size=-4>beta</font></sub>
+				<span>
+					<a class="popup-with-zoom-anim" href="#help-dialog" >Help</a>&nbsp;
+					<a href="func.html" target="_funcs">Functions</a></span>
+			</h1>
+ -->
+			<!-- <div class="info"> -->
+				<!-- <p>
+					Search through <span id="total"></span> Praat commands (based on version <span id="version"></span>) and assemble the list of parameters if required.
+				</p> -->
+				<!-- <p> -->
+					<small>
+					Show Commands for Target: 
+					<select id="filterTarget" name="filterTarget">
+						<option value="a">All</option>
+						<option value="Editor">Editor</option>
+						<option value="Script">Script</option>
+					</select>&nbsp;
+					Exclude&nbsp;&quot;hidden&quot;:&nbsp;<input type="checkbox" id="sh_hid" name="sh_hid">&nbsp;&nbsp;Exclude&nbsp;&quot;deprecated&quot;:&nbsp;<input type="checkbox" id="sh_depr" name="sh_depr" checked>
+					</small>
+				<!-- </p> -->
+			<!-- </div> -->
+
+		<!-- </section> -->
+
+		<div id="wizard"></div>
+		<div class="pinfo">
+			<button title="Insert Command [CTRL+A]" onclick="insertCmd('pcmd');">Insert Command</button>
+			<span id="pcmdinfo" class="pcmdinfo"></span><div id="psearch" class="psearch"><button title="Google™ Search for help of current command" onclick="psearch()">?</div>
+		</div>
+		
+		<div id="pcmd" class="pcmd" ondblclick="SelectText('pcmd')" onclick="SelectText('pcmd')"></div>
+
+		<div id="cmdparam" class="box2"></div>
+
+		<div id="help-dialog" class="white-popup mfp-hide">
+			<h1>Help</h1>
+			<p><b>Keyboard shortcuts</b><br>
+				<code>CTRL+F</code> sets the focus to the search input field<br>
+				&nbsp;&nbsp;<code>ENTER</code> inside the search input field sets the focus to the table<br>
+				<code>CTRL+A</code> selects the entire Praat command for copying<br>
+				<code>CTRL+U</code> sets the focus to the target menu<br>
+				<code>CTRL+Y</code> sets the focus to the first argument of the found command<br>
+				<code>CTRL+Z</code> sets the focus to the first visible row of the table<br>
+				<code>ARROW-UP/DOWN ~ PAGE UP/DOWN</code> navigates through the table if it's selected
+			</p>
+			<p><b>Search Input Field</b><br>
+				The string that is entered here will be searched for in the <i>Command</i> and <i>of Object(s)</i> columns, and if a row (command or object) 
+				contains the search string  it will be outputted. To look for more than one word or part of a word, simply enter a <code>Space</code> 
+				between the search strings. The order of multiple search strings doesn't affect the output.<br>
+				The <i>of Object(s)</i> column lists the object type(s) – (if there are more than one they're separated by ".") 
+				which the command  can be applied to.
+				For instance, the command "Extract all intervals..." can only be executed if a "Sound" and a "TextGrid" object are selected. 
+				In order to search for all commands that can be applied to a given object you can use "." to mark the beginning and end of a word (object); 
+				".." can be used to look for the absolute beginning and end of the entire column <i>of Object(s)</i>.
+				<br>
+				<i>Examples</i>:
+				<ul>
+				<li>to look for "Create Sound" commands</li>
+				<code>cre sou</code> or <code>sou cre</code>
+				<li>to look for "Get number" commands where at least one of the selected objects is a TextGrid</li>
+				<code>get num textgrid</code> or <code>textgrid get num</code>
+				<li>get all available commands for a "Sound" object <u>only</u></li>
+				<code>..sound..</code>
+				<li>get all available commands for a "Sound" object which contain "duration" </li>
+				<code>..sound.. dur</code>
+				<li>get all commands if at least one "Sound" and one "TextGrid" object are selected</li>
+				<code>.textgrid. .sound.</code>
+				</ul>
+			</p>
+			<!-- <p><b>Set Search Input Field via URL</b><br>
+				You can set the search string and the target by using URL query parameters:<br>
+				<code>.../index.html?q=foo&amp;t=bar</code><br>
+				&nbsp;&nbsp;foo := the search string<br>
+				&nbsp;&nbsp;bar := e = "Editor", s = "Script", anything else = "All" <i><small>[optional]</small></i><br>
+				<i>Example</i>:<br>
+				<code><a href="http://www.bibiko.de/praat/wizard/index.html?q=get%20time%20..sound..&t=s" target="_blank">http://www.bibiko.de/praat/wizard/index.html?q=get%20time%20..sound..&t=s</a></code>
+				will look for "get time ..sound.." [show all commands for a "Sound" object which contains the strings "get" and "time"] as normal script command.<br>
+				<br><i>Remark:</i> This can be used by programmable script editors or other programs to search for a specific command online or offline <i><small>[see "Download"]</small></i>.
+			</p> -->
+			<p><b>Form of Arguments</b><br>
+				If a command requires argument(s) an editable form, similar to Praat's forms, will be displayed. 
+				In addition a tooltip displaying the required argument format for each input field will be shown. A change of an argument triggers a simple argument 
+				validation and an update and of the entire command shown above the form.<br>
+				<b><i>Remark:</i></b> Please do <b>not</b> use any script variable names as argument value! This can be done after pasting the entire command in your editor.
+			</p>
+			<p><b>Buttons</b><br>
+				<button>All</button> show either <b>all</b>, only <span style="background-color:#FD6ACB">&nbsp;&nbsp;&nbsp;</span> <b>editor</b> script, or only Praat 
+				<span style="background-color:#FFCC99">&nbsp;&nbsp;&nbsp;</span> <b>script</b> commands<br>
+				<button>Other columns</button> show or hide available columns<br>
+				<button>⇣ Select</button> selects the found command for copying<br>
+				<button>?</button> looks for help of the found command via Google™ online
+			</p>
+		</div>
+
+		<div id="about-dialog" class="white-popup mfp-hide">
+			<h1>About</h1>
+			<p><i>Motivation: </i><b>Praat</b> is a brilliant tool which can do phonetic analyses <u>and</u> can be scripted. 
+				My point is, I'm not able to remember all the possible command names and esp. 
+				the argument structure of each single command. One way is to use Praat's "<i>Paste History</i>" functionality.
+				This works fine for an initial script, but if I want to add something or fine-tune the script I get lost in all the 
+				possibilities to do that.
+			</p>
+			<p>
+				<i>My Solution: </i>Since Praat's documentation does not list all possible commands, I went the way to write
+				a script which parses the entire source code of Praat to get a list of <b>all</b> commands in conjunction
+				with the information about their default argument structure, whether it's an editor or script command, and to which object it can be
+				applied to. The script, written in Perl, extracted 99% of these commands automatically, and of course, I'm aware
+				of the fact that the script can't be perfect, thus if you encounter a missing command, a wrong argument structure,
+				or any other erroneous issue, <u>please do not hesitate to contact me</u> via <u>mail [at] bibiko.de</u> .
+			</p>
+			<p>
+				<i>Remark: </i><b>Offline usage</b> - since the entire web page is written in pure HTML and JavaScript only you can
+				also use this wizard offline. Simply download <a href="http://www.bibiko.de/praat/wizard/pcw.zip">this ZIP file</a> (ca. 410kB), extract it, and open the <code>index.html</code> file with
+				your favourite browser.
+			</p>
+			<p class='myn'>Hans-Jörg Bibiko</p>
+		</div>
+
+		<div id="dl-dialog" class="white-popup mfp-hide">
+			<h1>Download</h1>
+			<p>
+				<u>Praat's Command Wizard</u> is written in pure HTML and JavaScript only. That's why you can use it offline as well. Download
+				<a href="http://www.bibiko.de/praat/wizard/pcw.zip"> this ZIP file</a> (ca. 410kB), extract it to any locations, and open the <code>index.html</code> with your favourite browser.
+			</p>
+		</div>
+
+	</div>
+	<div id="mft" class="mfooter">
+		<!-- <center>
+			<p>Version <span id="pcwversion"></span> - <span id="pcwdate"></span> | written&nbsp;by&nbsp;<a href="http://www.bibiko.de">Hans-Jörg Bibiko</a>,
+				<a href="http://www.eva.mpg.de">MPI EVA - Linguistics</a>, Leipzig/Germany | powered&nbsp;by&nbsp;
+				<a href="http://www.praat.org">Praat</a>, <a href="http://jquery.com">jquery</a>,
+				<a href="http://datatables.net">datatables</a>,
+				<a href="http://dimsemenov.com/plugins/magnific-popup/">magnific-popup</a>
+			</p>
+		</center> -->
+	</div>
+
+</body>
+</html>

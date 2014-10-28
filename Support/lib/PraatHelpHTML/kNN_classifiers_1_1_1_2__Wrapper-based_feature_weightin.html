@@ -1,0 +1,26 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>kNN classifiers 1.1.1.2. Wrapper-based feature weighting</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+kNN classifiers 1.1.1.2. Wrapper-based feature weighting
+</b></font></table></table>
+<p>
+The <i>wrapper-based</i> <i>feature weighting</i> algorithm implemented in Praat attempts to find the globally optimal feature weights by means of a greedy local search. The local neighbourhood is defined by a number of random seeds centered around a pivot seed. For each iteration of the algorithm the best performing seed is chosen to be the pivot of the next iteration. At the same time the maximum allowed distance between a seed and the pivot is decreased by a constant factor. Given a sufficient number of seeds and a small shrinkage factor the algorithm will on average home in on a good approximation of the global maximum.</p>
+<p>
+Given reasonable parameter settings, the search algorithm on average gives good results without huge memory and CPU requirements. The strong point of the method, the ability to efficiently do a rather thorough search of the weight space, can, as mentioned in <a href="kNN_classifiers_1_1_1__Feature_weighting.html">section 1.1.1.</a>, lead to overfitting. One way of minimizing this problem is to constrain the algorithm by means of <i>early stopping</i>. In Praat this is done in a very naive fashion, by simply not allowing the algorithm to explore weights achieving an accuracy higher than a specified threshold value.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="KNN___Pattern___Categories__To_FeatureWeights___.html">KNN & Pattern & Categories: To FeatureWeights...</a>
+<li><a href="KNN___Pattern___FeatureWeights__To_Categories___.html">KNN & Pattern & FeatureWeights: To Categories...</a>
+<li><a href="KNN___Pattern___FeatureWeights__To_TableOfReal___.html">KNN & Pattern & FeatureWeights: To TableOfReal...</a>
+<li><a href="kNN_classifiers.html">kNN classifiers</a>
+<li><a href="kNN_classifiers_1_1_2__Model_selection.html">kNN classifiers 1.1.2. Model selection</a>
+<li><a href="KNN__To_FeatureWeights___.html">KNN: To FeatureWeights...</a>
+<li><a href="Pattern___Categories__To_FeatureWeights___.html">Pattern & Categories: To FeatureWeights...</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, January 23, 2009</p>
+</address>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+ARG=`cat`
+QWRAP=`echo -n "$ARG" | perl -ne 'if(m/^".*?"$/){print 1}else{print 0}'`
+
+RES=`${TM_PRAAT:-/Applications/Praat.app/Contents/MacOS/Praat} -a "$TM_BUNDLE_SUPPORT"/bin/uni2sym.praat "$ARG"`
+
+if [ $QWRAP -eq 1 ]; then
+	echo -n "$RES" | perl -pe 's/^"//;s/"$//;s/"/""/g;s/^/"/;s/$/"/'
+else
+	echo -n "$RES" | perl -pe 's/"/""/g'
+fi
+</string>
+	<key>input</key>
+	<string>word</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^~@c</string>
+	<key>name</key>
+	<string>Convert Unicode to \sym</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>B91D6F1B-29A5-4D12-A7F5-825F011C10F9</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+WORD=""
+
+if [ ! -z "$TM_SELECTED_TEXT" ]; then
+	WORD="$TM_SELECTED_TEXT"
+fi
+
+# echo "$WORD" | "$TM_BUNDLE_SUPPORT"/bin/searchMan.rb
+
+cat &lt;&lt;-HTML
+&lt;html&gt;
+	&lt;head&gt;
+	&lt;title&gt;Search Praat Manual&lt;/title&gt;
+	&lt;style type="text/css"&gt; 
+		.res {
+			font-size:16pt;
+			line-height:40pt;
+		}
+		.inp {
+			width:70%;
+		}
+		.buttonInAct {
+			color:#555555;
+		}
+		.buttonAct {
+			color:#000000;
+		}
+		.list {
+			overflow: auto;
+			height: 98%;
+		}
+		.list-container {
+			margin-top:1cm;
+			float: left; width: 30%;
+			height: 100%;
+		}
+		.content {
+			margin-top:1cm;
+			float: right; width: 70%;
+		}
+		.ifr {
+			border:0;
+			width:100%;
+			height:100%;
+		}
+		a:link {
+			text-decoration:none;
+			a:before{content:"Achtung!";color:#ff0000;}
+		}
+		a:before{content:"◇ ";color:#aaa;}
+		.names {
+			font-size:10pt;
+			color:#fff;
+			background:#888;
+			z-index:105;
+			text-align:center;
+			bottom:0px;
+			position:fixed;
+			left:0px;
+			width:100%;
+			height:34px;
+			padding:2mm;
+			font-weight: bold;
+		}
+		.head {
+			font-size:10pt;
+			color:#fff;
+			background:#888;
+			z-index: 106;
+			text-align:center;
+			position:fixed;
+			top:0px;
+			left:0px;
+			width:100%;
+			height:24px;
+			padding:1mm;
+		}
+	&lt;/style&gt; 
+	&lt;script&gt;
+		var myCommand = null;
+		var oldterm;
+		outStr = "";
+		var aTimer;
+		var term;
+		function startSearch(t) {
+			term = t;
+			window.clearTimeout(aTimer);
+			aTimer = window.setTimeout("startSearchTimed()",0);
+		}
+		function startSearchTimed() {
+			// term = term.replace(/^\s+|\s+$/g,"");
+			term = term.replace(/^ {2,}/g," ");
+			if (!TextMate.isBusy &amp;&amp; (oldterm != term) &amp;&amp; term.length &gt; 0) {
+				oldterm = term
+				TextMate.isBusy = true;
+				outStr = "";
+				document.getElementById("result").innerHTML = "";
+				var cmd = "echo \""+term+"\" | '$TM_BUNDLE_SUPPORT/bin/searchMan.rb'";
+				myCommand = TextMate.system(cmd, function (task) { });
+				myCommand.onreadoutput = output;
+				TextMate.isBusy = false;
+			}
+		}
+		function output(str) {
+			outStr += str;
+			document.getElementById("result").innerHTML = outStr;
+			document.getElementById('lc1').click();
+		}
+		document.onkeydown = function keyPress(event) {
+			if ( typeof event == "undefined" ) event = window.event;
+			wkey = event.keyCode;
+			if ( wkey == 13 ) startSearch(document.getElementById("search").value);
+			var char = String.fromCharCode((event.which || event.keyCode));
+			if (event.ctrlKey &amp;&amp; char == 'F') {
+				document.getElementById('search').focus();
+				return false;
+			}
+		}
+	&lt;/script&gt;
+	&lt;/head&gt;
+&lt;body onload='document.getElementById("search").value="$WORD";document.getElementById("search").focus();startSearch("$WORD")'&gt;
+&lt;div class='head'&gt;
+&lt;input class="inp" id='search' type='search' autosave='TMPraatManualSearch' results='20' placeholder='search string (version 5.4) [CTRL+F]'&gt;&lt;button title="Search [ENTER]" onclick='startSearch(document.getElementById("search").value);'&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;div class='list-container'&gt;&lt;div class='list' id='result'&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class='content' name='content' id='content'&gt;&lt;iframe class="ifr" name="content" id='ifr'&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+HTML
+
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^~h</string>
+	<key>name</key>
+	<string>Search Praat Manual...</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>A91BEECE-B5EB-42CE-8913-86B00BB3327A</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

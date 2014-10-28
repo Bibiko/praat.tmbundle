@@ -1,0 +1,116 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Scripting 5.1. Variables</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+Scripting 5.1. Variables
+</b></font></table></table>
+<p>
+A <i>variable</i> is a location in your computer's memory that has a name and where you can store something, as explained in <a href="Scripting_3_2__Numeric_variables.html">\SS3.2</a> and <a href="Scripting_3_4__String_variables.html">\SS3.4</a>. In a Praat script, you can store numbers and texts, i.e. you can use <i>numeric variables</i> and <i>string variables</i>.</p>
+<h3>
+Numeric variables</h3>
+<p>
+Numeric variables can hold integer numbers between -1,000,000,000,000,000 and +1,000,000,000,000,000 or real numbers between -10<sup>308</sup> and +10<sup>308</sup>. The smallest numbers lie near -10<sup>-308</sup> and +10<sup>-308</sup>.</p>
+<p>
+You use numeric variables in your script like this:</p>
+<code>
+<b>length</b> = 10<br></code>
+<code>
+Draw line: 0, <b>length</b>, 1, 1<br></code>
+<p>
+This draws a line in the Picture window from position (0, 10) to position (1, 1). In the first line, you assign the value 10 to the variable called <i>length</i>, and in the second line you use the value of <i>length</i> as the second argument to the command "Draw line...".</p>
+<p>
+Names of numeric variables must start with a lower-case letter, optionally followed by a sequence of letters, digits, and underscores.</p>
+<h3>
+String variables</h3>
+<p>
+You use string variables, which contain text, as follows:</p>
+<code>
+<b>title$</b> = "Dutch nasal place assimilation"<br></code>
+<code>
+Text top: "yes", <b>title$</b><br></code>
+<p>
+This writes the text "Dutch nasal place assimilation"</p>
+<p>
+As in the programming language Basic, the names of string variables end in a dollar sign.</p>
+<h3>
+Making numeric variables visible</h3>
+<p>
+You can write the content of numeric variables directly to the info window:</p>
+<code>
+x = 2.0<br></code>
+<code>
+root = sqrt (x)<br></code>
+<code>
+<b>writeInfoLine</b>: "The square root of ", x, " is ", root, "."<br></code>
+<p>
+This will write the following text to the Info window:</p>
+<code>
+The square root of 2 is 1.4142135623730951.<br></code>
+<p>
+You can fix the number of digits after the decimal point by use of the <b>fixed$</b> function:</p>
+<code>
+x = 2.0<br></code>
+<code>
+root = sqrt (x)<br></code>
+<code>
+writeInfoLine: "The square root of ", <b>fixed$</b> (x, 3), " is approximately ", <b>fixed$</b> (root, 3), "."<br></code>
+<p>
+This will write the following text to the Info window:</p>
+<code>
+The square root of 2.000 is approximately 1.414.<br></code>
+<p>
+By using 0 decimal digits, you round to whole values:</p>
+<code>
+root = sqrt (2)<br></code>
+<code>
+writeInfoLine: "The square root of 2 is very approximately ", <b>fixed$</b> (root, <b>0</b>), "."<br></code>
+<p>
+This will write the following text to the Info window:</p>
+<code>
+The square root of 2 is very approximately 1.<br></code>
+<p>
+By using the <b>percent$</b> function, you give the result in a percent format:</p>
+<code>
+jitter = 0.0156789<br></code>
+<code>
+writeInfoLine: "The jitter is ", <b>percent$</b> (jitter, 3), "."<br></code>
+<p>
+This will write the following text to the Info window:</p>
+<code>
+The jitter is 1.568%.<br></code>
+<p>
+The number 0, however, will always be written as 0, and for small numbers the number of significant digits will never be less than 1:</p>
+<code>
+jitter = 0.000000156789<br></code>
+<code>
+writeInfoLine: "The jitter is ", percent$ (jitter, 3), "."<br></code>
+<p>
+This will write the following text to the Info window:</p>
+<code>
+The jitter is 0.00002%.<br></code>
+<h3>
+Predefined variables</h3>
+<p>
+All of the variables you saw earlier in this tutorial were defined at the first moment a value was assigned to them. Some variables, however, are already defined implicitly at the start of your script.</p>
+<p>
+Some predefined <b>numeric variables</b> are <code>macintosh</code>, <code>windows</code>, and <code>unix</code>, which are 1 if the script is running on a Macintosh, Windows, or Unix platform (respectively), and which are otherwise zero. Another one is <code>praatVersion</code>, which is e.g. 5400 for the current version of Praat.</p>
+<p>
+Some <b>predefined string variables</b> are <code>newline$</code>,  <code>tab$</code>, and <code>shellDirectory$</code>. The last one specifies the directory that was the default directory when Praat started up; you can use it in scripts that run from the Unix or Windows command line. Likewise, there exist the predefined string variables <code>homeDirectory$</code>, <code>preferencesDirectory$</code>, and <code>temporaryDirectory$</code>. These three refer to your home directory (which is where you log in), the Praat <a href="preferences_directory.html">preferences directory</a>, and a directory for saving temporary files; if you want to know what they are on your computer, try to write them into a script window. The variable <code>defaultDirectory$</code> is available for formulas in scripts; it is the directory that contains the script file. Finally, we have <code>praatVersion$</code>, which is "5.4" for the current version of Praat.</p>
+<h3>
+Functions that handle variables</h3>
+<p>
+To check whether a variable exists, you can use the function</p>
+<code>
+<i>variableExists</i> (<i>variableName$</i>)<br></code>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="Scripting.html">Scripting</a>
+<li><a href="Scripting_3_3__Numeric_queries.html">Scripting 3.3. Numeric queries</a>
+<li><a href="Scripting_5__Language_elements_reference.html">Scripting 5. Language elements reference</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; ppgb, January 11, 2014</p>
+</address>
+</body>
+</html>

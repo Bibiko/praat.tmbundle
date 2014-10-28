@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<link rel="shortcut icon" type="image/x-icon" href="http://www.bibiko.de/praat/wizard/media/favicon.ico">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+	<meta name="author" content="Hans-Jörg Bibiko">
+	<meta name="description" content="Praat built-in functions">
+	<meta name="keywords" content="Bibiko, Praat, Praat Wizard, Praat Manual, Praat Scripting, Praat Compendium, Praat Commands, Praat Help, Praat Syntax">
+	<meta name="date" content="2014-09-20T00:00:00+00:00">
+
+	<title>Praat's Command Wizard &dash; Functions</title>
+
+	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="css/dataTables.colVis.css">
+	<link rel="stylesheet" type="text/css" href="css/wizard.css">
+	<style type="text/css">
+	pre.p1 {margin: 0.0px 0.0px 0.0px 0.0px; color: #007a05}
+	span.s1 {color: #0433ff}
+	span.s2 {color: #000000}
+	span.s3 {color: #8090e5}
+	span.s4 {color: #0329d7}
+	span.s5 {color: #d21f08}
+	span.s6 {color: #4c6085}
+	</style>
+
+	<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="js/comwiz1.dat"></script>
+	<script type="text/javascript" language="javascript" class="init">
+
+	function isRetinaDisplay() {
+		if (window.matchMedia) {
+			var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+			if (mq && mq.matches || (window.devicePixelRatio > 1)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	$(document).ready(function() {
+		if (isRetinaDisplay) {
+			document.getElementById("mft").className = "mfooter_r";
+		}
+		$('a[href^="#"]').on('click',function (e) {
+			e.preventDefault();
+
+			var target = this.hash,
+			$target = $(target);
+
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top
+			}, 900, 'swing', function () {
+				window.location.hash = target;
+			});
+		});
+		document.getElementById("pcwversion").innerHTML = pcwversion;
+		document.getElementById("pcwdate").innerHTML = pcwdate;
+		document.getElementById("total").innerHTML = oTable.fnSettings().fnRecordsTotal();
+	} );
+	</script>
+</head>
+<body class="dt-cmdtable">
+	<div class="container">
+		<section>
+			<h1><a href="http://www.praat.org" target="_new">
+					<img src="media/Praat/64x64.png" width="32px" style="margin-right:5mm"/></a>
+				Praat's built-in Functions &dash; 
+				<span><a href="#op" >Operators</a>&nbsp;
+					<a href="#nu" >Numeric</a>&nbsp;
+					<a href="#st" >String</a>&nbsp;
+					<a href="#co">Controls</a>
+				</span>
+			</h1>
+		</section>
+	</div>
+	<div class="funcs">
+		<p><font size="-4"><i>Superscript numbers := number of arguments; n := number is variable; x := it's somewhat "special"</i></font></p>
+		<h3 id="op">Operators</h3>
+			<p>
+				<code>*</code><code>+</code><code>+=</code><code>-</code><code>-=</code><code>/</code><code>&lt;</code><code>&lt;=</code><code>&lt;&gt;</code><code>=</code><code>&gt;</code><code>&gt;=</code><code>^</code><code>and</code><code>div</code><code>mod</code><code>not</code><code>or</code><code>||</code><code>&&</code>
+			</p>
+		<h3 id="nu">Numeric</h3>
+		<h4>mathematical</h4>
+		<p>
+<code>abs<sup>1</sup></code>
+<code>arccos<sup>1</sup></code>
+<code>arccosh<sup>1</sup></code>
+<code>arcsin<sup>1</sup></code>
+<code>arcsinh<sup>1</sup></code>
+<code>arctan<sup>1</sup></code>
+<code>arctan2<sup>2</sup></code>
+<code>arctanh<sup>1</sup></code>
+<code>barkToHertz<sup>1</sup></code>
+<code>besselI<sup>2</sup></code>
+<code>besselK<sup>2</sup></code>
+<code>beta<sup>2</sup></code>
+<code>beta2<sup>2</sup></code>
+<code>binomialP<sup>3</sup></code>
+<code>binomialQ<sup>3</sup></code>
+<code>ceiling<sup>1</sup></code>
+<code>chiSquareP<sup>2</sup></code>
+<code>chiSquareQ<sup>2</sup></code>
+<code>cos<sup>1</sup></code>
+<code>cosh<sup>1</sup></code>
+<code>differenceLimensToPhon<sup>1</sup></code>
+<code>erb<sup>1</sup></code>
+<code>erbToHertz<sup>1</sup></code>
+<code>erf<sup>1</sup></code>
+<code>erfc<sup>1</sup></code>
+<code>exp<sup>1</sup></code>
+<code>fisherP<sup>3</sup></code>
+<code>fisherQ<sup>3</sup></code>
+<code>floor<sup>1</sup></code>
+<code>gaussP<sup>1</sup></code>
+<code>gaussQ<sup>1</sup></code>
+<code>hertzToBark<sup>1</sup></code>
+<code>hertzToErb<sup>1</sup></code>
+<code>hertzToMel<sup>1</sup></code>
+<code>hertzToSemitones<sup>1</sup></code>
+<code>imax<sup>n</sup></code>
+<code>imin<sup>n</sup></code>
+<code>incompleteBeta<sup>3</sup></code>
+<code>incompleteGammaP<sup>2</sup></code>
+<code>invBinomialP<sup>3</sup></code>
+<code>invBinomialQ<sup>3</sup></code>
+<code>invChiSquareQ<sup>2</sup></code>
+<code>invFisherQ<sup>3</sup></code>
+<code>invGaussQ<sup>1</sup></code>
+<code>invSigmoid<sup>1</sup></code>
+<code>invStudentQ<sup>2</sup></code>
+<code>linear#<sup>3,4</sup></code>
+<code>ln<sup>1</sup></code>
+<code>lnBeta<sup>2</sup></code>
+<code>lnGamma<sup>1</sup></code>
+<code>log10<sup>1</sup></code>
+<code>log2<sup>1</sup></code>
+<code>max</code>
+<code>melToHertz<sup>1</sup></code>
+<code>min<sup>n</sup></code>
+<code>numberOfColumns<sup>1</sup></code>
+<code>numberOfRows<sup>1</sup></code>
+<code>numberOfSelected<sup>n</sup></code>
+<code>phonToDifferenceLimens<sup>1</sup></code>
+<code>randomBinomial<sup>2</sup></code>
+<code>randomGauss<sup>2</sup></code>
+<code>randomGauss#<sup>3</sup></code>
+<code>randomInteger<sup>2</sup></code>
+<code>randomInteger#<sup>3</sup></code>
+<code>randomPoisson<sup>1</sup></code>
+<code>randomUniform<sup>2</sup></code>
+<code>randomUniform#<sup>3</sup></code>
+<code>readFile<sup>1</sup></code>
+<code>round<sup>1</sup></code>
+<code>semitonesToHertz<sup>1</sup></code>
+<code>sigmoid<sup>1</sup></code>
+<code>sin<sup>1</sup></code>
+<code>sinc<sup>1</sup></code>
+<code>sincpi<sup>1</sup></code>
+<code>sinh<sup>1</sup></code>
+<code>soundPressureToPhon<sup>2</sup></code>
+<code>sqrt<sup>1</sup></code>
+<code>studentP<sup>2</sup></code>
+<code>studentQ<sup>2</sup></code>
+<code>tan<sup>1</sup></code>
+<code>tanh<sup>1</sup></code>
+<code>zero#<sup>2</sup></code>
+		</p>
+		<h4>special</h4>
+			<p>
+<code>demoClicked<sup>0</sup></code>
+<code>demoClickedIn<sup>4</sup></code>
+<code>demoCommandKeyPressed<sup>0</sup></code>
+<code>demoExtraControlKeyPressed<sup>0</sup></code>
+<code>demoKeyPressed<sup>0</sup></code>
+<code>demoOptionKeyPressed<sup>0</sup></code>
+<code>demoShiftKeyPressed<sup>0</sup></code>
+<code>demoShow<sup>0</sup></code>
+<code>demoWaitForInput<sup>0</sup></code>
+<code>demoX<sup>0</sup></code>
+<code>demoY<sup>0</sup></code>
+			</p>
+		<h3 id="st">String</h3>
+			<p>
+<code>appendFile<sup>n</sup></code>
+<code>appendFileLine<sup>n</sup></code>
+<code>appendInfo<sup>n</sup></code>
+<code>appendInfoLine<sup>n</sup></code>
+<code>assert<sup>1x</sup></code>
+<code>asserterror<sup>1x</sup></code>
+<code>backslashTrigraphsToUnicode$<sup>1</sup></code>
+<code>beginPause<sup>1</sup></code>
+<code>chooseDirectory$<sup>1</sup></code>
+<code>chooseReadFile$<sup>1</sup></code>
+<code>chooseWriteFile$<sup>2</sup></code>
+<code>clearinfo<sup>0x</sup></code>
+<code>createDirectory<sup>1</sup></code>
+<code>date$<sup>0</sup></code>
+<code>deleteFile<sup>1</sup></code>
+<code>echo<sup>1x</sup></code>
+<code>endsWith<sup>2</sup></code>
+<code>environment$<sup>1</sup></code>
+<code>execute<sup>1x</sup></code>
+<code>exitScript<sup>n</sup></code>
+<code>extractLine$<sup>2</sup></code>
+<code>extractNumber<sup>2</sup></code>
+<code>extractWord$<sup>2</sup></code>
+<code>fappendinfo<sup>1x</sup></code>
+<code>fileappend<sup>nx</sup></code>
+<code>filedelete<sup>1x</sup></code>
+<code>fileReadable<sup>1</sup></code>
+<code>fixed$<sup>2</sup></code>
+<code>index<sup>2</sup></code>
+<code>index_regex<sup>2</sup></code>
+<code>info$<sup>0</sup></code>
+<code>left$<sup>2</sup></code>
+<code>length<sup>1</sup></code>
+<code>mid$<sup>3</sup></code>
+<code>minus<sup>1x</sup></code>
+<code>minusObject<sup>1</sup></code>
+<code>number<sup>1</sup></code>
+<code>percent$<sup>2</sup></code>
+<code>plus<sup>1x</sup></code>
+<code>plusObject<sup>1</sup></code>
+<code>print<sup>1x</sup></code>
+<code>printline<sup>nx</sup></code>
+<code>printtab<sup>0</sup></code>
+<code>readFile$<sup>1</sup></code>
+<code>removeObject<sup>1</sup></code>
+<code>replace$<sup>2</sup></code>
+<code>replace_regex$<sup>2</sup></code>
+<code>right$<sup>2</sup></code>
+<code>rindex<sup>2</sup></code>
+<code>rindex_regex<sup>2</sup></code>
+<code>runScript<sup>n</sup></code>
+<code>selected<sup>n</sup></code>
+<code>selected$<sup>n</sup></code>
+<code>selectObject<sup>n</sup></code>
+<code>sendpraat<sup>nx</sup></code>
+<code>sendsocket<sup>nx</sup></code>
+<code>startsWith<sup>2</sup></code>
+<code>string$<sup>1</sup></code>
+<code>system<sup>nx</sup></code>
+<code>system_nocheck<sup>nx</sup></code>
+<code>unicodeToBackslashTrigraphs$<sup>1</sup></code>
+<code>variableExists<sup>1</sup></code>
+<code>writeFile<sup>n</sup></code>
+<code>writeFileLine<sup>n</sup></code>
+<code>writeInfo<sup>n</sup></code>
+<code>writeInfoLine<sup>n</sup></code>
+			</p>
+		<h4>special</h4>
+			<p>
+<code>demoInput<sup>1</sup></code>
+<code>demoKey$<sup>0</sup></code>
+<code>demoWindowTitle<sup>1</sup></code>
+<code>do$<sup>n</sup></code>
+			</p>
+		<h3 id="co">Controls</h3>
+			<p>
+<code>editor</code>
+<code>elif</code>
+<code>else</code>
+<code>elsif</code>
+<code>endeditor</code>
+<code>endfor</code>
+<code>endif</code>
+<code>endwhile</code>
+<code>exit<sup>X</sup></code>
+<code>for</code>
+<code>from</code>
+<code>goto<sup>1</sup></code>
+<code>if</code>
+<code>include<sup>1</sup></code>
+<code>label<sup>1</sup></code>
+<code>procedure</code>
+<code>repeat</code>
+<code>stopwatch</code>
+<code>then</code>
+<code>to</code>
+<code>until</code>
+<code>while</code>
+			</p>
+		<h4>special</h4>
+		<p>
+<code>demo</code>
+<code>do</code>
+<code>endForm</code>
+<code>endPause<sup>n</sup></code>
+<code>form<sup>1</sup></code>
+<code>nocheck</code>
+<code>noprogress</code>
+<code>nowarn</code>
+<code>pause<sup>n</sup></code>
+<code>pauseScript<sup>n</sup></code>
+<code>select</code>
+<code>select</code>
+<code>unix_nocheck</code>
+		</p>
+		<h4>form</h4>
+		<p>
+<pre class="p1"><span class="s1"><b>form</b></span> Form_Title
+	<span class="s3"><b>comment</b></span> A normal comment
+	<span class="s3"><b>positive</b></span> Title_Positive_Real <span class="s4">0.1</span>
+	<span class="s3"><b>real</b></span> Title_Real <span class="s4">-4.4e-2</span>
+	<span class="s3"><b>integer</b></span> Title_Integer <span class="s4">-1</span>
+	<span class="s3"><b>natural</b></span> Title_Natural: <span class="s4">1</span>
+	<span class="s3"><b>word</b></span> Single_Word word
+	<span class="s3"><b>sentence</b></span> A_Short_Sentence I'm a short sentence.
+	<span class="s3"><b>text</b></span> A_Long_Text I'm a long, long text.
+	<span class="s3"><b>boolean</b></span> A_Checkbox <span class="s5"><b>yes</b></span>
+	<span class="s3"><b>optionmenu</b></span> Title_Option<span class="s2">:</span><span class="s4"> 2</span>
+		<span class="s3"><b>option</b></span> Option 1
+		<span class="s3"><b>option</b></span> Option 2 is default
+		<span class="s3"><b>option</b></span> Option 3
+	<span class="s3"><b>choice</b></span> Title_Choice<span class="s2">:</span><span class="s4"> 2</span>
+		<span class="s3"><b>button</b></span> Choice 1
+		<span class="s3"><b>button</b></span> Choice 2 default
+		<span class="s3"><b>button</b></span> Choice 3
+<span class="s1"><b>endform</b></span><span class="s6"><b>
+</b></span></pre>
+</p>
+	</div>
+	<div id="mft" class="mfooter">
+		<center>
+			<p>Version <span id="pcwversion"></span> - <span id="pcwdate"></span> | written&nbsp;by&nbsp;<a href="http://www.bibiko.de">Hans-Jörg Bibiko</a>, 
+				<a href="http://www.eva.mpg.de">MPI EVA - Linguistics</a>, Leipzig/Germany | powered&nbsp;by&nbsp;
+				<a href="http://www.praat.org">Praat</a>, <a href="http://jquery.com">jquery</a>, 
+				<a href="http://datatables.net">datatables</a>, 
+				<a href="http://dimsemenov.com/plugins/magnific-popup/">magnific-popup</a>
+			</p>
+		</center>
+	</div>
+</body>
+</html>

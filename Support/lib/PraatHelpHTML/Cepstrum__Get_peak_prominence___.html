@@ -1,0 +1,44 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Cepstrum: Get peak prominence...</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+Cepstrum: Get peak prominence...
+</b></font></table></table>
+<p>
+Calculates the cepstral peak prominence measure (CPP) as defined by <a href="Hillenbrand_et_al___1994_.html">Hillenbrand et al. (1994)</a></p>
+<p>
+The CPP measure is the difference in amplitude between the cepstral peak and the corresponding value on the regression line that is directly below the peak (i.e., the predicted magnitude for the quefrency at the cepstral peak). The CPP measure represents how far the cepstral peak emerges from the cepstrum background. </p>
+<h3>
+Settings</h3>
+<p align=middle><img height=420 width=700 src=Cepstrum__Get_peak_prominence____1.png></p><dl>
+<dt>
+<b>Search peak in pitch range</b>
+<dd>
+determine the limits of the quefrency range where a peak is searched for. The lower quefrency is determined as 1 / <i>pitchCeiling</i> and this value is in general more critical than the value of the upper quefrency which equals 1 / <i>pitchFloor</i>. A <i>pitchCeiling</i> of 300 Hz will correspond to a lower quefrency of 1/300&#8776;0.0033 seconds.
+<dt>
+<b>Interpolation</b>
+<dd>
+determines how the <a href="vector_peak_interpolation.html">amplitude of a peak is determined</a>.
+<dt>
+<b>Tilt line quefrency range</b>
+<dd>
+the quefrency range for which the amplitudes (in dB) will be modelled by a straight line. The lower value for this range in the Hillenbrand article was chosen as 0.001 s in order to reduce the effect of the low quefrency data on the straight line fit. In our analysis this value is not so critical as we use a more robust straight line fit.
+<dt>
+<b>Fit method</b>
+<dd>
+the default method is <a href="theil_regression.html">Theil's robust line fit</a>. However, to be compatible with the past, a standard least squares line fit has also  been implemented.
+</dl>
+<h3>
+Note</h3>
+<p>
+The CPP value does not depend on the reference value used in the dB calculation of the power cepstrum.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="Cepstrogram__To_Table__peak_prominence___.html">Cepstrogram: To Table (peak prominence...</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; djmw, April 25, 2013</p>
+</address>
+</body>
+</html>

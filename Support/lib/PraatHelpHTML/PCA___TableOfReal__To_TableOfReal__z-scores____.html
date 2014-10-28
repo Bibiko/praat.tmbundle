@@ -1,0 +1,34 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PCA & TableOfReal: To TableOfReal (z-scores)...</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+PCA & TableOfReal: To TableOfReal (z-scores)...
+</b></font></table></table>
+<p>
+A command to construct a <a href="TableOfReal.html">TableOfReal</a> with z-scores from the selected <a href="TableOfReal.html">TableOfReal</a> and <a href="PCA.html">PCA</a>.</p>
+<h3>
+Setting</h3>
+<dl>
+<dt>
+<b>Number of dimensions</b>
+<dd>
+determines the number of dimensions of the resulting Configuration.
+</dl>
+<h3>
+Algorithm</h3>
+<p>
+The values <i>d</i><sub><i>ij</sub></i> in the new TableOfReal are calculated as</p>
+<table width="100%"><tr><td align=middle>
+<i>d</i><sub><i>ij</sub></i> = <b>eigenvector</b><sub>j</sub>&#183; <b>z</b><sub><i>i</sub></i>,</table>
+<p>
+which is the inproduct of the <i>j</i>-th eigenvector and the z-score vector <b>z</b><sub><i>i</sub></i> of the <i>i</i>-th row whose elements <i>z</i><sub><i>ij</sub></i> are defined as</p>
+<table width="100%"><tr><td align=middle>
+<i>z</i><sub><i>ij</sub></i> = (data<sub><i>ij</sub></i> - mean<sub><i>j</sub></i>) / sqrt (eigenvalue<sub><i>j</sub></i>),</table>
+<p>
+in which data<sub><i>ij</sub></i> is the data value at row <i>i</i> and column <i>j</i> of the selected TableOfReal and mean<sub><i>j</sub></i> is the <i>j</i>-th centroid value of the PCA. The square root of the <i>j</i>-th eigenvalue is the standard deviation in  the <i>j</i>-th principal direction.</p>
+<hr>
+<address>
+	<p>&copy; djmw, May 10, 2012</p>
+</address>
+</body>
+</html>

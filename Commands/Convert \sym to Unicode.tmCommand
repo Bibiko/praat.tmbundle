@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+ARG=`cat | perl -pe 's/""/"/g;'`
+echo -en `${TM_PRAAT:-/Applications/Praat.app/Contents/MacOS/Praat} -a "$TM_BUNDLE_SUPPORT"/bin/sym2uni.praat "$ARG"`
+</string>
+	<key>input</key>
+	<string>word</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^~@c</string>
+	<key>name</key>
+	<string>Convert \sym to Unicode</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>534F50E1-9B31-44D8-98E6-B78F8B22AD20</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

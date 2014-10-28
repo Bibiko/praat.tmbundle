@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>znvy@ovovxb.qr</string>
+	<key>contactName</key>
+	<string>Hans-Jörg Bibiko</string>
+	<key>description</key>
+	<string>Praat Scripting http://www.praat.org</string>
+	<key>mainMenu</key>
+	<dict>
+		<key>excludedItems</key>
+		<array>
+			<string>6A53D310-BD56-4E46-9AEC-D5FB250C7EE5</string>
+			<string>69B845A8-272E-44A8-90BD-90682A5A05A2</string>
+			<string>9F7D90BA-36D9-4327-93A0-720B237191AF</string>
+		</array>
+		<key>items</key>
+		<array>
+			<string>7D94278D-F4A5-4CEB-931C-424DFEEE99AE</string>
+			<string>CEF5C54F-886C-44BB-AA85-C1015A551486</string>
+			<string>------------------------------------</string>
+			<string>BB039328-EF69-4354-8F37-6FCC81A22DA8</string>
+			<string>------------------------------------</string>
+			<string>BED51C8D-3B2D-4220-AA46-F13B10035665</string>
+			<string>928244DE-9B54-4A29-8674-DC0749778469</string>
+			<string>B968EC35-4610-9600-6415-EDDBA1BC5E3F</string>
+			<string>------------------------------------</string>
+			<string>5DA72714-875F-4170-890F-ED5E2AF8FC7F</string>
+			<string>A91BEECE-B5EB-42CE-8913-86B00BB3327A</string>
+			<string>------------------------------------</string>
+			<string>A06D0CE4-668E-4CF3-ABA8-000106FA0C6E</string>
+			<string>------------------------------------</string>
+			<string>0704488F-7B53-4096-85D2-E3268F94CE91</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>928244DE-9B54-4A29-8674-DC0749778469</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>D19CDE02-DE81-451A-90B9-96910F4B6EC2</string>
+					<string>FC619DE8-6A5F-4C97-B6E6-C7E2CFDF2A8F</string>
+					<string>84C2A6B7-8838-40FC-9F5C-CD978B54C8D0</string>
+					<string>EE84AA98-B505-498E-AF17-2D48D49446E9</string>
+					<string>523F035D-06EE-44AE-8E67-E630C5DBEB8D</string>
+					<string>0B6FAEF0-50C1-4D49-ACFE-EC6C3531AF35</string>
+					<string>------------------------------------</string>
+					<string>10DA1183-585E-42A7-85CF-C95972360CF8</string>
+					<string>7D919FB7-C179-403B-9832-74369D09FBA4</string>
+					<string>21AA3A81-BD75-4B5D-BA12-E4D60A440160</string>
+					<string>9214C5A3-DCE6-43EE-B6DF-6102DF80F47E</string>
+				</array>
+				<key>name</key>
+				<string>Language Snippets</string>
+			</dict>
+			<key>BED51C8D-3B2D-4220-AA46-F13B10035665</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>CC02544A-961E-4110-972B-EF0F7A3EE7CC</string>
+					<string>4C987DF8-633B-4ACB-A395-D313681C9C31</string>
+					<string>97EB2E8E-CCE0-4519-BAFF-944523F82983</string>
+					<string>145DA00C-74FB-4B4A-A19C-0213D757115D</string>
+					<string>B968EC35-6415-4610-9600-DEDB1ABC5E3F</string>
+					<string>96613193-1D00-47FF-B0BC-30E30C2D624A</string>
+					<string>C6BC5554-1230-4C0A-81C6-AAAD1903C5CC</string>
+					<string>B4C7ECA0-0456-4B3E-B0D2-6B973FBF6126</string>
+					<string>02A76E82-6525-4F7C-BA3F-1A2455F261D1</string>
+				</array>
+				<key>name</key>
+				<string>Language Controls</string>
+			</dict>
+			<key>B968EC35-4610-9600-6415-EDDBA1BC5E3F</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>534F50E1-9B31-44D8-98E6-B78F8B22AD20</string>
+					<string>B91D6F1B-29A5-4D12-A7F5-825F011C10F9</string>
+				</array>
+				<key>name</key>
+				<string>Conversions</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>name</key>
+	<string>Praat</string>
+	<key>uuid</key>
+	<string>CBF77EC2-7FA1-49AD-8181-42C88D343E1D</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Read from file: "${1:file_path}"</string>
+	<key>name</key>
+	<string>Read from file</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>tabTrigger</key>
+	<string>rff</string>
+	<key>uuid</key>
+	<string>FC619DE8-6A5F-4C97-B6E6-C7E2CFDF2A8F</string>
+</dict>
+</plist>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Indent Correction Suppress for Form Block</string>
+	<key>scope</key>
+	<string>meta.inner.block.form.praat</string>
+	<key>settings</key>
+	<dict>
+		<key>disableIndentCorrections</key>
+		<true/>
+		<key>indentOnPaste</key>
+		<string>simple</string>
+	</dict>
+	<key>uuid</key>
+	<string>579FE7C2-C27E-46A9-85EE-4A5E13697F16</string>
+</dict>
+</plist>

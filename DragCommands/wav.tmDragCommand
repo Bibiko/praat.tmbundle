@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+
+if [ "$TM_MODIFIER_FLAGS" == "SHIFT" ]; then
+	echo "Read from file: \"$TM_DROPPED_FILEPATH\""
+else
+	echo "Read from file: \"$TM_DROPPED_FILE\""
+fi
+</string>
+	<key>draggedFileExtensions</key>
+	<array>
+		<string>wav</string>
+		<string>aiff</string>
+		<string>aif</string>
+		<string>mp3</string>
+		<string>textgrid</string>
+		<string>flac</string>
+	</array>
+	<key>name</key>
+	<string>Audio &amp; TextGrid</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>CDF1ED1B-3346-4BF2-B9A9-A877C28104E5</string>
+</dict>
+</plist>

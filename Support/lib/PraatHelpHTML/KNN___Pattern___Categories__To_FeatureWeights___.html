@@ -1,0 +1,62 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>KNN & Pattern & Categories: To FeatureWeights...</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+KNN & Pattern & Categories: To FeatureWeights...
+</b></font></table></table>
+<p>
+Wrap the selected <a href="KNN.html">KNN</a> and use its classification accuracy on the test set constituted by the <a href="Pattern.html">Pattern</a> and <a href="Categories.html">Categories</a> objects as feedback to guide the search for the optimal feature weights. A <a href="FeatureWeights.html">FeatureWeights</a> object will be created.</p>
+<h3>
+Settings</h3>
+<dl>
+<dt>
+<b>Learning rate</b>
+<dd>
+The rate at which the maximum distance between the pivot and a random seed is decremented.
+<dt>
+<b>Number of seeds</b>
+<dd>
+The size of the feature weight neighbourhood.
+<dt>
+<b>Stop at</b>
+<dd>
+A value specifying a stopping criterion. When feature weights yielding accuracy estimates higher than the specified value the search will stop. A value of 1 imposes no constraints whereas a value of 0.5 will result in the termination of the search algorithm once feature weights resulting in an classification accuracy of 50 percent or better are found.
+<dt>
+<b>Optimization</b>
+<dd>
+Specifies whether to search for all features simultaneously or one at a time.
+<dt>
+<b>k neighbours</b>
+<dd>
+The size of the neighbourhood used for feedback classification.
+<dt>
+<b>Vote weighting</b>
+<dd>
+The type of vote weighting to be used.
+</dl>
+<h3>
+See also:</h3>
+<dl>
+<dd>
+<a href="kNN_classifiers_1_1_1_2__Wrapper-based_feature_weightin.html">kNN classifiers 1.1.1.2. Wrapper-based feature weighting</a>
+<dd>
+<a href="kNN_classifiers_1_1_1__Feature_weighting.html">kNN classifiers 1.1.1. Feature weighting</a>
+<dd>
+<a href="kNN_classifiers_1_1__Improving_classification_accuracy.html">kNN classifiers 1.1. Improving classification accuracy</a>
+<dd>
+<a href="KNN___Pattern___Categories___FeatureWeights__Evaluate__.html">KNN & Pattern & Categories & FeatureWeights: Evaluate...</a>
+<dd>
+<a href="kNN_classifiers_1__What_is_a_kNN_classifier_.html">kNN classifiers 1. What is a kNN classifier?</a>
+<dd>
+<a href="kNN_classifiers.html">kNN classifiers</a>
+</dl>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="kNN_classifiers_3__Command_overview.html">kNN classifiers 3. Command overview</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, August 9, 2008</p>
+</address>
+</body>
+</html>

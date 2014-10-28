@@ -1,0 +1,3624 @@
+ -- Pitch
+ -- Pitch (hum)
+1-to-1
+100
+16-bit
+1952
+1973
+1980
+1985
+2.0
+200
+2006
+24-bit
+300-dpi
+32-bit
+440
+600-dpi
+8-bit
+About
+About Praat...
+About ScriptEditor
+About special symbols
+About text styles
+abs
+absolute
+accounted
+accuracy
+Acknowledgments
+action
+Activation
+activation
+activities
+activity
+Add
+Add action command
+Add amplitude point
+Add aspiration amplitude point
+Add bandwidth point
+Add breathiness amplitude point
+Add collision phase point
+Add connection
+Add delta bandwidth point
+Add delta formant
+Add delta formant bandwidth point
+Add delta formant frequency and bandwidth tiers
+Add delta formant frequency point
+Add delta formant point
+Add double pulsing point
+Add duration point at
+Add duration point at cursor
+Add flutter point
+Add formant and bandwidth tier
+Add formant point
+Add frication amplitude point
+Add frication bypass point
+Add frication formant
+Add frication formant amplitude point
+Add frication formant amplitude tier
+Add frication formant bandwidth point
+Add frication formant frequency and bandwidth tiers
+Add frication formant frequency point
+Add interval on tier 1
+Add interval on tier 2
+Add interval on tier 3
+Add interval on tier 4
+Add interval on tier 5
+Add interval on tier 6
+Add interval on tier 7
+Add interval on tier 8
+Add interval tier
+Add items to Collection
+Add menu command
+Add nasal antiformant
+Add nasal antiformant bandwidth point
+Add nasal antiformant frequency and bandwidth tiers
+Add nasal antiformant frequency point
+Add nasal formant
+Add nasal formant amplitude point
+Add nasal formant amplitude tier
+Add nasal formant bandwidth point
+Add nasal formant frequency and bandwidth tiers
+Add nasal formant frequency point
+Add new word
+Add node
+Add on all tiers
+Add on selected tier
+Add on tier 1
+Add on tier 2
+Add on tier 3
+Add on tier 4
+Add on tier 5
+Add on tier 6
+Add on tier 7
+Add on tier 8
+Add open phase point
+Add oral formant
+Add oral formant amplitude point
+Add oral formant amplitude tier
+Add oral formant bandwidth point
+Add oral formant frequency and bandwidth tiers
+Add oral formant frequency point
+Add pitch point
+Add pitch point at
+Add pitch point at cursor
+Add pitch point at time slice
+Add point
+Add point at
+Add point at cursor
+Add point tier
+Add power1 point
+Add power2 point
+Add pulse at
+Add pulse at cursor
+Add selected word to user dictionary
+Add spectral tilt point
+Add to dynamic menu
+Add to Excitations
+Add to fixed menu
+Add to menu
+Add tracheal antiformant
+Add tracheal antiformant bandwidth point
+Add tracheal antiformant frequency and bandwidth tiers
+Add tracheal antiformant frequency point
+Add tracheal formant
+Add tracheal formant amplitude point
+Add tracheal formant amplitude tier
+Add tracheal formant bandwidth point
+Add tracheal formant frequency and bandwidth tiers
+Add tracheal formant frequency point
+Add VocalTract
+Add voicing amplitude point
+Adding
+Adding to a dynamic menu
+Adding to a fixed menu
+additive
+Advanced
+Advanced formant settings
+Advanced pitch settings
+Advanced pulses settings
+Advanced spectrogram settings
+AffineTransform
+AffineTransform help
+after
+again
+AIFC
+AIFF
+air
+Alaw
+align
+Align
+Align eigenvectors
+Align interval
+align,trim
+Alignment
+alignment
+Alignment settings
+all
+allowed
+alone
+along
+amplitude
+AmplitudeTier
+AmplitudeTier help
+analyses
+and
+angle
+Annotation
+Annotation tutorial
+anova
+antiformant
+any
+Append
+append
+Append column
+Append columns
+Append difference column
+Append product column
+Append quotient column
+Append row
+Append sum column
+Append to existing sound file
+appendFile
+appendFileLine
+appendInfo
+appendInfoLine
+Apple
+apq11
+apq3
+apq5
+arc
+arccos
+arccosh
+arcsin
+arcsinh
+arctan
+arctan2
+arctanh
+Are
+Are all partial outputs grammatical?
+Are all partial outputs singly grammatical?
+area
+Arrow
+arrow
+Arrow size
+Art
+artefacts
+Articulation
+Articulatory
+Articulatory synthesis tutorial
+Artword
+Artword help
+asked
+aspiration
+assert
+asserterror
+assimilation
+audio
+Autocorrelate
+autocorrelation
+Average
+average
+Axes
+axes
+back
+backslash
+backslashTrigraphsToUnicode$
+backward
+band
+band-filtered
+bands
+bandwidth
+bandwidths
+Bar
+Bar plot where
+Bark
+BarkFilter
+BarkFilter help
+barkToHertz
+Barney
+bars
+bartlett
+baseline
+basis
+begin
+beginPause
+below
+besselI
+besselK
+beta
+beta2
+between
+between-groups
+BHEP
+bias
+biases
+Big
+big-endian
+bigrams
+bin
+binary
+binomialP
+binomialQ
+bins
+biplot
+bit
+bitmap
+Black
+blocks
+blue
+Blue
+boolean
+bottom
+boundary
+bounded
+Box
+box
+Box plots
+Box plots where
+breathiness
+bss
+burg
+button
+ButtonEditor
+ButtonEditor help
+Buttons
+Buttons...
+bypass
+Calculator
+callback
+calling
+candidate
+candidates
+Carroll
+Categories
+categories
+CategoriesEditor
+CategoriesEditor help
+category
+CCA
+ceiling
+cell
+cells
+CEMM
+central
+Centralize
+Centre
+centre
+Centre columns
+Centre of gravity ~ intensity
+Centre rows
+centroid
+centroids
+Cepstral
+Cepstral smoothing
+Cepstrum
+Change
+Change ceiling
+Change gender
+Change speaker
+channel
+channels
+characters
+ChebyshevSeries
+Check
+Check spelling in interval
+Check spelling in tier
+chi
+chiSquareP
+chiSquareQ
+choice
+cholesky
+chooseDirectory$
+chooseReadFile$
+chooseWriteFile$
+chronological
+circle
+circles
+Circular
+Circular permutation
+CJK
+CJK font style preferences
+clamping
+class
+classes
+ClassificationTable
+ClassificationTable help
+classifier
+Classifier
+classifiers
+Clear
+Clear history
+clearinfo
+clipboard
+clipping
+Clone
+Clone time domain
+Close
+closed
+closures
+Cochleagram
+Cochleagram help
+code
+coefficient
+coefficients
+col
+col$
+Collapse
+Collapse rows
+Collect
+Collect to Table
+Collection
+collision
+Colour
+colour
+column
+columns
+Combine
+Combine to stereo
+combined
+comma-separated
+command
+comment
+Compare
+Compare candidates
+complex
+component
+components
+Compress
+Compress frequency domain
+computation
+Compute
+Compute trend line
+Concatenate
+Concatenate recoverably
+Concatenate with overlap
+Concatenate?
+concentration
+Condense
+Confidence
+confidence
+Confidence intervals
+Configuration
+Configuration help
+Conflate
+Confusion
+congruence
+Conjugate
+connection
+consecutive
+constant
+constrained
+constraint
+constraints
+contents
+ContingencyTable
+continuous
+contour
+contours
+contribution
+Convert
+Convert entire TextGrid to backslash trigraphs
+Convert entire TextGrid to Unicode
+Convert to backslash trigraphs
+Convert to C string
+Convert to mono
+Convert to stereo
+Convert to Unicode
+Convolve
+copy
+Copy
+Copy channel ranges
+Copy selection to Sound clipboard
+Copy text
+Copy to clipboard
+Corpus
+correct
+correlation
+Correlation
+Correlation help
+cos
+cosh
+cost
+costs
+Count
+Count differences
+Count labels
+Count voiced frames
+Courier
+Covariance
+covariance
+covariances
+CPPS
+Cramer's
+Create
+Create AmplitudeTier
+Create Articulation
+Create Artword
+Create Categories
+Create ChebyshevSeries
+Create Configuration
+Create continuous HMM
+Create copy from FilesInMemory
+Create Corpus
+Create DurationTier
+Create empty EditCostsTable
+Create empty Network
+Create empty PointProcess
+Create FeatureWeights
+Create FFNet
+Create FFNet (linear outputs)
+Create FileInMemory
+Create FilesInMemory from directory contents
+Create formant table (Peterson & Barney 1952)
+Create formant table (Pols & Van Nierop 1973)
+Create formant table (Weenink 1985)
+Create FormantGrid
+Create FormantTier
+Create H1H2 table (Esposito 2006)
+Create HMM
+Create INDSCAL Carroll Wish example
+Create IntensityTier
+Create iris data set
+Create iris example
+Create ISpline
+Create KlattGrid
+Create KlattGrid example
+Create KlattTable example
+Create kNN classifier
+Create LegendreSeries
+Create letter R example
+Create Matrix
+Create metrics grammar
+Create MSpline
+Create multi-level metrics grammar
+Create NoCoda grammar
+Create Pattern
+Create Permutation
+Create Photo
+Create PitchTier
+Create place assimilation distribution
+Create place assimilation grammar
+Create Poisson process
+Create Polygon (random vertices)
+Create Polynomial
+Create rectangular Network
+Create rectangular Network (vertical)
+Create simple Confusion
+Create simple Covariance
+Create simple CrossCorrelationTable
+Create simple HMM
+Create simple Matrix
+Create simple MixingMatrix
+Create simple Photo
+Create simple Polygon
+Create Sound
+Create Sound as pure tone
+Create Sound as tone complex
+Create Sound from formula
+Create Sound from gamma-tone
+Create Sound from gammatone
+Create Sound from Shepard tone
+Create Sound from tone complex
+Create Sound from VowelEditor...
+Create Speaker
+Create SpeechSynthesizer
+Create Strings as characters
+Create Strings as directory list
+Create Strings as file list
+Create Strings as tokens
+Create Strings from espeak voices
+Create Table
+Create Table (Ganong 1980)
+Create Table with column names
+Create Table without column names
+Create TableOfReal
+Create TableOfReal (Pols 1973)
+Create TableOfReal (Van Nierop 1973)
+Create TableOfReal (Weenink 1985)
+Create test CrossCorrelationTables
+Create TextGrid
+Create tongue-root grammar
+Create Vocal Tract from phone
+createDirectory
+cross
+Cross-correlate
+cross-correlations
+cross-entropy
+CrossCorrelationTable
+CrossCorrelationTable help
+CrossCorrelationTables
+CrossCorrelationTables help
+crossing
+cumm.
+cumulative
+cursor
+curve
+Cut
+Cut parts matching label
+Cut text
+Cyan
+Dashed
+Dashed line
+Dashed-dotted
+Dashed-dotted line
+data
+DataEditor
+DataEditor help
+DataModeler
+date$
+dda
+ddp
+de-emphasis
+De-emphasize
+De-emphasize (in-line)
+Debug
+decision
+Deepen
+Deepen band modulation
+default
+defaultDirectory$
+degree
+degrees
+Delete
+Delete log file 1
+Delete log file 2
+deleteFile
+deletion
+delta
+Demo
+demo
+Demo window
+demoClicked
+demoClickedIn
+demoCommandKeyPressed
+demoExtraControlKeyPressed
+demoInput
+demoKey$
+demoKeyPressed
+demoOptionKeyPressed
+demoShiftKeyPressed
+demoShow
+demoWaitForInput
+demoWindowTitle
+demoX
+demoY
+density
+derivative
+determination
+Detrend
+deviation
+deviations
+dft
+diagonality
+Diagonalize
+Diagonalizer
+diagram
+dictionary
+Difference
+difference
+differenceLimensToPhon
+differences
+different
+dimension
+directions
+directory
+Discriminant
+Discriminant help
+disharmony
+disk
+Dissimilarity
+Dissimilarity help
+distance
+Distance
+distances
+Distribution
+distribution
+Distribution plot
+Distribution plot where
+Distributions
+Distributions help
+div
+Divide
+do$
+domain
+Dotted
+Dotted line
+double
+Double
+Double centre
+Down
+down
+Down to FormantGrid
+Down to FormantTier
+Down to IntensityTier
+Down to Matrix
+Down to Matrix (area)
+Down to Matrix (lpc)
+Down to Matrix (rc)
+Down to PitchTier
+Down to PointProcess
+Down to PowerCepstrum
+Down to Sound
+Down to Table
+Down to TableOfReal
+Down to TableOfReal (any)
+dragging
+Draw
+Draw (linear)
+Draw (log freq)
+Draw (phonetogram)
+Draw absolute regression
+Draw activation
+Draw arc
+Draw arrow
+Draw as numbers
+Draw as numbers if
+Draw as squares
+Draw backward probabilities illustration
+Draw basis function
+Draw biplot
+Draw boundary
+Draw box plots
+Draw circle
+Draw circle (mm)
+Draw circles
+Draw closed
+Draw column as distribution
+Draw concentration ellipses
+Draw confidence ellipse
+Draw confidence ellipses
+Draw connection
+Draw contours
+Draw cost history
+Draw cumulative distribution
+Draw decision plane
+Draw distribution
+Draw edit operations
+Draw eigenvalues
+Draw eigenvector
+Draw ellipse
+Draw ellipse (standard deviation)
+Draw ellipse where (standard deviation)
+Draw ellipses
+Draw ellipses where
+Draw erb
+Draw estimated track
+Draw estimated tracks
+Draw filter functions
+Draw filters
+Draw forward and backward probabilities illustration
+Draw forward probabilities illustration
+Draw frequency scales
+Draw frication
+Draw function
+Draw gain
+Draw horizontal lines
+Draw hyperplane intersections
+Draw i-spline regression
+Draw inner box
+Draw interval regression
+Draw knots
+Draw left and right lines
+Draw line
+Draw logarithmic
+Draw marginal pdf
+Draw MDS class relations
+Draw mel
+Draw mesh
+Draw monotone regression
+Draw one confidence ellipse
+Draw one contour
+Draw one sigma ellipse
+Draw outliers marked
+Draw path
+Draw phases
+Draw phonation
+Draw poles
+Draw ratio regression
+Draw rectangle
+Draw rounded rectangle
+Draw row as histogram
+Draw row from distribution
+Draw rows
+Draw rows as histogram
+Draw scalp
+Draw scalp (colour)
+Draw scalp (garnish)
+Draw scatter diagram
+Draw scatter plot
+Draw scatter plot matrix
+Draw segments
+Draw selected sound
+Draw semitones
+Draw semitones (re 100 Hz)
+Draw semitones (re 200 Hz)
+Draw semitones (re 440 Hz)
+Draw separately
+Draw separately (erb)
+Draw separately (logarithmic)
+Draw separately (mel)
+Draw separately (semitones)
+Draw Shepard diagram
+Draw sigma ellipse
+Draw sigma ellipses
+Draw spectrum (slice)
+Draw splines
+Draw synthesizer
+Draw tableau
+Draw tableau (narrowly)
+Draw tilt line
+Draw top and bottom lines
+Draw topology
+Draw tracks
+Draw trajectory
+Draw trellis
+Draw two-way arrow
+Draw vectors
+Draw vertical lines
+Draw visible formant contour
+Draw visible intensity contour
+Draw visible pitch contour
+Draw visible pitch contour and TextGrid
+Draw visible pulses
+Draw visible sound
+Draw visible sound and TextGrid
+Draw visible TextGrid
+Draw vocal tract
+Draw warp (x)
+Draw weights
+Draw weights to layer
+Draw where
+Draw with Pitch?
+Draw with Sound?
+DTW
+DTW help
+Duplicate
+Duplicate tier
+duration
+Duration
+DurationTier
+DurationTier help
+dynamic
+earlier
+echo
+edb
+edge
+Edit
+edit
+Edit alone
+Edit aspiration amplitude tier
+Edit breathiness amplitude tier
+Edit collision phase tier
+Edit constraint
+Edit delta formant grid
+Edit double pulsing tier
+Edit external electrode names
+Edit flutter tier
+Edit frication amplitude tier
+Edit frication bypass tier
+Edit frication formant amplitude tier
+Edit frication formant grid
+Edit nasal antiformant grid
+Edit nasal formant amplitude tier
+Edit nasal formant grid
+Edit open phase tier
+Edit oral formant amplitude tier
+Edit oral formant grid
+Edit pitch tier
+Edit power1 tier
+Edit power2 tier
+Edit ranking
+Edit spectral tilt tier
+Edit tracheal antiformant grid
+Edit tracheal formant amplitude tier
+Edit tracheal formant grid
+Edit voicing amplitude tier
+EditCostsTable
+EditCostsTable help
+EditDistanceTable
+EditDistanceTable help
+Editor
+editor
+Editor info
+Editors
+EEG
+EEG help
+EEGWindow
+EEGWindow help
+Eigen
+eigenvalue
+eigenvalues
+eigenvector
+eigenvectors
+eighth
+eip
+electrode
+element
+elements
+elif
+ellipse
+ellipses
+else
+elsif
+emission
+empty
+enclosed
+End
+end
+End to centre
+endeditor
+endfor
+endform
+Endian
+endif
+endPause
+endproc
+endsWith
+endwhile
+energy
+ensemble
+entire
+entropy
+environment$
+EPS
+Equal?
+equality
+Equalize
+Equalize intensities
+equation
+Erase
+Erase all
+Erase text
+erb
+erbToHertz
+erf
+erfc
+ERP
+ERPTier
+ERPTier help
+error
+espeak
+Esposito
+estimate
+estimated
+Evaluate
+Evaluate (noise 2.0)
+Evaluate (tiny noise)
+Evaluate (zero noise)
+events
+every
+exact
+example
+examples
+Excitation
+Excitation help
+Excitations
+execute
+existing
+exit
+exitScript
+exp
+Expand
+Expand include files
+expected
+Extend
+Extend time
+Extend trajectory
+Extend-select
+Extend-select left
+Extend-select right
+external
+Extract
+Extract all channels
+Extract all intervals
+Extract amplitude tier
+Extract aspiration amplitude tier
+Extract between-groups SSCP
+Extract blue
+Extract breathiness amplitude tier
+Extract centroid
+Extract centroids
+Extract channel
+Extract collision phase tier
+Extract column labels as Strings
+Extract column ranges
+Extract columns where
+Extract columns where label
+Extract columns where row
+Extract component
+Extract CrossCorrelationTable
+Extract DataModeler
+Extract delta formant grid
+Extract double pulsing tier
+Extract duration tier
+Extract emission probabilities
+Extract entire selected tier
+Extract ERP
+Extract events where column (number)
+Extract events where column (text)
+Extract Excitation
+Extract flutter tier
+Extract formant grid
+Extract formant grid (open phases)
+Extract FormantGrid
+Extract frication amplitude tier
+Extract frication bypass tier
+Extract frication formant amplitude tier
+Extract frication formant grid
+Extract green
+Extract group centroids
+Extract group labels
+Extract group standard deviations
+Extract input Patterns
+Extract intervals
+Extract intervals where
+Extract KlattGrid
+Extract left channel
+Extract left singular vectors
+Extract marks as TextGrid
+Extract mixing probabilities
+Extract nasal antiformant grid
+Extract nasal formant amplitude tier
+Extract nasal formant grid
+Extract non-empty intervals
+Extract one channel
+Extract one channel as Sound
+Extract one tier
+Extract open phase tier
+Extract oral formant amplitude tier
+Extract oral formant grid
+Extract oral formant grid (open phases)
+Extract original sound
+Extract output Categories
+Extract part
+Extract part for overlap
+Extract pitch tier
+Extract PitchTier
+Extract PointProcess (glottal closures)
+Extract power1 tier
+Extract power2 tier
+Extract pulses
+Extract red
+Extract results
+Extract right channel
+Extract right singular vectors
+Extract row labels as Strings
+Extract row ranges
+Extract rows where
+Extract rows where (mahalanobis)
+Extract rows where column
+Extract rows where column (number)
+Extract rows where column (text)
+Extract rows where label
+Extract selected EEG (preserve times)
+Extract selected EEG (time from zero)
+Extract selected sound (preserve times)
+Extract selected sound (time from 0)
+Extract selected sound (windowed)
+Extract selected sound for overlap
+Extract selected TextGrid (preserve times)
+Extract selected TextGrid (time from 0)
+Extract selection
+Extract selection (preserve times)
+Extract selection (time from 0)
+Extract singular values
+Extract smoothest part
+Extract smoothest part (constrained)
+Extract sound selection (preserve times)
+Extract sound selection (time from 0)
+Extract spectral tilt tier
+Extract tier
+Extract tracheal antiformant grid
+Extract tracheal formant amplitude tier
+Extract tracheal formant grid
+Extract transformation matrix
+Extract transition probabilities
+Extract translation vector
+Extract transparency
+Extract user dictionary
+Extract visible formant contour
+Extract visible intensity contour
+Extract visible pitch contour
+Extract visible pulses
+Extract visible spectrogram
+Extract voicing amplitude tier
+Extract waveforms as Sound
+Extract weights
+Extract windowed selection
+Extract windowed sound selection
+Extract within-group SSCP
+Extract WordList
+extractLine$
+extractNumber
+extractWord$
+extrema
+extremum
+F1 & F2 range
+factor
+Fade
+Fade in
+Fade out
+fappendinfo
+features
+FeatureWeights
+Feedforward
+Feedforward neural networks
+FFNet
+FFNet help
+fft
+Fifth
+fifth
+Fifth down
+Fifth up
+file
+fileappend
+filedelete
+FileInMemory
+fileReadable
+files
+FilesInMemory
+Fill
+Fill inner contour
+filter
+Filter
+Filter (de-emphasis)
+Filter (formula)
+Filter (gammatone)
+Filter (inverse)
+Filter (inverse) with filter at time
+Filter (no scale)
+Filter (one formant)
+Filter (pass Hann band)
+Filter (pre-emphasis)
+Filter (stop Hann band)
+Filter by vocal tract
+Filter with filter at time
+Filter with one formant (in-line)
+Filtering
+Filtering tutorial
+filters
+Find
+Find again
+Find path
+Find path (band & slope)
+Find path inside
+Find positive weights
+finder
+finishing
+first
+fisherP
+fisherQ
+fit
+Fit
+Fit model
+fixed
+fixed$
+FLAC
+floating
+floor
+flutter
+followed
+Font
+font
+Font size
+fontless
+for
+Forget
+Forget duration
+form
+Formant
+formant
+Formant help
+Formant listing
+Formant settings
+FormantFilter
+FormantFilter help
+FormantGrid
+FormantGrid help
+FormantModeler
+formants
+FormantTier
+FormantTier help
+Formula
+formula
+Formula (bandwidths)
+Formula (blue)
+Formula (column range)
+Formula (delta formant bandwidths)
+Formula (delta formant frequencies)
+Formula (distances)
+Formula (frequencies)
+Formula (frication formant bandwidths)
+Formula (frication formant frequencies)
+Formula (green)
+Formula (nasal antiformant bandwidths)
+Formula (nasal antiformant frequencies)
+Formula (nasal formant bandwidths)
+Formula (nasal formant frequencies)
+Formula (oral formant bandwidths)
+Formula (oral formant frequencies)
+Formula (part)
+Formula (red)
+Formula (tracheal antiformant bandwidths)
+Formula (tracheal antiformant frequencies)
+Formula (tracheal formant bandwidths)
+Formula (tracheal formant frequencies)
+Formula (transparency)
+Formulas
+Formulas tutorial
+forward
+fourth
+fraction
+frame
+frames
+free
+freedom
+freq
+frequencies
+frequency
+Frequently
+Frequently asked questions
+frication
+from
+function
+functions
+gain
+gamma-tone
+gammatone
+Ganong
+garnish
+GaussianMixture
+GaussianMixture help
+gaussP
+gaussQ
+gender
+Generate
+Generate inputs
+Genericize
+Genericize entire TextGrid
+Get
+Get absolute extremum
+Get accuracy estimate
+Get activity
+Get additive constant
+Get amplitude at time
+Get angle between pc1-pc2 planes
+Get area
+Get aspiration amplitude at time
+Get average costs
+Get average distance between tracks
+Get band density
+Get band density difference
+Get band energy
+Get band energy difference
+Get band from frequency
+Get band width
+Get bandwidth
+Get bandwidth at time
+Get begin of selection
+Get bias
+Get bin from frequency
+Get bin number from frequency
+Get bin width
+Get breathiness amplitude at time
+Get c0 value in frame
+Get candidate
+Get category of output unit
+Get central moment
+Get centre of gravity
+Get centre points
+Get centroid element
+Get channel name
+Get channel number
+Get chi squared probability
+Get class index
+Get class label
+Get coefficient
+Get coefficient of determination
+Get collision phase at time
+Get column distance
+Get column index
+Get column label
+Get column sum
+Get confidence ellipse area
+Get constraint
+Get constraint number
+Get cost (others)
+Get CPPS
+Get CPPS (hillenbrand)
+Get Cramer's statistic
+Get cross-entropy
+Get cumulative contribution of components
+Get cursor
+Get data point sigma
+Get data point status
+Get data point value
+Get data standard deviation...
+Get degree
+Get degrees of freedom
+Get degrees of freedom...
+Get deletion cost
+Get delta bandwidth at time
+Get delta formant at time
+Get delta formant bandwidth at time
+Get delta formant frequency at time
+Get diagonality (bartlett)
+Get diagonality measure
+Get difference
+Get dimension of component
+Get dimension of functions
+Get disharmony
+Get distance (weighted)
+Get distance value
+Get double pulsing at time
+Get duration
+Get eigenvalue
+Get eigenvector dimension
+Get eigenvector element
+Get emission probability
+Get end of selection
+Get end point
+Get end point of interval
+Get end points
+Get end quefrency
+Get end time
+Get end time (x)
+Get end time (y)
+Get energy
+Get energy in air
+Get entropy
+Get equality of eigenvalues
+Get expected duration in state
+Get finishing time
+Get first bandwidth
+Get first formant
+Get flutter at time
+Get formant
+Get formant at time
+Get formant standard deviation
+Get formants constraints factor
+Get fourth bandwidth
+Get fourth formant
+Get fraction correct
+Get fraction correct (maximum likelihood)
+Get fraction correct (probability matching)
+Get fraction different
+Get fraction variance
+Get fraction variance accounted for
+Get fraction variation
+Get frame duration
+Get frame from time
+Get frame length
+Get frame number from time
+Get frame number from time (x)
+Get frame number from time (y)
+Get frequency at frequency cursor
+Get frequency distance
+Get frequency from band
+Get frequency from bin
+Get frequency from bin number
+Get frequency from row
+Get frequency in Bark
+Get frequency in Hertz
+Get frequency in mel
+Get frequency of maximum
+Get frequency of minimum
+Get frication amplitude at time
+Get frication bypass at time
+Get frication formant amplitude at time
+Get frication formant bandwidth at time
+Get frication formant frequency at time
+Get grand sum
+Get group mean
+Get high index
+Get high index from time
+Get high interval at time
+Get highest frequency
+Get highest x
+Get highest y
+Get imaginary part of root
+Get imaginary value in bin
+Get index
+Get index from time
+Get input
+Get inputs
+Get insertion cost
+Get intensity
+Get intensity (dB)
+Get interpretive parse
+Get interval
+Get interval at time
+Get interval boundary from time
+Get interval edge from time
+Get invTukeyQ
+Get jitter (ddp)
+Get jitter (local)
+Get jitter (local, absolute)
+Get jitter (ppq5)
+Get jitter (rap)
+Get kurtosis
+Get label
+Get label of interval
+Get label of point
+Get length
+Get likelihood value
+Get ln(determinant)
+Get ln(determinant_group)
+Get ln(determinant_total)
+Get local peak height
+Get location of point
+Get loudness
+Get low index
+Get low index from time
+Get low interval at time
+Get lowest frequency
+Get lowest x
+Get lowest y
+Get maximum
+Get maximum consecutive steps
+Get maximum distance
+Get maximum intensity
+Get maximum number of formants
+Get maximum pitch
+Get mean
+Get mean (curve)
+Get mean (points)
+Get mean absolute difference
+Get mean absolute slope
+Get mean period
+Get median absolute deviation
+Get minimum
+Get minimum distance
+Get minimum intensity
+Get minimum number correct
+Get minimum number of formants
+Get minimum pitch
+Get model value at time
+Get model value at x
+Get nasal antiformant bandwidth at time
+Get nasal antiformant frequency at time
+Get nasal formant amplitude at time
+Get nasal formant bandwidth at time
+Get nasal formant frequency at time
+Get nearest index
+Get nearest index from time
+Get nearest zero crossing
+Get number of bands
+Get number of bins
+Get number of candidates
+Get number of categories
+Get number of channels
+Get number of classes
+Get number of coefficients
+Get number of columns
+Get number of components
+Get number of components (VAF)
+Get number of constraints
+Get number of data points
+Get number of data points...
+Get number of differences
+Get number of eigenvectors
+Get number of elements
+Get number of fixed parameters
+Get number of formants
+Get number of frames
+Get number of frames (x)
+Get number of frames (y)
+Get number of frequencies
+Get number of functions
+Get number of groups
+Get number of hidden units
+Get number of hidden weights
+Get number of inputs
+Get number of intervals
+Get number of invalid data points
+Get number of invalid data points...
+Get number of observations
+Get number of optimal candidates
+Get number of output weights
+Get number of outputs
+Get number of pairs
+Get number of parameters
+Get number of periods
+Get number of points
+Get number of quefrency bins
+Get number of roots
+Get number of rows
+Get number of samples
+Get number of strings
+Get number of tableaus
+Get number of tiers
+Get number of tracks...
+Get number of trials
+Get number of violations
+Get open phase at time
+Get optimized parameters
+Get oral formant amplitude at time
+Get oral formant bandwidth at time
+Get oral formant frequency at time
+Get order
+Get output
+Get output unit of category
+Get outputs
+Get p (time, state)
+Get p (time, state, symbol)
+Get parameter standard deviation
+Get parameter status
+Get parameter value
+Get peak
+Get peak prominence
+Get peak prominence (hillenbrand)
+Get perplexity
+Get pitch
+Get pitch at time
+Get point (x)
+Get point (y)
+Get points
+Get points (followed)
+Get points (preceded)
+Get power
+Get power at
+Get power in air
+Get power1 at time
+Get power2 at time
+Get probability
+Get probability (label)
+Get probability at position
+Get probability staying in state
+Get quantile
+Get quantile of bandwidth
+Get quefrency of peak
+Get quefrency step
+Get ranking value
+Get real part of root
+Get real value in bin
+Get residual sum of squares
+Get response
+Get response sum
+Get resynthesis (LPC)
+Get resynthesis (overlap-add)
+Get resynthesis (PSOLA)
+Get rhamonics to noise ratio
+Get root
+Get root-mean-square
+Get row distance
+Get row index
+Get row label
+Get row sum
+Get sample duration
+Get sample number from time
+Get sample period
+Get sample rate
+Get sampling frequency
+Get sampling interval
+Get sampling period
+Get scale
+Get second bandwidth
+Get second formant
+Get selection length
+Get shimmer (apq11)
+Get shimmer (apq3)
+Get shimmer (apq5)
+Get shimmer (dda)
+Get shimmer (local)
+Get shimmer (local, dB)
+Get shimmer (local_dB)
+Get sigma ellipse area
+Get significance of means difference
+Get significance of one mean
+Get significance of one variance
+Get significance of variances ratio
+Get size of instancebase
+Get skewness
+Get slope
+Get slope without octave jumps
+Get smoothness value
+Get source index
+Get spectral power at cursor cross
+Get spectral tilt at time
+Get standard deviation
+Get standard deviation (curve)
+Get standard deviation (points)
+Get start of selection
+Get start point
+Get start probability
+Get start quefrency
+Get start time
+Get start time (x)
+Get start time (y)
+Get starting point
+Get starting point of interval
+Get starting points
+Get starting time
+Get state label
+Get stdev period
+Get stimulus
+Get stimulus sum
+Get stress
+Get stress (absolute mds)
+Get stress (i-spline mds)
+Get stress (interval mds)
+Get stress (monotone mds)
+Get stress (ratio mds)
+Get string
+Get string1
+Get string2
+Get substitution cost
+Get sum
+Get sum of eigenvalues
+Get symbol label
+Get table norm
+Get target
+Get target duration
+Get target index
+Get third bandwidth
+Get third formant
+Get tier name
+Get tilt line intercept
+Get tilt line slope
+Get time along path
+Get time from column
+Get time from frame
+Get time from frame number
+Get time from frame number (x)
+Get time from frame number (y)
+Get time from index
+Get time from sample number
+Get time of maximum
+Get time of minimum
+Get time of point
+Get time step
+Get time step (x)
+Get time step (y)
+Get total costs
+Get total duration
+Get total duration (x)
+Get total duration (y)
+Get total variance
+Get tracheal antiformant bandwidth at time
+Get tracheal antiformant frequency at time
+Get tracheal formant amplitude at time
+Get tracheal formant bandwidth at time
+Get tracheal formant frequency at time
+Get transformation element
+Get transition probability
+Get translation element
+Get TukeyQ
+Get VAF
+Get value
+Get value (complex)
+Get value (labels)
+Get value at frequency
+Get value at index
+Get value at sample number
+Get value at time
+Get value at xy
+Get value in band
+Get value in bin
+Get value in cell
+Get value in frame
+Get variance of parameters
+Get voice name
+Get voice variant
+Get voicing amplitude at time
+Get weight
+Get Wilks lambda
+Get winner
+Get x of column
+Get x of maximum
+Get x of minimum
+Get x time
+Get x time from y time
+Get y of row
+Get y time
+Get y time from x time
+Get zero correlation probability
+GIF
+glottal
+gne
+Go to line
+Go to manual page
+goto
+grammar
+grammatical
+grammatical?
+grand
+graph
+graphical
+gravity
+green
+Green
+Grey
+grid
+group
+Group
+Group responses
+Group stimuli
+groups
+gsvd
+GSVD
+H1H2
+Hann
+harmonically
+Harmonicity
+Harmonicity help
+harmonics
+harmony
+Has
+Has word
+headerless
+height
+help
+Helvetica
+Hertz
+hertzToBark
+hertzToErb
+hertzToMel
+hertzToSemitones
+hidden
+Hide
+Hide action command
+Hide menu command
+high
+highest
+hillenbrand
+histogram
+history
+History
+HMM
+HMM help 
+HMM_ObservationSequence
+HMM_StateSequence
+homeDirectory$
+Horizontal
+horizontal
+Horizontal error bars plot
+Horizontal error bars plot where
+Horizontal mm to wc
+Horizontal wc to mm
+HTML
+Hum
+hum
+hyperplane
+i-spline
+icon
+illustration
+image
+imaginary
+imax
+imin
+Improve
+Improve diagonality
+Improve likelihood
+Improve unmixing
+in-line
+include
+incompleteBeta
+incompleteGammaP
+Increase
+index
+Index
+Index help
+index_regex
+indscal
+INDSCAL
+info
+Info
+info$
+Initialization
+Initialization scripts
+inner
+input
+Input
+Input to output
+Input to outputs
+inputs
+Inputs
+Inputs to outputs
+Insert
+Insert boundary
+Insert column
+Insert column (index)
+Insert interval tier
+Insert picture from file
+Insert point
+Insert point tier
+Insert row
+Insert row (index)
+Insert string
+insertion
+inside
+Inspect
+instancebase
+instar
+integer
+intensities
+Intensity
+intensity
+Intensity help
+Intensity listing
+Intensity settings
+IntensityTier
+IntensityTier help
+intercept
+Interleave
+Interpolate
+Interpolate quadratically
+Interpolate quadratically (4 pts)
+interpretive
+Interrupt
+Interrupt playing
+Intersection
+intersections
+interval
+intervals
+IntervalTier
+IntervalTier help
+Into
+into
+Into TextGrid
+Intro
+invalid
+invBinomialP
+invBinomialQ
+invChiSquareQ
+inverse
+Invert
+Invert dimension
+Invert eigenvector
+invFisherQ
+invGaussQ
+invSigmoid
+invStudentQ
+invTukeyQ
+iris
+Is candidate grammatical
+Is candidate singly grammatical
+Is interval tier
+Is partial output grammatical
+Is partial output singly grammatical
+Is word allowed
+ISpline
+ISpline help
+items
+jitter
+Join
+JPEG
+JPEG-2000
+jumps
+Kay
+keep
+Kendall
+Kill
+Kill octave jumps
+KlattGrid
+KlattGrid help
+KlattTable
+KlattTable help
+kNN
+KNN
+kNN classifiers
+kNN help
+knots
+kruskal
+Kruskal-Wallis
+kurtosis
+label
+labels
+Lag
+Lag plot
+Lag plot where
+lambda
+later
+layer
+lda
+leak
+Learn
+Learn from partial outputs
+Learn from partial outputs (eip)
+Learn from partial outputs (rrip)
+Learn from partial outputs (wrip)
+Learn one
+Learn one from partial output
+Learn slow
+learning
+left
+left$
+LegendreSeries
+LegendreSeries help
+length
+Lengthen
+Lengthen (overlap-add)
+Lengthen (PSOLA)
+letter
+levels
+LFCC
+LFCC help
+likelihood
+Lime
+line
+Line
+Line graph where
+Line width
+linear
+linear#
+lines
+list
+List
+List nodes
+List obligatory rankings
+List readable types of objects
+list?
+listing
+little-endian
+ln(determinant)
+ln(determinant_group)
+ln(determinant_total)
+lnBeta
+lnGamma
+local
+local, 
+local_dB
+location
+log
+Log
+Log 1
+Log 2
+Log script 3 (...)
+Log script 4 (...)
+Log settings
+log10
+log2
+Logarithmic
+logarithmic
+Logarithmic marks bottom
+Logarithmic marks left
+Logarithmic marks right
+Logarithmic marks top
+logistic
+long
+LongSound
+LongSound help
+LongSound info
+LongSound preferences
+LongSoundEditor
+LongSoundEditor help
+lossy
+loudness
+low
+lowest
+lpc
+LPC
+LPC -- Pitch  ("LPC pitch manipulation")
+LPC help
+LPC smoothing
+Ltas
+Ltas help
+LVS
+macintosh
+Magenta
+mahalanobis
+manipulation
+Manipulation
+Manipulation help
+ManipulationEditor
+ManipulationEditor help
+manual
+Manual
+Manual help
+Map
+marginal
+marginals
+mark
+marked
+marker
+marks
+Marks
+Marks bottom
+Marks bottom every
+Marks left
+Marks left every
+Marks right
+Marks right every
+Marks top
+Marks top every
+Maroon
+marple
+matching
+Matrix
+matrix
+Matrix help
+max
+max.
+maximum
+mds
+MDS
+MDS tutorial
+mean
+means
+measure
+Measure
+Measure typology
+mechanism
+median
+medians
+mel
+MelFilter
+MelFilter help
+melToHertz
+memory
+menu
+Merge
+Merge (append rows)
+mesh
+metafile
+method
+metrics
+MFCC
+MFCC help
+mid$
+min
+Minimize
+minimum
+minus
+minusObject
+Mix
+mixing
+MixingMatrix
+mod
+model
+Modify
+Modify trajectory duration
+modulated
+modulation
+moment
+monic
+mono
+Monotone
+monotone
+Monotone regression
+Mouse
+Mouse selects inner viewport
+Mouse selects outer viewport
+Move
+Move begin of selection by
+Move begin of selection left
+Move begin of selection right
+Move begin of selection to nearest zero crossing
+Move cursor by
+Move cursor to
+Move cursor to begin of selection
+Move cursor to end of selection
+Move cursor to maximum pitch
+Move cursor to minimum pitch
+Move cursor to nearest peak
+Move cursor to nearest zero crossing
+Move cursor to start of selection
+Move end of selection by
+Move end of selection left
+Move end of selection right
+Move end of selection to nearest zero crossing
+Move frequency cursor to
+Move start of selection by
+Move start of selection left
+Move start of selection right
+Move start of selection to nearest zero crossing
+Move to nearest zero crossing
+movie
+Movie
+MSpline
+MSpline help
+multi-level
+Multiply
+Multiply by window
+Multiply frequencies
+Multiply pitch frequencies
+multivariate
+name
+names
+narrowly
+nasal
+Nativize
+Nativize entire TextGrid
+natural
+Navy
+ncol
+near
+nearest
+Network
+networks
+neural
+new
+New
+New duration
+New editor script
+New Praat script
+New trajectory
+new?
+newline$
+next
+Next
+Next not allowed word
+Next/Sun
+NeXt/Sun
+NeXT/Sun
+Nierop
+ninth
+NIST
+nocheck
+NoCoda
+node
+Nodes
+nodes
+Nodes down to table
+noise
+non-empty
+noprogress
+norm
+Normal
+Normal probability plot
+Normal probability plot where
+normality
+Normalize
+Normalize activities
+Normalize columns
+Normalize rows
+Normalize table
+Normalize weights
+not
+nowarn
+nrow
+number
+numberOfColumns
+numberOfRows
+numberOfSelected
+numbers
+numeric
+Object
+object
+Object window
+Object window help
+object$
+objects
+objectsAreIdentical
+obligatory
+observations
+Octave
+octave
+Octave down
+Octave up
+Olive
+One
+one
+One logarithmic mark bottom
+One logarithmic mark left
+One logarithmic mark right
+One logarithmic mark top
+One mark bottom
+One mark left
+One mark right
+One mark top
+one-way
+only
+Open
+open
+Open editor script...
+Open long sound file
+Open movie file
+Open Praat script...
+Open...
+operations
+optimal
+optimized
+option
+optionMenu
+oral
+order
+original
+OT learning tutorial
+OTGrammar
+OTGrammar help
+OTGrammarEditor
+OTGrammarEditor help
+others
+out
+outer
+outliers
+output
+outputs
+outstar
+overlap
+overlap-add
+Overlap-add
+Override
+Override sample rate
+Override sampling frequency
+Page
+page
+Page setup...
+Paint
+Paint cells
+Paint circle
+Paint circle (mm)
+Paint circles
+Paint contours
+Paint distances
+Paint ellipse
+Paint enclosed
+Paint image
+Paint one image
+Paint rectangle
+Paint rounded rectangle
+Paint surface
+Paint visible spectrogram
+Paint where
+PairDistribution
+PairDistribution help
+pairs
+Palatino
+ParamCurve
+ParamCurve help
+parameter
+parameters
+parse
+part
+partial
+parts
+pass
+Pass
+Pass band
+Paste
+Paste after selection
+Paste history
+Paste text
+path
+Path
+Path finder
+Pattern
+Patterns
+pause
+pauseScript
+pc1-pc2
+pca
+PCA
+PCA help
+PDF
+pdf
+peak
+peaks
+Pearson
+percent$
+period
+periodic, 
+periods
+permutation
+Permutation
+Permutation help
+Permute
+Permute items
+Permute randomly
+Permute randomly (blocks)
+Permute rows
+Permute strings
+perplexity
+Peterson
+phase
+phases
+phonation
+phone
+Phonetic
+Phonetic symbols
+phonetogram
+phonToDifferenceLimens
+Photo
+Picture
+picture
+Picture info
+Picture settings report
+Picture window help
+Pink
+Pitch
+pitch
+Pitch help
+Pitch listing
+Pitch settings
+pitch-corrected
+Pitch?
+PitchEditor
+PitchEditor help
+PitchModeler
+PitchTier
+PitchTier help
+PitchTierEditor
+PitchTierEditor help
+place
+Plain
+Plain line
+plane
+planes
+plasticity
+Play
+Play (LPC)
+Play (overlap-add)
+Play (PSOLA)
+Play as frequency shifted
+Play as pulse train
+Play movie
+Play one channel
+Play or stop
+Play part
+Play pulses
+Play sine
+Play special
+Play text
+Play window
+playing
+plot
+plots
+plus
+plusObject
+PNG
+point
+point(s)
+PointEditor
+PointEditor help
+PointProcess
+PointProcess help
+points
+Poisson
+poles
+Polish
+Polish roots
+Pols
+Polygon
+Polygon help
+Polynomial
+Polynomial help
+position
+positions
+positive
+PostScript
+PostScript settings...
+PostScript text width (mm)
+PostScript text width (wc)
+power
+Power
+power1
+power2
+PowerCepstrogram
+PowerCepstrogram help
+PowerCepstrum
+PowerCepstrum help
+ppq5
+Praat
+praat
+Praat Intro
+Praat script
+Praat test
+praatVersion
+praatVersion$
+pre-emphasis
+Pre-emphasize
+Pre-emphasize (in-line)
+preceded
+preferences
+Preferences
+preferencesDirectory$
+preserve
+previous
+Previous
+primitive
+principal
+print
+Print
+Print manual
+Print...
+printline
+printtab
+prob.
+probabilities
+probability
+procedure
+process
+Procrustes
+Procrustes help
+product
+program
+Programming
+Project
+prominence
+properties
+proportions
+Prune
+PSOLA
+pts
+Publish
+Publish band
+Publish band-filtered sound
+Publish resynthesis
+Publish Sound
+pulse
+Pulse
+Pulse listing
+pulse(s)
+Pulses
+pulses
+Pulses & LPC -- ("LPC resynthesis")
+Pulses (hum) --
+Pulses --
+Pulses -- Pitch
+Pulses -- Pitch (hum)
+pulsing
+pure
+Purple
+quadratically
+quantile
+Quantile-quantile
+Quantile-quantile plot
+Quantile-quantile plot (between levels)
+quefrency
+questions
+quotient
+random
+randomBinomial
+randomGauss
+randomGauss#
+randomInteger
+randomInteger#
+Randomize
+Randomize rows
+randomly
+randomPoisson
+randomUniform
+randomUniform#
+range
+ranges
+rank
+ranking
+rankings
+rap
+rate
+ratio
+raw
+Read
+Read from file
+Read from praat picture file
+Read IntervalTier from Xwaves
+Read KlattTable from raw text file
+Read Matrix from LVS AP file
+Read Matrix from raw text file
+Read separate channels from sound file
+Read Sound from raw 16-bit Big Endian file
+Read Sound from raw Alaw file
+Read Strings from raw text file
+Read Table from comma-separated file
+Read Table from tab-separated file
+Read Table from table file
+Read Table from whitespace-separated file
+Read TableOfReal from headerless spreadsheet file
+Read TextTier from Xwaves
+Read two Sounds from stereo file
+readable
+readFile
+readFile$
+reading
+real
+reconstruct
+Record
+Record mono Sound...
+Record Sound (fixed time)
+Record stereo Sound...
+recording
+recoverably
+rectangle
+rectangular
+red
+Red
+Redo
+reference
+Reflect
+Reflect rows
+regression
+Reject
+Reject artefacts
+relations
+Remove
+Remove all text from tier
+Remove amplitude points between
+Remove aspiration amplitude points
+Remove aspiration amplitude points between
+Remove bandwidth points between
+Remove boundary at time
+Remove breathiness amplitude points
+Remove breathiness amplitude points between
+Remove collision phase points
+Remove collision phase points between
+Remove column
+Remove column (index)
+Remove constraint
+Remove delta bandwidth points between
+Remove delta formant
+Remove delta formant bandwidth points
+Remove delta formant frequency and bandwidth tiers
+Remove delta formant frequency points
+Remove delta formant points between
+Remove double pulsing points
+Remove double pulsing points between
+Remove duration point(s)
+Remove entire tier
+Remove events between
+Remove flutter points
+Remove flutter points between
+Remove formant points between
+Remove frication amplitude points
+Remove frication amplitude points between
+Remove frication bypass points
+Remove frication bypass points between
+Remove frication formant
+Remove frication formant amplitude points
+Remove frication formant amplitude tier
+Remove frication formant bandwidth points
+Remove frication formant frequency and bandwidth tiers
+Remove frication formant frequency points
+Remove harmonically bounded candidates
+Remove left boundary
+Remove nasal antiformant
+Remove nasal antiformant bandwidth points
+Remove nasal antiformant frequency and bandwidth tiers
+Remove nasal antiformant frequency points
+Remove nasal formant
+Remove nasal formant amplitude points
+Remove nasal formant amplitude tier
+Remove nasal formant bandwidth points
+Remove nasal formant frequency and bandwidth tiers
+Remove nasal formant frequency points
+Remove noise
+Remove open phase points
+Remove open phase points between
+Remove oral formant
+Remove oral formant amplitude points
+Remove oral formant amplitude tier
+Remove oral formant bandwidth points
+Remove oral formant frequency and bandwidth tiers
+Remove oral formant frequency points
+Remove pitch point(s)
+Remove pitch points
+Remove pitch points between
+Remove point
+Remove point near
+Remove point(s)
+Remove points
+Remove points below
+Remove points between
+Remove power1 points
+Remove power1 points between
+Remove power2 points
+Remove power2 points between
+Remove pulse(s)
+Remove right boundary
+Remove row
+Remove row (index)
+Remove spectral tilt points
+Remove spectral tilt points between
+Remove string
+Remove tier
+Remove tracheal antiformant
+Remove tracheal antiformant bandwidth points
+Remove tracheal antiformant frequency and bandwidth tiers
+Remove tracheal antiformant frequency points
+Remove tracheal formant
+Remove tracheal formant amplitude points
+Remove tracheal formant amplitude tier
+Remove tracheal formant bandwidth points
+Remove tracheal formant frequency and bandwidth tiers
+Remove tracheal formant frequency points
+Remove triggers
+Remove unshared stimuli
+Remove voicing amplitude points
+Remove voicing amplitude points between
+Remove zero weights
+removeObject
+Rename
+Rename tier
+Reopen
+Reopen from disk
+repeat
+Replace
+Replace again
+Replace all
+Replace amplitude tier
+Replace blue
+Replace collision phase tier
+Replace delta formant grid
+Replace double pulsing tier
+Replace duration tier
+Replace duration tier?
+Replace flutter tier
+Replace formant grid
+Replace frication amplitude tier
+Replace frication bypass tier
+Replace frication formant amplitude tier
+Replace frication formant grid
+Replace green
+Replace interval text
+Replace matrix
+Replace nasal antiformant grid
+Replace nasal formant amplitude tier
+Replace nasal formant grid
+Replace open phase tier
+Replace oral formant amplitude tier
+Replace oral formant grid
+Replace original sound
+Replace pitch tier
+Replace pitch tier?
+Replace point text
+Replace power1 tier
+Replace power2 tier
+Replace pulses
+Replace red
+Replace spectral tilt tier
+Replace TextGrid
+Replace tracheal antiformant grid
+Replace tracheal formant amplitude tier
+Replace tracheal formant grid
+Replace transparency
+Replace user dictionary
+Replace voicing amplitude tier
+Replace word list?
+Replace WordList
+replace$
+replace_regex$
+report
+Report
+Report chi squared
+Report correlation (Kendall tau)
+Report correlation (Pearson r)
+Report difference (Student t)
+Report difference of two proportions
+Report equality of covariances
+Report floating point properties
+Report graphical properties
+Report group difference (Student t)
+Report group difference (Wilcoxon rank sum)
+Report group mean (Student t)
+Report integer properties
+Report mean (Student t)
+Report memory use
+Report multivariate mean difference
+Report one-way Kruskal-Wallis
+Report spectral tilt
+Report text properties
+Report two-way anova
+Resample
+Reset
+Reset all rankings
+Reset to random ranking
+Reset to random total ranking
+Reset...
+residual
+response
+responses
+results
+resynthesis
+Reverse
+Reverse selection
+Reverse trajectory
+Reverse X
+Reverse Y
+rhamonics
+right
+right$
+rindex
+rindex_regex
+robust
+root
+root-mean-square
+roots
+Roots
+Roots help
+Rotate
+Rotate (pc)
+round
+rounded
+row
+row$
+Rows
+rows
+Rows to columns
+rrip
+rule
+Run
+Run selection
+runScript
+Salesperson
+Salience
+sample
+samples
+sampling
+Save
+Save as 24-bit WAV file
+Save as 300-dpi PNG file
+Save as 32-bit WAV file
+Save as 600-dpi PNG file
+Save as AIFC file
+Save as AIFF file
+Save as Apple icon file
+Save as binary file
+Save as binary file without Sound
+Save as chronological text file
+Save as comma-separated file
+Save as EPS file
+Save as FLAC file
+Save as fontless EPS file (SILIPA)
+Save as fontless EPS file (XIPA)
+Save as GIF file
+Save as headerless spreadsheet file
+Save as JPEG-2000 file
+Save as Kay sound file
+Save as lossy JPEG file
+Save as matrix text file
+Save as NeXT/Sun file
+Save as Next/Sun file
+Save as NIST file
+Save as PDF file
+Save as PitchTier spreadsheet file
+Save as PNG file
+Save as praat picture file
+Save as raw 16-bit big-endian file
+Save as raw 16-bit little-endian file
+Save as raw 24-bit big-endian file
+Save as raw 24-bit little-endian file
+Save as raw 32-bit big-endian file
+Save as raw 32-bit little-endian file
+Save as raw 8-bit signed file
+Save as raw 8-bit unsigned file
+Save as raw text file
+Save as Sesam file
+Save as short text file
+Save as stereo AIFC file
+Save as stereo AIFF file
+Save as stereo NeXt/Sun file
+Save as stereo NIST file
+Save as stereo WAV file
+Save as Sun audio file
+Save as tab-separated file
+Save as table file
+Save as text file
+Save as text file without Sound
+Save as TIFF file
+Save as WAV file
+Save as Windows bitmap file
+Save as Windows icon file
+Save as Windows metafile
+Save as Xwaves label file
+Save as...
+Save left channel as AIFC file
+Save left channel as AIFF file
+Save left channel as FLAC file
+Save left channel as Next/Sun file
+Save left channel as NIST file
+Save left channel as WAV file
+Save manual to HTML directory
+Save page as HTML file
+Save part as audio file
+Save right channel as AIFC file
+Save right channel as AIFF file
+Save right channel as FLAC file
+Save right channel as Next/Sun file
+Save right channel as NIST file
+Save right channel as WAV file
+Save selected sound as 24-bit WAV file
+Save selected sound as 32-bit WAV file
+Save selected sound as AIFC file
+Save selected sound as AIFF file
+Save selected sound as FLAC file
+Save selected sound as Next/Sun file
+Save selected sound as NIST file
+Save selected sound as WAV file
+Save TextGrid as text file
+Save to HTML directory
+ScalarProduct
+scale
+Scale
+Scale coefficients (monic)
+Scale intensity
+Scale peak
+Scale times
+Scale times by
+Scale times to
+Scale x
+scales
+scaling
+scalp
+scatter
+Scatter
+Scatter plot
+Scatter plot (mark)
+Scatter plot where
+Scatter plot where (mark)
+script
+ScriptEditor
+Scripting
+Scripting examples
+Scripting tutorial
+scripts
+Scroll
+Scroll page back
+Scroll page forward
+Search
+Search column
+Search for page (list)
+Search manual...
+Search Praat manual
+second
+segments
+select
+Select
+select all
+Select all weights
+Select biases
+Select earlier
+Select eighth
+Select fifth
+Select first
+Select formant or bandwidth
+Select fourth
+Select inner viewport
+Select later
+Select next interval
+Select next tier
+Select ninth
+Select outer viewport
+Select previous interval
+Select previous tier
+Select rows where column
+Select second
+Select seventh
+Select sixth
+Select third
+selected
+selected$
+selection
+selectObject
+selects
+self
+self$
+semitones
+semitonesToHertz
+Send
+Send back to calling program
+sendpraat
+sendsocket
+sentence
+separate
+separately
+Sesam
+set
+Set
+Set activity
+Set activity clipping rule
+Set activity leak
+Set bandwidth range
+Set bias
+Set centroid
+Set channel name
+Set channel to zero
+Set clamping
+Set coefficient
+Set column label (index)
+Set column label (label)
+Set constraint plasticity
+Set costs (others)
+Set data point sigma
+Set data point status
+Set data point value
+Set data weighing
+Set decision strategy
+Set default costs
+Set deletion costs
+Set distance value
+Set domain
+Set duration range
+Set dynamic range
+Set emission probabilities
+Set F0
+Set F3 & F4
+Set formant range
+Set group labels
+Set harmony computation method
+Set id
+Set insertion costs
+Set instar
+Set interval text
+Set leak
+Set length
+Set new edit costs
+Set numeric value
+Set outstar
+Set parameter free
+Set parameter value fixed
+Set parameter values to zero
+Set part to zero
+Set pitch dragging strategy
+Set pitch range
+Set pitch units
+Set point text
+Set ranking
+Set root
+Set row label (index)
+Set row label (label)
+Set selection to zero
+Set shunting
+Set source symbol (index)
+Set speech output settings
+Set start probabilities
+Set string
+Set string value
+Set substitution costs
+Set target
+Set target symbol (index)
+Set text input settings
+Set tier name
+Set tolerance
+Set transition probabilities
+Set value
+Set value at index
+Set value at sample number
+Set weight
+Set weight leak
+Settings
+settings
+Settings report
+setup
+seventh
+shellDirectory$
+Shepard
+Shift
+Shift frequencies
+Shift pitch frequencies
+Shift times by
+Shift times to
+Shift to zero
+Shift trajectory
+shifted
+shimmer
+short
+Show
+Show action command
+Show all
+Show analyses
+Show as code
+Show bandwidths
+Show menu command
+Show one file as code
+Show one vowel mark
+Show trajectory time marks every
+Show vowel marks
+Show vowel marks from fixed set
+Show vowel marks from Table file
+shs
+Shuffle
+shunting
+sigma
+sigmoid
+signed
+significance
+silences
+SILIPA
+Silver
+Similarity
+Similarity help
+simple
+Simplify
+sin
+sinc
+sincpi
+sine
+singly
+singular
+sinh
+sixth
+size
+skewness
+slice
+slice, 
+slope
+slow
+Smooth
+Smooth (in-line)
+smoothest
+smoothing
+smoothness
+Solid
+Solid line
+Solve
+Solve equation
+Sort
+sort
+Sort by column
+Sort by label
+Sort rows
+sorting
+Sound
+sound
+Sound & Pulses -- Pitch & Duration  ("Overlap-add manipulation")
+Sound help
+Sound info
+Sound playing preferences
+Sound recording preferences
+Sound scaling
+Sound?
+SoundEditor
+SoundEditor help
+soundPressureToPhon
+SoundRecorder
+SoundRecorder help
+Sounds
+source
+speaker
+Speaker
+Speaker help
+special
+Speckle
+Speckle (phonetogram)
+Speckle erb
+Speckle logarithmic
+Speckle mel
+Speckle semitones
+Speckle semitones (re 100 Hz)
+Speckle semitones (re 200 Hz)
+Speckle semitones (re 440 Hz)
+Speckle separately
+Speckle separately (erb)
+Speckle separately (logarithmic)
+Speckle separately (mel)
+Speckle separately (semitones)
+Speckle size
+spectral
+spectrogram
+Spectrogram
+Spectrogram help
+Spectrogram settings
+Spectrum
+spectrum
+Spectrum help
+SpectrumEditor
+SpectrumEditor help
+SpectrumTier
+speech
+SpeechSynthesizer
+SpeechSynthesizer help
+spelling
+SpellingChecker
+SPINET
+splines
+Split
+Split component
+Split into Pattern and Categories
+Spread
+Spread activities
+spreadsheet
+sqrt
+squared
+squares
+SSCP
+SSCP help
+standard
+Standardize
+Standardize columns
+Standardize rows
+start
+Start
+Start to centre
+starting
+startsWith
+state
+state, 
+statistic
+Statistics
+Statistics tutorial
+status
+staying
+stdev
+step
+steps
+stereo
+stimuli
+stimulus
+stop
+Stop
+Stop band
+Stop playing sound
+stopwatch
+strategy
+stress
+string
+string$
+string1
+string2
+Strings
+strings
+Strings help
+StringsEditor
+StringsEditor help
+Stringses
+StringsIndex
+Student
+studentP
+studentQ
+style
+styles
+Stylize
+Stylize pitch
+Stylize pitch (2 st)
+substitution
+Subtract
+Subtract baseline
+Subtract linear fit
+Subtract mean
+Subtract mean channel
+Subtract reference
+Subtract tilt
+Subtract tilt (in-line)
+Subtract trend line
+sum
+Sum
+Sun
+surface
+SVD
+Swap
+Swap axes
+Swap blocks
+Swap inputs and outputs
+Swap numbers
+Swap one from range
+Swap positions
+symbol
+symbols
+synthesis
+synthesizer
+system
+system_nocheck
+tab$
+tab-separated
+table
+Table
+Table help
+tableau
+tableaus
+TableEditor
+TableEditor help
+TableOfReal
+TableOfReal help
+tan
+tanh
+target
+tau
+Teal
+temporaryDirectory$
+Test
+test
+Test sorting
+tests
+text
+Text
+Text bottom
+Text left
+Text reading preferences
+Text right
+Text special
+Text top
+Text width (mm)
+Text width (wc)
+Text writing preferences
+TextGrid
+TextGrid help
+TextGridEditor
+TextGridEditor help
+TextTier
+TextTier help
+The
+The History mechanism
+then
+third
+tier
+tier?
+tiers
+TIFF
+tilt
+Time
+time
+Time step settings
+time, 
+Times
+times
+tiny
+To Activation
+To AffineTransform (congruence)
+To AmplitudeTier
+To AmplitudeTier (period)
+To AmplitudeTier (point)
+To Art (slice)
+To BarkFilter
+To Categories
+To Categories (responses)
+To Categories (stimuli)
+To CCA
+To Cepstrum
+To ClassificationTable
+To Cochleagram
+To Cochleagram (edb)
+To Configuration
+To Configuration (absolute mds)
+To Configuration (ca)
+To Configuration (i-spline mds)
+To Configuration (indscal)
+To Configuration (interval mds)
+To Configuration (kruskal)
+To Configuration (lda)
+To Configuration (monotone mds)
+To Configuration (pca)
+To Configuration (ratio mds)
+To Configuration (varimax)
+To Configuration (ytl)
+To Confusion
+To ContingencyTable
+To Correlation
+To Correlation (columns)
+To Correlation (rank)
+To Covariance
+To Covariance (between)
+To Covariance (channels)
+To Covariance (parameters)
+To Covariance (parameters)...
+To Covariance (total)
+To Covariance (within)
+To CrossCorrelationTable
+To CrossCorrelationTable (combined)
+To CrossCorrelationTables
+To DataModeler
+To Diagonalizer
+To Discriminant
+To Dissimilarity
+To Dissimilarity (pdf)
+To Distance
+To Distributions
+To DTW
+To EditDistanceTable
+To EEG (bss)
+To EEG (principal components)
+To EEG (whiten)
+To Eigen (gsvd)
+To ERP (mean)
+To ERPTier
+To ERPTier (bit)
+To ERPTier (marker)
+To ERPTier (triggers)
+To ERPTier (triggers, preceded)
+To Excitation
+To Excitation (slice)
+To Excitations
+To FeatureWeights
+To FFNet
+To FilesInMemory
+To Formant
+To Formant (burg)
+To Formant (interval)
+To Formant (keep all)
+To Formant (peaks)
+To Formant (robust)
+To Formant (sl)
+To FormantFilter
+To FormantModeler
+To FormantModeler (process outliers)
+To FormantTier
+To GaussianMixture
+To GaussianMixture (CEMM)
+To GaussianMixture (row labels)
+To GSVD
+To Harmonicity
+To Harmonicity (ac)
+To Harmonicity (cc)
+To Harmonicity (gne)
+To HMM
+To HMM_ObservationSequence
+To HMM_StateSequence
+To Intensity
+To IntensityTier
+To IntensityTier (peaks)
+To IntensityTier (valleys)
+To IntervalTier
+To KlattGrid
+To KlattGrid (simple)
+To KlattTable
+To KNN Classifier
+To LFCC
+To linear regression
+To logistic regression
+To LPC
+To LPC (autocorrelation)
+To LPC (burg)
+To LPC (covariance)
+To LPC (marple)
+To LPC (robust)
+To Ltas
+To Ltas (1-to-1)
+To Ltas (only harmonics)
+To Ltas (pitch-corrected)
+To Manipulation
+To Matrix
+To Matrix (cumm. distances)
+To Matrix (density)
+To Matrix (distances)
+To Matrix (features)
+To Matrix (unwrap)
+To MelFilter
+To MFCC
+To MixingMatrix
+To output Distribution
+To output Distributions
+To PairDistribution
+To ParamCurve
+To Pattern
+To Pattern and Categories
+To PCA
+To Permutation
+To Permutation (sort row labels)
+To Pitch
+To Pitch (ac)
+To Pitch (cc)
+To Pitch (shs)
+To Pitch (SPINET)
+To PitchModeler
+To PitchTier
+To PointProcess
+To PointProcess (cc)
+To PointProcess (extrema)
+To PointProcess (peaks)
+To PointProcess (periodic, cc)
+To PointProcess (periodic, peaks)
+To PointProcess (zeroes)
+To Polygon
+To Polygon (enclosed)
+To Polynomial
+To Polynomial (derivative)
+To Polynomial (primitive)
+To Polynomial (slice)
+To PowerCepstrogram
+To PowerCepstrogram (hillenbrand)
+To PowerCepstrum
+To PowerCepstrum (slice)
+To Procrustes
+To Roots
+To Salience
+To ScalarProduct
+To Similarity
+To Similarity (cc)
+To Sound
+To Sound (bss)
+To Sound (fft)
+To Sound (frequency shifted)
+To Sound (hum)
+To Sound (mc modulated)
+To Sound (phonation)
+To Sound (principal components)
+To Sound (pulse train)
+To Sound (pulses)
+To Sound (sine)
+To Sound (slice)
+To Sound (special)
+To Sound (white channels)
+To Sound ensemble
+To Spectrogram
+To Spectrum
+To Spectrum (dft)
+To Spectrum (fft)
+To Spectrum (slice)
+To SpectrumTier (peaks)
+To SSCP
+To Strings
+To Strings (exact)
+To Strings (id)
+To Strings (max. prob.)
+To Stringses
+To StringsIndex (column)
+To SVD
+To Table
+To Table (distances)
+To Table (hillenbrand)
+To Table (peak prominence)
+To Table (text alignment)
+To Table (z-scores)
+To TableOfReal
+To TableOfReal (BHEP normality tests)
+To TableOfReal (bigrams)
+To TableOfReal (cholesky)
+To TableOfReal (cross-correlations)
+To TableOfReal (directions)...
+To TableOfReal (mahalanobis)
+To TableOfReal (marginals)
+To TableOfReal (means by row labels)
+To TableOfReal (medians by row labels)
+To TableOfReal (random sampling)
+To TableOfReal (reconstruct 1)
+To TableOfReal (reconstruct)
+To TableOfReal (z-scores)
+To TextGrid
+To TextGrid (align)
+To TextGrid (align,trim)
+To TextGrid (silences)
+To TextGrid (vuv)
+To TextGrid (warp times)
+To TextTier
+To Transition
+To Transition (noise)
+To VocalTract
+To VocalTract (slice)
+To VocalTract (slice, special)
+To VocalTractTier
+To Weight
+To WordList
+tokens
+tolerance
+tone
+tongue-root
+top
+topology
+total
+tracheal
+track
+Track
+tracks
+tract
+Tract
+train
+trajectory
+transformation
+Transition
+transition
+Transition help
+Translate
+translation
+transparency
+Transplant
+Transplant time domain
+Transpose
+trellis
+trend
+trials
+triggers
+triggers, 
+trigraphs
+Trim
+Trim silences
+TukeyQ
+tutorial
+two
+two-way
+types
+Types
+Types of objects
+typology
+undefined
+Undo
+Unicode
+unicodeToBackslashTrigraphs$
+Union
+unit
+units
+unix
+unix_nocheck
+Unmix
+unmixing
+unshared
+unsigned
+until
+Unvoice
+unwrap
+Up to IntensityTier
+Up to PitchTier
+Up to SpellingChecker
+Up to TextTier
+Update
+Update weights
+use
+user
+VAF
+valleys
+value
+values
+Van
+variableExists
+variance
+variances
+variant
+variation
+varimax
+vector
+vectors
+vertical
+Vertical
+Vertical error bars plot
+Vertical error bars plot where
+Vertical mm to wc
+Vertical wc to mm
+vertices
+View
+View & Edit
+View & Edit alone
+View & Edit with callback
+View & Edit with Sound?
+View spectral slice
+viewport
+Viewport
+Viewport text
+violations
+visible
+Vocal
+vocal
+VocalTract
+VocalTract help
+VocalTractTier
+VocalTractTier help
+voice
+Voice
+Voice report
+voiced
+voices
+voicing
+vowel
+VowelEditor
+VowelEditor help
+vuv
+warp
+WAV
+waveforms
+Weenink
+weighing
+Weight
+weight
+weighted
+Weights
+weights
+Weights from Matrix
+Weights to Matrix
+What's
+What's new?
+where
+Where
+Where am I?
+while
+white
+White
+whiten
+whitespace-separated
+width
+Wilcoxon
+Wilks
+window
+windowed
+windows
+Windows
+winner
+Wish
+with
+within
+within-group
+without
+word
+WordList
+wrip
+Write
+Write left channel to AIFC file
+Write left channel to AIFF file
+Write left channel to FLAC file
+Write left channel to Next/Sun file
+Write left channel to NIST file
+Write left channel to WAV file
+Write manual to HTML directory
+Write part to audio file
+Write right channel to AIFC file
+Write right channel to AIFF file
+Write right channel to FLAC file
+Write right channel to Next/Sun file
+Write right channel to NIST file
+Write right channel to WAV file
+Write selected sound to AIFC file
+Write selected sound to AIFF file
+Write selected sound to FLAC file
+Write selected sound to Next/Sun file
+Write selected sound to NIST file
+Write selected sound to WAV file
+Write selection to AIFC file
+Write selection to AIFF file
+Write selection to Next/Sun file
+Write selection to NIST file
+Write selection to WAV file
+Write sound selection to AIFC file
+Write sound selection to AIFF file
+Write sound selection to FLAC file
+Write sound selection to Next/Sun file
+Write sound selection to NIST file
+Write sound selection to WAV file
+Write to AIFC file
+Write to AIFF file
+Write to binary file
+Write to binary file without Sound
+Write to chronological text file
+Write to EPS file
+Write to FLAC file
+Write to fontless EPS file (SILIPA)
+Write to fontless EPS file (XIPA)
+Write to headerless spreadsheet file
+Write to Kay sound file
+Write to matrix text file
+Write to Next/Sun file
+Write to NeXT/Sun file
+Write to NIST file
+Write to PDF file
+Write to PitchTier spreadsheet file
+Write to praat picture file
+Write to raw 8-bit signed file
+Write to raw 8-bit unsigned file
+Write to raw text file
+Write to Sesam file
+Write to short text file
+Write to stereo AIFC file
+Write to stereo AIFF file
+Write to stereo FLAC file
+Write to stereo NeXt/Sun file
+Write to stereo Next/Sun file
+Write to stereo NIST file
+Write to stereo WAV file
+Write to Sun audio file
+Write to table file
+Write to text file
+Write to text file without Sound
+Write to WAV file
+Write to Windows metafile
+Write to Xwaves label file
+writeFile
+writeFileLine
+writeInfo
+writeInfoLine
+writing
+XIPA
+xmax
+xmin
+Xwaves
+Yellow
+ymax
+ymin
+ytl
+z-scores
+Zero
+zero
+Zero activities
+zero#
+zeroes
+Zoom
+Zoom back
+Zoom in
+Zoom out
+Zoom to selection

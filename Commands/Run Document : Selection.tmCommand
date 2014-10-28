@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby18
+require ENV["TM_SUPPORT_PATH"] + "/lib/tm/executor"
+require ENV["TM_SUPPORT_PATH"] + "/lib/tm/save_current_document"
+require ENV["TM_SUPPORT_PATH"] + "/lib/ui.rb"
+
+ENV["TM_FILEPATH"] = nil if not ENV["TM_SELECTED_TEXT"].nil?
+TextMate.save_if_untitled('praat')
+TextMate::Executor.make_project_master_current_document
+
+hasBeginPause = `egrep -c '^[ \t]*(beginPause|pauseScript)' '#{ENV['TM_FILEPATH']}'`
+if hasBeginPause != "0\n"
+  TextMate::UI.alert(:critical, "Run Praat Script", "You can't run a Praat script which contains commands like:\n\n“beginPause”, “pauseScript”\n\nPlease use instead the command “Send Line/Selection to Praat”.", "OK")
+  exit
+end
+
+form_temp_file = "/tmp/tm_in_praat"
+arg_in = ''
+arg_cnt = 1
+struct = ''
+
+fscript = File.read(ENV["TM_FILEPATH"]).gsub(/.*?(^form .*?\nendform).*/m, '\1')
+if fscript =~ /^form /sm
+  File.delete(form_temp_file) if File.exist?(form_temp_file)
+  puts &lt;&lt;HTMLINFORM
+  &lt;head&gt;
+  &lt;style type="text/css"&gt;
+  .pform {
+    width:100%;
+    background-color: #fcfcfc;
+    overflow: auto;
+    border: 1px solid #e0e0e0;
+  }
+  .label {
+    font-size: 75%;
+  }
+  .inp {
+  }
+  body {
+    font: 75% "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+    margin-top: 2mm;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+  }
+  &lt;/style&gt;
+  &lt;script type="text/javascript" language="javascript"&gt;
+  var argList = '';
+  function cancelForm() {
+    TextMate.system('echo @@TM_CANCEL_FORM_BY_User@@ &gt; #{form_temp_file}', null);
+  }
+  function runForm() {
+    passArgs();
+  }
+  function formatReal(r) {
+    if (r.match(/[eE]/)) {
+      var r1 = r.replace(/[eE].*$/, '').replace(/[\.+\-]/,'');
+      r1 = r1.replace(/^0+/, '');
+      r1 = r1.replace(/0+$/, '');
+      return parseFloat(r).toExponential(r1.length-1);
+    }
+    return parseFloat(r);
+  }
+  function passArgs() {
+    if (updateParams() == false) return;
+    argList = argList.replace(/"/g, '\\\\"').replace(/'/g, "\\\\'");
+    TextMate.system('echo '+argList+' &gt; #{form_temp_file}', null);
+    document.getElementById('pform').parentNode.removeChild(document.getElementById('pform'));
+  }
+  function updateParams() {
+    var struct = structr.split('');
+    var args = [];
+    var e;
+    a ='';
+    for(var i=0; i&lt;structr.length; i++) {
+      f = "f" + (i+1).toString();
+      e = document.getElementsByName(f);
+      if (e === null) {
+        continue;
+      }
+      val = '';
+      if (e.length &gt; 1) {
+        for (k = 0; k &lt; e.length; k++) {
+          if (e[k].checked) {
+            val = e[k].value;
+            break;
+          }
+        }
+      } else {
+        ee = document.getElementById(f);
+        if (ee === null) {
+          alert(structr);
+          continue;
+        }
+        if (ee.type == 'checkbox') {
+          if (i+1 == structr.length) {
+            val = (ee.checked) ? 'yes' : 'no';
+          } else {
+            val = (ee.checked) ? '\\"yes\\"' : '\\"no\\"';
+          }
+          args.push(val);
+          continue;
+        } else {
+          val = ee.value;
+        }
+      }
+      if (struct[i] == 's') {
+        if (i+1 == structr.length) {
+          val = val.replace(/"/g, 'ꀁ');
+          args.push(val);
+        } else {
+          val = val.replace(/"/g, 'ꀀ');
+          args.push('"'+val+'"');
+        }
+      }
+      else if(struct[i] == 'w') {
+        if (i+1 == structr.length)
+          args.push(val)
+        else
+    			args.push('"'+val+'"');
+  		}
+  		else if(struct[i] == 'i') {
+  			// val = val.replace(/\s*\(.*?\)\s*$/, '');
+  			val = val.replace(/\.0+$/, '');
+  			val = val.replace(/^\s+/, '');
+  			val = val.replace(/\s+$/, '');
+  			args.push(parseInt(val).toString());
+  		}
+  		else if(struct[i] == 'c') {
+  			// val = val.replace(/\s*\(.*?\)\s*$/, '');
+  			val = val.replace(/\.0+$/, '');
+  			val = val.replace(/^\s+/, '');
+  			val = val.replace(/\s+$/, '');
+  			if (val.match(/^Mono$/) || val.match(/^Left$/) || val.match(/^1$/)) {
+  				args.push('1');
+  			}
+  			else if (val.match(/^Stereo$/) || val.match(/^Right$/) || val.match(/^2$/)) {
+  				args.push('2');
+  			}
+  			else if (parseInt(val) &gt; 0) {
+  				args.push(parseInt(val).toString());
+  			}
+  			else {
+          args.push('-1');
+  			}
+  		}
+  		else if(struct[i] == 'f') {
+  			//val = val.replace(/\s*\(.*?\)\s*$/, '');
+  			val = val.replace(/\.0+$/, '');
+  			val = val.replace(/^\s+/, '');
+  			val = val.replace(/\s+$/, '');
+  			if(val.match(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/)) {
+  				if (parseFloat(val) &gt;= 0 &amp;&amp; parseFloat(val) &lt;=1 ){
+  					args.push(parseFloat(val).toString());
+  				}
+  			}
+  			else if (val.match(/^(Black|White|Red|Green|Blue|Yellow|Cyan|Magenta|Maroon|Lime|Navy|Teal|Purple|Olive|Pink|Silver|Grey)$/i)) {
+          if (i+1 == structr.length)
+            args.push(val)
+          else
+      			args.push('"'+val+'"');
+  			}
+  			else if (val.match(/^\{\s*[+]?[0]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*,\s*[+]?[0]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*,\s*[+]?[0]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*\}$/)) {
+          if (i+1 == structr.length)
+            args.push(val)
+          else
+      			args.push('"'+val+'"');
+  			}
+  			else {
+  				args.push('-1');
+  			}
+  		}
+  		else if(struct[i] == 'n') {
+  			// val = val.replace(/\s*\(.*?\)\s*$/, '');
+  			val = val.replace(/\.0+$/, '');
+  			val = val.replace(/^\s+/, '');
+  			val = val.replace(/\s+$/, '');
+  			args.push(parseInt(val).toString());
+  		}
+  		else if(struct[i] == 'r') {
+  			//val = val.replace(/\s*\(.*?\)\s*$/, '');
+  			val = val.replace(/^\s+/, '');
+  			val = val.replace(/\s+$/, '');
+  			args.push(formatReal(val).toString());
+  		}
+  		else if(struct[i] == 'p') {
+        // val = val.replace(/\s*\(.*?\)\s*$/, '');
+  			val = val.replace(/^\s+/, '');
+  			val = val.replace(/\s+$/, '');
+  			args.push(formatReal(val).toString());
+  		}
+  	}
+  	argList = args.join(" ");
+    return true;
+  }
+  
+  &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;div id="pform" class="pform"&gt;
+  &lt;script&gt;
+  document.getElementById('pform').onkeyup = function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code === 27) { cancelForm(); }
+    if (code === 13) { runForm(); }
+  }
+  document.getElementById('pform').onkeypress = function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code === 27) { cancelForm(); }
+    if (code === 13) { runForm(); }
+  }
+  &lt;/script&gt;
+  &lt;center&gt;
+  &lt;table&gt;
+HTMLINFORM
+  opdef = 1
+  opcnt = 0
+  rdcnt = 0
+  fscript.split(/\n/).each do |f|
+    f = f.gsub(/^\s+/, '').gsub(/\s+$/, '')
+    next if f.empty?
+    if f =~ /^form /
+      f = f.gsub(/^form /, '')
+      puts "&lt;h2&gt;#{f}&lt;/h2&gt;"
+      next
+    elsif f =~ /^endform/
+      break
+    else
+      if f =~ /^comment /
+        f = f.gsub(/^comment /, '')
+        puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+        if rdcnt &gt; 0
+          puts "&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+        end
+        puts "&lt;tr&gt;&lt;td align='center' colspan='2'&gt;&lt;i&gt;&lt;small&gt;#{f}&lt;/small&gt;&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;"
+        opdef = 1
+        opcnt = 0
+        rdcnt = 0
+      else
+        re   = /^(.+?)\s+([^ ]+?)\s+(.*)$/
+        reop = /^([^ ]+?)\s+(.*)$/
+        farr0 = farr1 = farr2 = ''
+        if f =~ /^option\b/ or f =~ /^button\b/
+          if m = f.match(reop)
+            farr0, farr1 = m.captures
+          end
+        elsif f =~ /^optionmenu\b.*?\d$/ or f =~ /^choice\b.*?\d$/
+          if m = f.match(re)
+            farr0, farr1, farr2 = m.captures
+            farr1 = farr1.gsub(/_/, ' ') + ":"
+          end
+        elsif f =~ /^optionmenu\b/ or f =~ /^choice\b/
+          if m = f.match(reop)
+            farr0, farr1 = m.captures
+          end
+          farr2 = "1"
+        else
+          if m = f.match(re)
+            farr0, farr1, farr2 = m.captures
+            farr1 = farr1.gsub(/_/, ' ') + ":"
+          end
+        end
+        if farr0 =~ /^[#;]/
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+          next
+        end
+        farr2 = farr2.gsub(/'/, "&amp;#39;")
+        if farr0 =~ /^sentence/ or farr0 =~ /^text/
+          struct += "s"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input size='50%' class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^word/
+          struct += "w"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^real/
+          struct += "r"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^positive/
+          struct += "p"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^integer/
+          struct += "i"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^natural/
+          struct += "n"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^channel/
+          struct += "c"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^colo(u)?r/
+          struct += "f"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='text' value='#{farr2}'/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^boolean/
+          struct += "b"
+          chk = ''
+          chk = "checked" if (farr2 =~ /^(yes|1)/i);
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;input class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' type='checkbox' #{chk}/&gt;&lt;/td&gt;&lt;/tr&gt;"
+          arg_cnt += 1
+          opdef = 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^optionmenu/
+          struct += "s"
+          opdef = farr2.to_i if (farr2 =~ /\d+/);
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;select class='inp' name='f#{arg_cnt}' id='f#{arg_cnt}' size='1'/&gt;"
+          arg_cnt += 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^option\b/
+          opcnt += 1
+          opsel = ''
+          opsel = ' selected' if opdef == opcnt
+          puts "&lt;option#{opsel}&gt;#{farr1}&lt;/option&gt;"
+        elsif farr0 =~ /^choice/
+          struct += "s"
+          puts "&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;" if opcnt &gt; 0
+          if rdcnt &gt; 0
+            puts "&lt;/td&gt;&lt;/tr&gt;"
+            arg_cnt += 1
+          end
+          puts "&lt;tr&gt;&lt;td align='right'&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;/td&gt;&lt;td&gt;"
+          opdef = farr2.to_i if (farr2 =~ /\d+/);
+          # arg_cnt += 1
+          opcnt = 0
+          rdcnt = 0
+        elsif farr0 =~ /^button/
+          rdcnt += 1
+          opsel = ''
+          opsel = ' checked' if opdef == rdcnt
+          puts "&lt;input class='inp' name='f#{arg_cnt}' type='radio' value='#{farr1}'#{opsel}&gt;&lt;span class='label'&gt;#{farr1}&lt;/span&gt;&lt;br&gt;"
+          opcnt = 0
+        end
+      end
+    end
+  end
+
+
+  puts &lt;&lt;HTMLINFORMF
+  &lt;/table&gt;
+  &lt;br&gt;
+  &lt;script&gt;
+  document.getElementById("f1").focus();
+  &lt;/script&gt;
+  &lt;button title="Cancel Script [ESC]" onclick="cancelForm();"&gt;Cancel&lt;/button&gt;&amp;nbsp;
+  &lt;button title="Run Script [ENTER]" onclick="runForm();"&gt;Run&lt;/button&gt;&lt;br&gt;
+  &lt;/center&gt;
+  &lt;/div&gt;
+  &lt;script type="text/javascript" language="javascript"&gt;
+    var structr = "#{struct}";
+  &lt;/script&gt;
+HTMLINFORMF
+
+  while not File.exist?(form_temp_file)
+    sleep 0.1
+  end
+  arg_in = File.read(form_temp_file).gsub(/[\n\r]/, '').gsub(/^\s+/, '').gsub(/\s+$/, '').gsub(/ꀀ/, '""').gsub(/ꀁ/, '"')
+  TextMate.exit_discard if arg_in.nil? or arg_in == "@@TM_CANCEL_FORM_BY_User@@"
+  File.delete(form_temp_file) if File.exist?(form_temp_file)
+end
+fscript = ''
+
+TextMate::Executor.run(ENV["TM_PRAAT"] || "/Applications/Praat.app/Contents/MacOS/Praat", "-a", ENV["TM_FILEPATH"], arg_in, :create_error_pipe =&gt; true, :use_hashbang =&gt; false, :version_args =&gt; ENV["TM_BUNDLE_SUPPORT"] + "/bin/version.praat") do |str, type|
+  if type == :err
+    if str =~ /^Error/
+      str.gsub!(/^Error\s*:/, "")
+      "&lt;span style='color:red'&gt;&lt;b&gt;Error:&lt;/b&gt;#{htmlize(str)}&lt;/span&gt;"
+    elsif str =~ /^Script line (\d+)/
+      line = $1;
+      str.gsub!(/^Script line \d+/, "")
+      "&lt;span style='color:red'&gt;Script &lt;a style='color:red' title='Click to jump to line number #{line}' href='txmt://open?line=#{line}'&gt;line #{line}&lt;/a&gt;#{htmlize(str)}&lt;/span&gt;"
+    else
+      "&lt;span style='color:red'&gt;#{htmlize(str)}&lt;/span&gt;"
+    end
+  end
+end
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run Document / Selection</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>semanticClass</key>
+	<string>process.run.script.praat</string>
+	<key>uuid</key>
+	<string>7D94278D-F4A5-4CEB-931C-424DFEEE99AE</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

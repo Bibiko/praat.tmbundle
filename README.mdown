@@ -1,0 +1,39 @@
+# Installation
+
+You can install this bundle in TextMate by opening the preferences and going to the bundles tab. After installation it will be automatically updated for you.
+
+# Description
+
+Praat (<http://www.praat.org>) is a software environment for doing phonetics written by Paul Boersma and David Weenink.
+
+This bundle is intended to help you write Praat scripts. 
+
+Here some of the key features:
+
+* syntax hightlighting of ca. 2500 unique Praat commands and built-in functions
+* integrated Praat help with search functionality
+* integrated Praat Command Wizard for Search & Insert Praat Commands (ca. 3300) plus arguments
+* intelligent command completion
+* run scripts self-sufficient on the command line with parameter passing via `form...endform` à la Praat
+* send lines remotely to Praat via `sendpraat`
+* open script or part of it in Praat
+* indent selection for pretty-printing praat scripts
+* ...
+
+
+# General
+
+* [Bundle Styleguide](http://kb.textmate.org/bundle_styleguide) — _before you make changes_
+* [Commit Styleguide](http://kb.textmate.org/commit_styleguide) — _before you send a pull request_
+* [Writing Bug Reports](http://kb.textmate.org/writing_bug_reports) — _before you report an issue_
+
+# License
+
+If not otherwise specified (see below), files in this repository fall under the following license:
+
+	For non-commercial purposes permission to copy, use, modify, and distribute
+	this software is granted. This software is provided "as is" without
+	express or implied warranty, and with no claim as to its
+	suitability for any purpose.
+
+An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of txt, html, or similar. For example “tidy” is accompanied by “tidy-license.txt”.

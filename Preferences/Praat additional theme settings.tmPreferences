@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Praat additional theme settings</string>
+	<key>scope</key>
+	<string>keyword.control.editor.praat, meta.editor.praat, support.function.editor.praat, support.function.commands_without_args.editor.praat, support.function.commands_with_args.editor.praat</string>
+	<key>settings</key>
+	<dict>
+		<key>background</key>
+		<string>#AAAAAA28</string>
+	</dict>
+	<key>uuid</key>
+	<string>1F1DE2F9-9E0E-4B90-94BB-CE69CC274ECF</string>
+</dict>
+</plist>

@@ -1,0 +1,122 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Confusion</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+Confusion
+</b></font></table></table>
+<p>
+One of the <a href="Types_of_objects.html">types of objects</a> in Praat.</p>
+<p>
+An object of type Confusions represents a confusion matrix, with stimuli as row labels and responses as column labels. The entry at position [<i>i</i>][<i>j</i>] represents the number of times response <i>j</i> was given to the stimulus <i>i</i>.</p>
+<h3>
+Creating a Confusion from data in a text file</h3>
+<p>
+Suppose you have two objects A and B. In one way or another, you have acquired the following  confusions: <i></i>&#948;<sub><i>AA</sub></i> = 6, <i></i>&#948;<sub><i>AB</sub></i> = 2 , <i></i>&#948;<sub><i>BA</sub></i> = 1, and <i></i>&#948;<sub><i>BB</sub></i> = 7.</p>
+<p>
+You can create a simple text file like the following:</p>
+<code>
+"ooTextFile"  ! to make Praat recognize your file<br></code>
+<code>
+"Confusion" ! The line that tells Praat about the contents<br></code>
+<code>
+2     "A"  "B"  ! Number of columns, and column labels<br></code>
+<code>
+2                   ! Number of rows<br></code>
+<code>
+"A"    6    2     ! Row label A, A-A value, A-B value<br></code>
+<code>
+"B"    1    7     ! Row label B, B-A value, B-B value<br></code>
+<p>
+This text file can be read with the <a href="Read_from_file___.html">Read from file...</a> command. </p>
+<h3>
+Commands</h3>
+<p>
+Creation:</p>
+<ul>
+<li>
+&nbsp;<a href="Categories__To_Confusion.html">Categories: To Confusion</a>
+<li>
+&nbsp;<a href="Create_simple_Confusion___.html">Create simple Confusion...</a>
+</ul>
+<p>
+Drawing</p>
+<ul>
+<li>
+&nbsp;<b>Draw as numbers...</b>
+<li>
+&nbsp;<b>Draw as squares...</b>
+</ul>
+<p>
+Query</p>
+<ul>
+<li>
+&nbsp;<a href="Confusion__Get_fraction_correct.html">Get fraction correct</a>
+<li>
+&nbsp;<a href="Confusion__Get_stimulus_sum___.html">Confusion: Get stimulus sum...</a>
+<li>
+&nbsp;<a href="Confusion__Get_response_sum___.html">Confusion: Get response sum...</a>
+<li>
+&nbsp;<b>Get grand sum</b>
+</ul>
+<p>
+Modification</p>
+<ul>
+<li>
+&nbsp;<b>Formula...</b>
+<li>
+&nbsp;<a href="Confusion__Increase___.html">Confusion: Increase...</a>
+</ul>
+<p>
+Grouping</p>
+<ul>
+<li>
+&nbsp;<a href="Confusion__Group_stimuli___.html">Confusion: Group stimuli...</a>
+<li>
+&nbsp;<a href="Confusion__Group_responses___.html">Confusion: Group responses...</a>
+</ul>
+<p>
+Analysis:</p>
+<ul>
+<li>
+&nbsp;<a href="Confusion__To_Similarity___.html">Confusion: To Similarity...</a>
+<li>
+&nbsp;<a href="Confusion__To_Dissimilarity__pdf____.html">Confusion: To Dissimilarity (pdf)...</a>
+</ul>
+<h3>
+Inside a Confusion</h3>
+<p>
+With <a href="Inspect.html">Inspect</a> you will see the following attributes:</p>
+<dl>
+<dt>
+<i>numberOfRows</i>
+<dd>
+the number of stimuli.
+<dt>
+<i>numberOfColumns</i>
+<dd>
+the number of responses.
+<dt>
+<i>rowLabels</i>
+<dd>
+the names of the stimuli.
+<dt>
+columnLabels
+<dd>
+the names of the responses.
+</dl>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="Confusion__Condense___.html">Confusion: Condense...</a>
+<li><a href="Confusion__To_Dissimilarity___.html">Confusion: To Dissimilarity...</a>
+<li><a href="Confusion__To_TableOfReal__marginals_.html">Confusion: To TableOfReal (marginals)</a>
+<li><a href="Discriminant_analysis.html">Discriminant analysis</a>
+<li><a href="Feedforward_neural_networks_2__Quick_start.html">Feedforward neural networks 2. Quick start</a>
+<li><a href="Feedforward_neural_networks_3__FFNet_versus_discriminan.html">Feedforward neural networks 3. FFNet versus discriminant classifier</a>
+<li><a href="INDSCAL_analysis.html">INDSCAL analysis</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; djmw, May 17, 2011</p>
+</address>
+</body>
+</html>

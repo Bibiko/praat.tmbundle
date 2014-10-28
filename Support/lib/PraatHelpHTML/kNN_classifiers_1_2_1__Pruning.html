@@ -1,0 +1,47 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>kNN classifiers 1.2.1. Pruning</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+kNN classifiers 1.2.1. Pruning
+</b></font></table></table>
+<p>
+Pruning is the process of discarding instances that do not improve upon the classification accuracy of the classifier. This group of instances includes noisy instances that, at best, make no difference as far as model accuracy is concerned, at worst, induces classification errors. It also includes instances that are redundant; instances that are implied by the defined neighbourhood.</p>
+<h3>
+The C-Pruner algorithm</h3>
+<p>
+The C-Pruner algorithm such as it is presented in <a href="Ke-Ping_Zhao_et_al___2003_.html">Zhao et al. (2003)</a> identifies pruning candidates and computes the order in which these candidates shall be removed. The ordering is of vital importance since the removal of one candidate might disqualify other candidates, making them non-prunable. In order to understand how the C-Pruner algorithm operates a few definitions are necessary:</p>
+<ul>
+<li>
+&nbsp;The <i>k</i>-reachability set of an instance <i>p</i> consists of the <i>k</i> nearest neighbours of <i>p</i>
+<li>
+&nbsp;The <i>k</i>-coverage set of an instance <i>p</i> consists of those instances of the same class as that of <i>p</i> having <i>p</i> as one of their <i>k</i> nearest neighbours.
+<li>
+&nbsp;An instance <i>p</i> is superfluous if it is implied by <i>k</i>-reachability, that is, if it can be correctly classified using <i>k</i>-reachability as instance base.
+<li>
+&nbsp;An instance <i>p</i> is critical if at least one instance in the <i>k</i>-coverage set of <i>p</i> is not implied by the <i>k</i>-reachability set of <i>p</i> or, after <i>p</i> is deleted, atleast one instance in the <i>k</i>-coverage set of <i>p</i> is not implied by the <i>k</i>-reachability set of <i>p</i>.
+<li>
+&nbsp;An instance <i>p</i> is noisy if <i>p</i> isn't superfluous and the <i>k</i>-reachability set of <i>p</i> is bigger than the <i>k</i>-coverage set of <i>p</i>.
+</ul>
+<p>
+Given these definitions, an instance is tagged for pruning if one of the following conditions hold: It is noisy, or it is superfluous but not critical. This translates to the discarding of instances that are bad class predictors (noise) and of instances that are highly typical of their class and thus are located close to the center of the cluster defining the given class. Instances located close to the class center are very likely implied by the surrounding border instances and thus redundant. In order to avoid destructive domino effects it is important that the pruning starts close to the center of the cluster and works its way out and not the other way around. To impose this ordering the C-Pruner algorithm uses the following heuristics to determine the order of removal of two superfluous instances <i>p</i><sub>i</sub> and <i>p</i><sub>j</sub>:</p>
+<ul>
+<li>
+&nbsp;If the <i>k</i>-reachability set of <i>p</i><sub>i</sub> contains more instances of the same class as that of <i>p</i><sub>i</sub> than the corresponding value for <i>p</i><sub>j</sub> then <i>p</i><sub>i</sub> should be removed before <i>p</i><sub>j</sub>.
+<li>
+&nbsp;If the <i>k</i>-reachability set of <i>p</i><sub>i</sub> contains the same number of instances of the same class as that of <i>p</i><sub>i</sub> as the corresponding value for <i>p</i><sub>j</sub> and the distance between <i>p</i><sub>i</sub> and the closest instance of a class different from the class of <i>p</i><sub>i</sub> is greater than the corresponding value for <i>p</i><sub>j</sub> then <i>p</i><sub>i</sub> should be removed before <i>p</i><sub>j</sub>.
+<li>
+&nbsp;If the <i>k</i>-reachability set of <i>p</i><sub>i</sub> contains the same number of instances of the same class as that of <i>p</i><sub>i</sub> as the corresponding value for <i>p</i><sub>j</sub> and the distance between <i>p</i><sub>i</sub> and the closest instance of a class different from the class of <i>p</i><sub>i</sub> equals the corresponding value for <i>p</i><sub>j</sub> then the order of removal is decided randomly.
+</ul>
+<p>
+In order to gain control of the degree of pruning the Praat implementation of the C-Pruner algorithm decides whether to prune or not prune a given instance tagged for pruning on a probabilistic basis. This makes it possible for the user to specify the hardness of the pruning process (e.g. 100 percent (exp.) noise, 50 percent (exp.) redundancy) to be able to find a good compromise between model accuracy and resource requirements.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="kNN_classifiers.html">kNN classifiers</a>
+<li><a href="KNN__Prune___.html">KNN: Prune...</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, May 29, 2008</p>
+</address>
+</body>
+</html>

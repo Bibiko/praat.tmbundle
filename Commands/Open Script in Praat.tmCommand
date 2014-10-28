@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+
+if [ -z $TM_SELECTED_TEXT ]; then
+	open -a Praat "$TM_FILEPATH"
+else
+	TEMPFILE=`date "+TM_temp_ %Y%m%d%H%M%S_$RANDOM.praat"`
+	cat &gt; "/tmp/$TEMPFILE"
+	open -a Praat "/tmp/$TEMPFILE"
+fi
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^o</string>
+	<key>name</key>
+	<string>Open Document / Selection in Praat</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>BB039328-EF69-4354-8F37-6FCC81A22DA8</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,1 @@
+writeInfoLine: "Praat — version: ", praatVersion$

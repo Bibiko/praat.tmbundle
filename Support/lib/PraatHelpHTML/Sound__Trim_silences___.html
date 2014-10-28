@@ -1,0 +1,38 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sound: Trim silences...</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+Sound: Trim silences...
+</b></font></table></table>
+<p>
+A command that creates from the selected <a href="Sound.html">Sound</a> a new sound in which all silence durations are not longer than a specified value.</p>
+<h3>
+Settings</h3>
+<dl>
+<dt>
+<i>Trim duration (s)</i>,
+<dd>
+specifies the maximum allowed silence duration.
+<dt>
+<i>Minimum pitch (Hz)</i>, and, <i>Time</i> step (s)<i></i>,
+<dd>
+determine how we measure the intensities on which the determination of silent intervals is based. See <a href="Sound__To_Intensity___.html">Sound: To Intensity...</a> for more info.
+<dt>
+<i>Silence threshold (dB)</i>, <i>Minimum silent interval duration (s)</i>, and <i>Minimum sounding interval duration</i>,
+<dd>
+determine how the silent intervals will be determined. See <a href="Intensity__To_TextGrid__silences____.html">Intensity: To TextGrid (silences)...</a> for more info.
+<dt>
+<i>Save trimming info as TextGrid</i>,
+<dd>
+determines if a TextGrid with trimming information will also be created. The TextGrid will have one tier where interval of the <i>originating</i> sound that were trimmed have been labeled. 
+<dt>
+<i>Trim label</i>,
+<dd>
+determines the label that the trimmed intervals in the TextGrid will get.
+</dl>
+<hr>
+<address>
+	<p>&copy; djmw, March 23, 2012</p>
+</address>
+</body>
+</html>

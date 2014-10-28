@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+RPID=$(ps aw | grep '[0-9] /.*Praat' | awk '{print $1;}' )
+
+#check whether Praat runs - if not start it
+[[ -z $RPID ]] &amp;&amp; open -a "Praat"
+
+CMD=`cat | perl -pe 's/"/\\"/g'`
+"${TM_BUNDLE_SUPPORT}/bin/sendpraat_carbon" Praat "$CMD"
+
+# catch exit status - if non-zero play a beep
+[[ $? -ne 0 ]] &amp;&amp; osascript -e beep &amp;&gt;/dev/null
+
+# set always exit status to 0 to avoid showing TM's error code sheet
+exit 0
+
+</string>
+	<key>input</key>
+	<string>line</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@</string>
+	<key>name</key>
+	<string>Send Line / Selection to Praat</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>scope</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>CEF5C54F-886C-44BB-AA85-C1015A551486</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

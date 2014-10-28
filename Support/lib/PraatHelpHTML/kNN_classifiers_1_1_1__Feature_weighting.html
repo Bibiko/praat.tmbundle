@@ -1,0 +1,33 @@
+<html><head><meta name="robots" content="index,follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>kNN classifiers 1.1.1. Feature weighting</title></head><body bgcolor="#FFFFFF">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td bgcolor="#CCCC00"><table border=4 cellpadding=9><tr><td align=middle bgcolor="#000000"><font face="Palatino,Times" size=6 color="#999900"><b>
+kNN classifiers 1.1.1. Feature weighting
+</b></font></table></table>
+<p>
+A <i>k</i>NN classifier in its most basic form operates under the implicit assumption that all features are of equal value as far as the classification problem at hand is concerned. When irrelevant and noisy features influence the neighbourhood search to the same degree as highly relevant features, the accuracy of the model is likely to deteriorate. <i>Feature weighting</i> is a technique used to approximate the optimal degree of influence of individual features using a training set. When successfully applied relevant features are attributed a high weight value, whereas irrelevant features are given a weight value close to zero. <i>Feature weighting</i> can be used not only to improve classification accuracy but also to discard features with weights below a certain threshold value and thereby increase the resource efficiency of the classifier.</p>
+<p>
+Two fundamentally different approaches to this optimization problem can be identified, the <i>filter-based</i> and the <i>wrapper-based</i>. The class of <i>filter-based</i> methods contains algorithms that use no input other than the training data itself to calculate the <i>feature weights</i>, whereas <i>wrapper-based</i> algorithms use feedback from a classifier to guide the search. <i>Wrapper-based</i> algorithms are inherently more powerful than their filter-based counterpart as they implicitly take the <i>inductive bias</i> of the classifier into account. This power comes at a price however; the usage of <i>wrapper-based</i> algorithms increases the risk of <i>overfitting</i> the training data.</p>
+<p>
+In <a href="kNN_classifiers_1_1_1_1__Filter-based_feature_weighting.html">section 1.1.1.1.</a> the <i>filter-based</i> feature weighting algorithm implemented in Praat is presented. <a href="kNN_classifiers_1_1_1_2__Wrapper-based_feature_weightin.html">Section 1.1.1.2.</a> contains an account of the implemented <i>wrapper-based</i> feature weighting algorithm.</p>
+<h3>Links to this page</h3>
+<ul>
+<li><a href="KNN___FeatureWeights__Get_accuracy_estimate___.html">KNN & FeatureWeights: Get accuracy estimate...</a>
+<li><a href="KNN___Pattern___Categories___FeatureWeights__Evaluate__.html">KNN & Pattern & Categories & FeatureWeights: Evaluate...</a>
+<li><a href="KNN___Pattern___Categories__Evaluate___.html">KNN & Pattern & Categories: Evaluate...</a>
+<li><a href="KNN___Pattern___Categories__To_FeatureWeights___.html">KNN & Pattern & Categories: To FeatureWeights...</a>
+<li><a href="KNN___Pattern___FeatureWeights__To_Categories___.html">KNN & Pattern & FeatureWeights: To Categories...</a>
+<li><a href="KNN___Pattern___FeatureWeights__To_TableOfReal___.html">KNN & Pattern & FeatureWeights: To TableOfReal...</a>
+<li><a href="kNN_classifiers.html">kNN classifiers</a>
+<li><a href="kNN_classifiers_1_1__Improving_classification_accuracy.html">kNN classifiers 1.1. Improving classification accuracy</a>
+<li><a href="KNN__Get_accuracy_estimate___.html">KNN: Get accuracy estimate...</a>
+<li><a href="KNN__To_FeatureWeights___.html">KNN: To FeatureWeights...</a>
+<li><a href="Pattern___FeatureWeights__To_Categories___.html">Pattern & FeatureWeights: To Categories...</a>
+<li><a href="Pattern___FeatureWeights__To_Dissimilarity___.html">Pattern & FeatureWeights: To Dissimilarity...</a>
+</ul>
+<hr>
+<address>
+	<p>&copy; Ola Söder, May 29, 2008</p>
+</address>
+</body>
+</html>
