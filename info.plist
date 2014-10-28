@@ -7,7 +7,7 @@
 	<key>contactName</key>
 	<string>Hans-Jörg Bibiko</string>
 	<key>description</key>
-	<string>Praat Scripting http://www.praat.org</string>
+	<string>Support for scripting and controlling Praat http://www.praat.org – “doing phonetics by computer”</string>
 	<key>mainMenu</key>
 	<dict>
 		<key>excludedItems</key>
@@ -55,6 +55,16 @@
 				<key>name</key>
 				<string>Language Snippets</string>
 			</dict>
+			<key>B968EC35-4610-9600-6415-EDDBA1BC5E3F</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>534F50E1-9B31-44D8-98E6-B78F8B22AD20</string>
+					<string>B91D6F1B-29A5-4D12-A7F5-825F011C10F9</string>
+				</array>
+				<key>name</key>
+				<string>Conversions</string>
+			</dict>
 			<key>BED51C8D-3B2D-4220-AA46-F13B10035665</key>
 			<dict>
 				<key>items</key>
@@ -71,16 +81,6 @@
 				</array>
 				<key>name</key>
 				<string>Language Controls</string>
-			</dict>
-			<key>B968EC35-4610-9600-6415-EDDBA1BC5E3F</key>
-			<dict>
-				<key>items</key>
-				<array>
-					<string>534F50E1-9B31-44D8-98E6-B78F8B22AD20</string>
-					<string>B91D6F1B-29A5-4D12-A7F5-825F011C10F9</string>
-				</array>
-				<key>name</key>
-				<string>Conversions</string>
 			</dict>
 		</dict>
 	</dict>
