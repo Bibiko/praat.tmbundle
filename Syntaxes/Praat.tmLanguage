@@ -100,12 +100,6 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(\n)</string>
-					<key>name</key>
-					<string>caret.end.line.form.praat</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>^\s*[#;].*$</string>
 					<key>name</key>
 					<string>comment.line.praat</string>
