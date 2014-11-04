@@ -113,7 +113,7 @@ Furhtermore you can make usage of the comment lines `#pragma mark -` and `#pragm
 
 # Main Bundle Maintainer
 
-***Version: 1.0 — Date: Oct 20 2014***
+***Version: 1.0 — Date: Nov 04 2014***
 
 <pre>
 -  Hans-Jörg Bibiko&nbsp;&nbsp;<a >mail [at] bibiko.de</a>
