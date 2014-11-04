@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Symbol List (Form)</string>
 	<key>scope</key>
-	<string>string.form.symbol.praat</string>
+	<string>string.unquoted.form-name.praat, string.quoted.double.form-name.praat</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>

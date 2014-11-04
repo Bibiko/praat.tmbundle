@@ -15,7 +15,7 @@
 		<key>unIndentedLinePattern</key>
 		<string>^\s*$</string>
 		<key>zeroIndentPattern</key>
-		<string>^\s*(label)\b|^#pragma </string>
+		<string>^\s*(label)\s|^#pragma </string>
 	</dict>
 	<key>uuid</key>
 	<string>7ACAD48E-6AC6-49CA-B3B4-D49A90DFB2DE</string>

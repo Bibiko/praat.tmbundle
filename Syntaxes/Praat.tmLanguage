@@ -30,7 +30,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.pragma.name.praat</string>
+					<string>entity.other.attribute-name.pragma.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -41,12 +41,18 @@
 			<string>comment.line.pragma-mark.praat</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>comment.line.number-sign.praat</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>comment # line</string>
 			<key>match</key>
-			<string>^\s*#.*$</string>
-			<key>name</key>
-			<string>comment.line.praat</string>
+			<string>^\s*(#.*)\n?</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -77,7 +83,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>string.form.symbol.praat</string>
+					<string>string.other.form-name.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -102,7 +108,7 @@
 					<key>match</key>
 					<string>^\s*[#;].*$</string>
 					<key>name</key>
-					<string>comment.line.praat</string>
+					<string>comment.line.number-sign-semicolon.praat</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -112,15 +118,10 @@
 							<key>name</key>
 							<string>support.type.praat</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable2.name.praat</string>
-						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>comment.variable2.name.praat</string>
+							<string>comment.line.variable.unity.praat</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -139,15 +140,10 @@
 							<key>name</key>
 							<string>support.type.praat</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable2.name.praat</string>
-						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>comment.variable2.name.praat</string>
+							<string>comment.line.variable.unity.praat</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -166,15 +162,10 @@
 							<key>name</key>
 							<string>support.type.praat</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable2.name.praat</string>
-						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>comment.variable2.name.praat</string>
+							<string>comment.line.variable.unity.praat</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -193,15 +184,10 @@
 							<key>name</key>
 							<string>support.type.praat</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable2.name.praat</string>
-						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>comment.variable2.name.praat</string>
+							<string>comment.line.variable.unity.praat</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -237,15 +223,10 @@
 							<key>name</key>
 							<string>support.type.praat</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable2.name.praat</string>
-						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>comment.variable2.name.praat</string>
+							<string>comment.line.variable.unity.praat</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -267,7 +248,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>comment.line.praat</string>
+							<string>comment.line.form.comment.praat</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -279,9 +260,9 @@
 			<key>comment</key>
 			<string>comment ;</string>
 			<key>match</key>
-			<string>;.*$</string>
+			<string>;.*\n?</string>
 			<key>name</key>
-			<string>comment.line.praat</string>
+			<string>comment.line.semicolon.praat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -294,10 +275,12 @@
 		<dict>
 			<key>comment</key>
 			<string>single quoted variable reference</string>
+			<key>disabled</key>
+			<true/>
 			<key>match</key>
 			<string>'[^ ]+?\$?'</string>
 			<key>name</key>
-			<string>variable2.name.praat</string>
+			<string>variable.parameter.praat</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -331,7 +314,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.tag.function.praat</string>
+					<string>entity.name.tag.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -359,7 +342,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.tag.function.praat</string>
+					<string>entity.name.tag.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -430,10 +413,12 @@
 				<dict>
 					<key>comment</key>
 					<string>recognize variable substitution in quoted strings</string>
+					<key>disabled</key>
+					<true/>
 					<key>match</key>
 					<string>'[^ ]+?\$?'</string>
 					<key>name</key>
-					<string>variable2.parameter.praat</string>
+					<string>variable.parameter.praat</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -446,10 +431,12 @@
 				<dict>
 					<key>comment</key>
 					<string>recognize variable substitution in quoted strings</string>
+					<key>disabled</key>
+					<true/>
 					<key>match</key>
 					<string>[\w\d_]+</string>
 					<key>name</key>
-					<string>variable2.name.praat</string>
+					<string>variable.other.praat</string>
 				</dict>
 			</array>
 		</dict>
@@ -552,12 +539,12 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>string.double.quoted.praat</string>
+					<string>string.quoted.double.praat</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>string.form.symbol.praat</string>
+					<string>string.quoted.double.form-name.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -587,7 +574,7 @@
 			<key>match</key>
 			<string>(?&lt;=\.)(col|row)\$\s*(?=\[)</string>
 			<key>name</key>
-			<string>variable.name.obj.praat</string>
+			<string>variable.other.object-attribute.praat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -595,7 +582,7 @@
 			<key>match</key>
 			<string>(?&lt;=\S\.)(col|dx|dy|ncol|nrow|nx|ny|row|x|xmax|xmin|y|ymax|ymin)\b</string>
 			<key>name</key>
-			<string>variable.name.obj.praat</string>
+			<string>variable.other.object-attribute.praat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -697,6 +684,8 @@
 			<string>(?=[\S])(:)NOTYETFINISHED</string>
 			<key>comment</key>
 			<string>Command: arguments</string>
+			<key>disabled</key>
+			<true/>
 			<key>end</key>
 			<string>$</string>
 			<key>patterns</key>
@@ -778,7 +767,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>constant.other.praat</string>
+					<string>constant.other.goto.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -797,13 +786,13 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.label.praat</string>
+					<string>entity.name.tag.label.praat</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>highlight label</string>
 			<key>match</key>
-			<string>^\s*(label) (.+)$</string>
+			<string>^\s*(label)\s+(.+)$</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -867,7 +856,7 @@
 			<key>match</key>
 			<string>\b(nowarn|noprogress|nocheck|execute|stopwatch|system_nocheck|sendsocket|unix_nocheck|asynchronous)\b</string>
 			<key>name</key>
-			<string>support.name.tag.praat</string>
+			<string>support.other.directive.praat</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -883,7 +872,7 @@
 			<key>comment</key>
 			<string>treat text following print-like commands as unquoted strings</string>
 			<key>contentName</key>
-			<string>string.quoted.single.praat</string>
+			<string>string.other.praat</string>
 			<key>end</key>
 			<string>$</string>
 			<key>endCaptures</key>
@@ -1019,7 +1008,7 @@
 					<key>match</key>
 					<string>;.*$</string>
 					<key>name</key>
-					<string>comment.line.praat</string>
+					<string>comment.line.semicolon.praat</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -1039,7 +1028,7 @@
 					<key>match</key>
 					<string>[\S]+?</string>
 					<key>name</key>
-					<string>string.praat</string>
+					<string>string.other.praat</string>
 				</dict>
 			</array>
 		</dict>
@@ -1080,7 +1069,7 @@
 					<key>match</key>
 					<string>;.*$</string>
 					<key>name</key>
-					<string>comment.line.praat</string>
+					<string>comment.line.semicolon.praat</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -1125,10 +1114,12 @@
 				<dict>
 					<key>comment</key>
 					<string>recognize variable substitution in quoted strings</string>
+					<key>disabled</key>
+					<true/>
 					<key>match</key>
 					<string>'[^ ]+?\$?'</string>
 					<key>name</key>
-					<string>variable2.parameter.praat</string>
+					<string>variable.parameter.praat</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -1136,7 +1127,7 @@
 					<key>match</key>
 					<string>;.*$</string>
 					<key>name</key>
-					<string>comment.line.praat</string>
+					<string>comment.line.semicolon.praat</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -1156,7 +1147,7 @@
 					<key>match</key>
 					<string>[\S]+?</string>
 					<key>name</key>
-					<string>string.praat</string>
+					<string>string.other.praat</string>
 				</dict>
 			</array>
 		</dict>

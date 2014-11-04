@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Symbol List (Label)</string>
 	<key>scope</key>
-	<string>entity.name.label.praat</string>
+	<string>entity.name.tag.label.praat</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
