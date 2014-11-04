@@ -449,7 +449,7 @@ HTMLINFORMF
 end
 fscript = ''
 
-TextMate::Executor.run(ENV["TM_PRAAT"] || "/Applications/Praat.app/Contents/MacOS/Praat", "-a", ENV["TM_FILEPATH"], arg_in, :create_error_pipe =&gt; true, :use_hashbang =&gt; false, :version_args =&gt; ENV["TM_BUNDLE_SUPPORT"] + "/bin/version.praat") do |str, type|
+TextMate::Executor.run(ENV["TM_PRAAT"], "-a", ENV["TM_FILEPATH"], arg_in, :create_error_pipe =&gt; true, :use_hashbang =&gt; false, :version_args =&gt; ENV["TM_BUNDLE_SUPPORT"] + "/bin/version.praat") do |str, type|
   if type == :err
     if str =~ /^Error/
       str.gsub!(/^Error\s*:/, "")
@@ -478,6 +478,19 @@ end
 	<string>html</string>
 	<key>outputLocation</key>
 	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>Praat</string>
+			<key>locations</key>
+			<array>
+				<string>/Applications/Praat.app/Contents/MacOS/Praat</string>
+			</array>
+			<key>variable</key>
+			<string>TM_PRAAT</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.praat</string>
 	<key>semanticClass</key>
