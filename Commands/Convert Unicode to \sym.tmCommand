@@ -11,7 +11,7 @@
 ARG=`cat`
 QWRAP=`echo -n "$ARG" | perl -ne 'if(m/^".*?"$/){print 1}else{print 0}'`
 
-RES=`${TM_PRAAT:-/Applications/Praat.app/Contents/MacOS/Praat} -a "$TM_BUNDLE_SUPPORT"/bin/uni2sym.praat "$ARG"`
+RES=`$TM_PRAAT -a "$TM_BUNDLE_SUPPORT"/bin/uni2sym.praat "$ARG"`
 
 if [ $QWRAP -eq 1 ]; then
 	echo -n "$RES" | perl -pe 's/^"//;s/"$//;s/"/""/g;s/^/"/;s/$/"/'
@@ -33,6 +33,19 @@ fi
 	<string>text</string>
 	<key>outputLocation</key>
 	<string>replaceInput</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>Praat</string>
+			<key>locations</key>
+			<array>
+				<string>/Applications/Praat.app/Contents/MacOS/Praat</string>
+			</array>
+			<key>variable</key>
+			<string>TM_PRAAT</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.praat</string>
 	<key>uuid</key>

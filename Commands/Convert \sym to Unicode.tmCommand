@@ -9,7 +9,7 @@
 [[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
 
 ARG=`cat | perl -pe 's/""/"/g;'`
-echo -en `${TM_PRAAT:-/Applications/Praat.app/Contents/MacOS/Praat} -a "$TM_BUNDLE_SUPPORT"/bin/sym2uni.praat "$ARG"`
+echo -en `$TM_PRAAT -a "$TM_BUNDLE_SUPPORT"/bin/sym2uni.praat "$ARG"`
 </string>
 	<key>input</key>
 	<string>word</string>
@@ -25,6 +25,19 @@ echo -en `${TM_PRAAT:-/Applications/Praat.app/Contents/MacOS/Praat} -a "$TM_BUND
 	<string>text</string>
 	<key>outputLocation</key>
 	<string>replaceInput</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>Praat</string>
+			<key>locations</key>
+			<array>
+				<string>/Applications/Praat.app/Contents/MacOS/Praat</string>
+			</array>
+			<key>variable</key>
+			<string>TM_PRAAT</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.praat</string>
 	<key>uuid</key>
